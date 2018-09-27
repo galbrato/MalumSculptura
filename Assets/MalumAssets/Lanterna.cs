@@ -4,7 +4,7 @@ using UnityEngine;
 using Tobii.Gaming;
 
 public class Lanterna : MonoBehaviour {
-
+	private Player jogador;
 	private Light myLight;
 	public int nRays = 8;
 	public int nCircles = 3;
@@ -13,6 +13,7 @@ public class Lanterna : MonoBehaviour {
 	public bool debug = false;
 	void Start() {
 		myLight = gameObject.GetComponent<Light>();
+		jogador = FindObjectOfType<Player>().GetComponent<Player>();
 	}
 
 	void Update () {
@@ -33,6 +34,7 @@ public class Lanterna : MonoBehaviour {
 
 		gameObject.transform.rotation = Quaternion.LookRotation (ray.direction);
 
+		jogador.dirVisao = ray.direction;
 		Vector3 dir = ray.direction;
 		RayDetection (dir, myLight.range);
 		for (int c = 1; c < nCircles; c++) {
