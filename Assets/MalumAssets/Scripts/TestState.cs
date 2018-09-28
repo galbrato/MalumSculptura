@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EditorLight : MonoBehaviour {
+public class TestState : StateMachineBehaviour {
 
 	// Use this for initialization
 	void Start () {
