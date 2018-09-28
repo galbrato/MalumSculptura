@@ -9,33 +9,26 @@ public class EnemyBehaviour : MonoBehaviour {
     public float SightRange = 10;
     
     private NavMeshAgent MyNav;
-    private Animator MyAnimator;
     private Transform Player;
     private Animator StateMachine;
     private void Awake() {
+        MyNav = GetComponent<NavMeshAgent>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        MyAnimator = GetComponent<Animator>();
         StateMachine = GetComponent<Animator>();
     }
 
-    // Use this for initialization
-    void Start () {
-		MyNav = GetComponent<NavMeshAgent>();
-		MyNav.destination = Player.transform.position; 
-	}
-	
 	// Update is called once per frame
 	void Update () {
         StateMachine.SetBool("CanSeePlayer", CanSeePlayer());
 
 		if (Stop) {
 			MyNav.enabled = false;
-            MyAnimator.enabled = false;
+            StateMachine.enabled = false;
 		} else {
             MyNav.enabled = true;
-            MyAnimator.enabled = true;
+            StateMachine.enabled = true;
 		}
-		Stop = false;
+        Stop = false;
 	}
 
     private bool CanSeePlayer() {
@@ -48,5 +41,12 @@ public class EnemyBehaviour : MonoBehaviour {
         if (debug) Debug.DrawRay (transform.position, dir.normalized * hit.distance, Color.red);
 
         return hit.collider.CompareTag("Player");
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.CompareTag("Player") && !Stop) {
+            //Morreu player
+            Debug.Log("BUUU!, Morreu player");
+        }
     }
 }

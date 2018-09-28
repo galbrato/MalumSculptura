@@ -24,8 +24,7 @@ public class Lanterna : MonoBehaviour {
 		} else {
 			olhando = new Vector3 (TobiiAPI.GetGazePoint ().Screen.x, TobiiAPI.GetGazePoint ().Screen.y, 0f);
 			ray = Camera.main.ScreenPointToRay (olhando);
-
-			//se tiver eyetracker, mas quiser pausar porque perdeu os olhos, fazer akie
+         	//se tiver eyetracker, mas quiser pausar porque perdeu os olhos, fazer akie
 			/*if (TobiiAPI.GetDisplayInfo ().IsValid) {
 				Debug.Log ("Seus olhos não podem ser detectados");
 			}*/
