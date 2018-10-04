@@ -38,6 +38,8 @@ public class Relogio : interagivel {
 		tempoAtivo =  tempoAtivoMax;
 		dandoCordaT = -100;//caso valor igual a -100, esta desativado
 		plaFpc.enabled = !plaFpc.enabled;
+		pontG.ativo = true;
+		pontP.ativo = true;
 	}
 
 	public override void interacao(){
@@ -47,14 +49,12 @@ public class Relogio : interagivel {
 
 		dandoCordaT = DandoCordaTempo;
 		plaFpc.enabled = !plaFpc.enabled;
-		pontG.ativo = true;
-		pontP.ativo = true;
 	}
 	void Update () {
 
-		//print(tempo);
+	print(tempo);
 	if(pontP == null){
-		print(":((");
+		print(gameObject.name +":((");
 	}
 		//caso relogio ativo
 		if(tempoAtivo > 0f){
