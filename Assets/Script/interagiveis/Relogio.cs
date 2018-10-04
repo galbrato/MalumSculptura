@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Relogio : interagivel {
 	public float tempoDeJogo = 100f;//tempo da fase
-	float tempo;
+	[HideInInspector]
+	public float tempo;
 
 	public float tempoAtivoMax = 100f;//tempo até necessitar dar corda no relogio
 	
@@ -14,9 +15,10 @@ public class Relogio : interagivel {
 	private float dandoCordaT;
 
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController  plaFpc;
-
-
+	public Ponteiro1 pontP;//transform com objeto ponteiro pequeno
+	public Ponteiro1  pontG;//transform com objeto ponteiro grande
 	protected override void comeco() {
+		//colocando valores iniciais
 		tempo = tempoDeJogo;
 		tempoAtivo = tempoAtivoMax;
 		dandoCordaT = -100;//caso -100 esta desativado o timer
@@ -25,6 +27,10 @@ public class Relogio : interagivel {
 
 		if(DandoCordaTempo < 0f)
 			Debug.Log("coloque o dandoCordaTempo do relogio para um valor POSITIVO, obg");
+
+
+		pontP.comeco(6, GetComponent<Relogio>());
+		pontG.comeco(6*60, GetComponent<Relogio>());
 	}
 	
 	//player da corda no relógio
@@ -41,18 +47,28 @@ public class Relogio : interagivel {
 
 		dandoCordaT = DandoCordaTempo;
 		plaFpc.enabled = !plaFpc.enabled;
+		pontG.ativo = true;
+		pontP.ativo = true;
 	}
 	void Update () {
 
+		//print(tempo);
+	if(pontP == null){
+		print(":((");
+	}
 		//caso relogio ativo
 		if(tempoAtivo > 0f){
 			tempoAtivo -= Time.deltaTime; 
 			tempo -= Time.deltaTime;
 
+
 			//termino do jogo
 			if(tempo <= 0f){
 				Debug.Log("acaba o jogo");
 			}
+		}else{
+			pontG.ativo = false;
+			pontP.ativo = false;
 		}
 
 		//dando corda no relogio

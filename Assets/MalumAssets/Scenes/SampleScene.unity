@@ -2260,6 +2260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distMin: 0
   tempoDeJogo: 100
+  tempo: 0
   tempoAtivoMax: 100
   DandoCordaTempo: 0
 --- !u!1 &1326874738
@@ -2622,6 +2623,30 @@ Prefab:
         type: 2}
       propertyPath: maxTimer
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008175495741964, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.69678956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008175495741964, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7172756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008175495741964, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -88.340004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008175495741964, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008175495741964, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008175495741964, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2813456
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b5a16fc433734a4dbf34e317d4e5222, type: 2}
