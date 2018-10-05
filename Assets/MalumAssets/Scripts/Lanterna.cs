@@ -56,7 +56,7 @@ public class Lanterna : MonoBehaviour {
             if (hit.collider.gameObject.tag == "Enemy"){
 				if (!saveEnemy)
 					saveEnemy = hit.collider.gameObject.GetComponent<EnemyBehaviour> ();
-				saveEnemy.Stop = true;
+                saveEnemy.Stop();
 			}
 		}
 		return "FODEU DETECTOU NADA";

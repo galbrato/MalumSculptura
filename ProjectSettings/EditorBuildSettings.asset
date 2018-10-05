@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MalumAssets/Scenes/cartaz.unity
+    guid: e98221653d32671439f99b70cafc2fd4
+  m_configObjects: {}

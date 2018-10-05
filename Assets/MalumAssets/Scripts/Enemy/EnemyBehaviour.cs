@@ -1,35 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour {
-    public bool debug = true;
-	public bool Stop = false;
+    [SerializeField] float Speed = 3.5f;
+    [SerializeField] bool debug = true;
     public float SightRange = 10;
     
-    private NavMeshAgent MyNav;
     private Transform Player;
     private Animator StateMachine;
+    private NavMeshAgent mAgent;
+
     private void Awake() {
-        MyNav = GetComponent<NavMeshAgent>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        mAgent = GetComponent<NavMeshAgent>();
         StateMachine = GetComponent<Animator>();
     }
 
 	// Update is called once per frame
 	void Update () {
         StateMachine.SetBool("CanSeePlayer", CanSeePlayer());
+          mAgent.speed = 3.5f;
 
-		if (Stop) {
-			MyNav.enabled = false;
-            StateMachine.enabled = false;
-		} else {
-            MyNav.enabled = true;
-            StateMachine.enabled = true;
-		}
-        Stop = false;
-	}
+    }
 
     private bool CanSeePlayer() {
         RaycastHit hit;
@@ -43,10 +38,16 @@ public class EnemyBehaviour : MonoBehaviour {
         return hit.collider.CompareTag("Player");
     }
 
+    public void Stop() {
+        //StateMachine.SetBool("Stop", true);
+        mAgent.speed = 0;
+       
+    }
     private void OnCollisionEnter(Collision collision) {
-        if(collision.gameObject.CompareTag("Player") && !Stop) {
-            //Morreu player
-            Debug.Log("BUUU!, Morreu player");
+        Debug.Log("colidi com o " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Player")) {
+            Debug.Log("BUuuuu, perdeu playba");
         }
     }
+
 }

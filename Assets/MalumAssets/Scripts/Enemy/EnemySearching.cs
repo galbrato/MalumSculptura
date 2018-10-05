@@ -24,8 +24,9 @@ public class EnemySearching : StateMachineBehaviour {
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         counter += Time.deltaTime;
-        if(counter < TimePrediction)mAgent.SetDestination(Player.position);
-        if( (mAgent.destination - animator.transform.position).magnitude < mAgent.stoppingDistance+0.1f) {
+        if(counter < TimePrediction) mAgent.SetDestination(Player.position);
+        Debug.DrawRay(mAgent.destination, Vector3.up * 100,Color.red);
+        if ((mAgent.destination - animator.transform.position).magnitude < mAgent.stoppingDistance + 0.5f) {
             animator.SetBool("SearchingPlayer", false);
         }
     }
