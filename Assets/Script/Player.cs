@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 
 		//interagir com objeto
-		if(Input.GetMouseButton(0)){
+		if(Input.GetMouseButton(0) ||Input.GetMouseButtonDown(0) ){
 
 			RaycastHit hit;
 			Physics.Raycast(trans.position, dirVisao, out hit, 100f);
@@ -24,21 +24,12 @@ public class Player : MonoBehaviour {
 
 			if (gmO != null) {
             	interagivel inte = gmO.GetComponent<interagivel>();
-				if(inte != null)
-					inte.interagir();
-			}
-		}
-		if(Input.GetMouseButtonDown(0)){
-
-			RaycastHit hit;
-			Physics.Raycast(trans.position, dirVisao, out hit, 100f);
-			//Debug.DrawRay(trans.position, dirVisao * 10, Color.yellow);
-			GameObject gmO = hit.collider.gameObject;
-
-			if (gmO != null) {
-            	interagivel inte = gmO.GetComponent<interagivel>();
-				if(inte != null)
-					inte.interagir2();
+				if(inte != null){
+					if(Input.GetMouseButton(0))
+						inte.interagir();
+					else	
+						inte.interagir2();
+				}
 			}
 		}
 	}

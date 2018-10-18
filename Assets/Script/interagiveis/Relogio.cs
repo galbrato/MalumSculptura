@@ -36,7 +36,7 @@ public class Relogio : interagivel {
 		//colocando valores iniciais
 		tempo = tempoDeJogo;
 		tempoAtivo = 10;//tempoAtivoMax - 1;
-		horaAtual = (int)tempoDeJogo/60 ;
+		horaAtual = (int)tempoDeJogo/60 -1;
 
 		plaFpc = pla.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController >();	
 
@@ -66,7 +66,6 @@ public class Relogio : interagivel {
 	}
 
 	void Update () {
-		Debug.Log(tempo + " " + tempoAtivo + " " + horaAtual );
 
 		//caso relogio ativo
 		if(tempoAtivo > 0f){
