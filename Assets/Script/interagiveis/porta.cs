@@ -33,8 +33,9 @@ public class porta : interagivel {
 		anguloInicial *= sentido;
 	}
 
-	public override void interacao(){
 
+	//interacao do ambiente / inimico com porta
+	public override void interacao2(){
 		//maquina de estado
 		if(estado == state.aberto)
 			estado = state.fechando;
@@ -49,13 +50,8 @@ public class porta : interagivel {
 		else if(estado == state.paFechando)
 			estado = state.fechando;
 
-	}
-
-	//interacao do ambiente / inimico com porta
-	public override void interacao2(){
-
-		estado = state.aberto;
-		gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
+		//estado = state.aberto;
+		//gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 
 	}
 

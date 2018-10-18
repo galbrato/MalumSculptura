@@ -15,7 +15,7 @@ public class interagivel : MonoBehaviour {
 		comeco();
 	}
 
-	//player interage com objeto
+	//player interage com objeto(botao pressionado)
 	public void interagir(){
 		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
 			return;
@@ -23,6 +23,13 @@ public class interagivel : MonoBehaviour {
 		interacao();
 	}
 
+	//player interage com objeto(um click)
+	public void interagir2(){
+		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
+			return;
+
+		interacao2();
+	}
 	protected virtual void comeco(){}
 	public virtual void interacao(){}
 

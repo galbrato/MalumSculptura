@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Ponteiro1 : MonoBehaviour {
 	[HideInInspector]
-	public bool ativo = true;
-	[HideInInspector]
 	public Relogio relogio;
 	private Transform trans;
 	private float umCiclo;
@@ -18,8 +16,6 @@ public class Ponteiro1 : MonoBehaviour {
 	}
 	
 	void Update(){
-		if(!ativo)
-			return;
 
 		trans.localEulerAngles = new Vector3(trans.localEulerAngles.x,trans.localEulerAngles.y,((relogio.tempo) % umCiclo / umCiclo) * 360);
 
