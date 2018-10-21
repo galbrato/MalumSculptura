@@ -71,15 +71,20 @@ public class EnemyBehaviour : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
+    public void JumpScare() {
+        GetComponent<AudioSource>().Play();
+        Camera.main.transform.LookAt(myHead);
+        Invoke("GameOver", 2);
+        Lanterna.isntance.LightOn();
+    }
+
     private void OnCollisionEnter(Collision collision) {
         Debug.Log("colidi com o " + collision.gameObject.name);
         if (!stop && collision.gameObject.CompareTag("Player")) {
-            Debug.Log("BUuuuu, perdeu playba");
-            Invoke("GameOver", 2);
-            GetComponent<AudioSource>().Play();
-            Camera.main.transform.LookAt(myHead);
+            Invoke("JumpScare", 2);
             Player.GetComponent<FirstPersonController>().enabled = false;
             Stop();
+            Lanterna.isntance.LightOff();
         }
     }
 
