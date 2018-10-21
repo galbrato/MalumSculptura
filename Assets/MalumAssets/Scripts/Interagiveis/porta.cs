@@ -16,8 +16,9 @@ public class porta : interagivel {
 	private float anguloAnterior;
 	private int sentido= 1;
 
-	public AudioSource audioOpen;
-	public AudioSource audioClose;
+	public AudioSource audioAbrindo;//ruído abrindo a porta
+	public AudioSource audioFechando;//ruído fechando a porta
+	public AudioSource audioFechar;//pancada da porta fechadondo
 	protected override void comeco(){
 		
 		anguloInicial = gira.eulerAngles.y;
@@ -39,26 +40,26 @@ public class porta : interagivel {
 	//interacao do ambiente / inimico com porta
 	public override void interacao2(){
 		//maquina de estado
-		if(estado == state.aberto)
+		if(estado == state.aberto){
 			estado = state.fechando;
-		else if(estado == state.fechado)
+			audioFechando.Play();
+		}
+		else if(estado == state.fechado){
 			estado = state.abrindo;
+			audioAbrindo.Play();
+		}
 		//else if(estado == state.fechando)
 		//	estado = state.paAbrindo;
 		//else if(estado == state.abrindo)
 		//	estado = state.paFechando;
-		else if(estado == state.paAbrindo)
-			estado = state.abrindo;
-		else if(estado == state.paFechando)
-			estado = state.fechando;
-
-		//estado = state.aberto;
-		//gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
+		//else if(estado == state.paAbrindo)
+		//	estado = state.abrindo;
+		//else if(estado == state.paFechando)
+		//	estado = state.fechando;
 
 	}
 
 	void Update(){
-		//Debug.Log(estado);
 
 		//arrumando rotacao y para ser menor que 360 e maior que 0
 		if(gira.eulerAngles.y < 0){
@@ -76,7 +77,6 @@ public class porta : interagivel {
 
 			//caso termine de abrir
 			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior <   anguloMax ){
-				audioOpen.Play();
 				estado = state.aberto;
 				gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 			}
@@ -86,7 +86,7 @@ public class porta : interagivel {
 
 			//caso termine de fechar
 			if( sentido*gira.eulerAngles.y  <  anguloInicial && sentido*anguloAnterior >  anguloInicial){
-				audioClose.Play();
+				audioFechar.Play();
 				estado = state.fechado;
 				gira.eulerAngles = new Vector3(0,anguloInicial * sentido,0);
 			
