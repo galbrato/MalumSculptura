@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class porta : interagivel {
 	public float anguloMax;
@@ -8,9 +9,12 @@ public class porta : interagivel {
 	public float velF;//velocidade de fechamento
 	public bool horario = true;//sentido da rotacao
 	public Transform gira;//objeto que gira
+	Canvas cv;
+	private GameObject lpMg;
+	public GameObject minigamePrefab;
 
-	private state estado = state.fechado;
-	enum state {aberto,fechado,abrindo,fechando,paAbrindo,paFechando};
+	public state estado = state.trancado;
+	public enum state {aberto,fechado,trancado,abrindo,fechando,paAbrindo,paFechando};
 
 	private float anguloInicial;
 	private float anguloAnterior;
@@ -19,6 +23,8 @@ public class porta : interagivel {
 	public AudioSource audioOpen;
 	public AudioSource audioClose;
 	protected override void comeco(){
+		
+		cv = FindObjectOfType<Canvas>();
 		
 		anguloInicial = gira.eulerAngles.y;
 
@@ -51,11 +57,25 @@ public class porta : interagivel {
 			estado = state.abrindo;
 		else if(estado == state.paFechando)
 			estado = state.fechando;
+		else if(estado == state.trancado){
+			if (lpMg == null || lpMg.active == false) {
+				lpMg = Instantiate(minigamePrefab) as GameObject;
+				lpMg.transform.SetParent(cv.transform);
+				RectTransform rec = lpMg.transform.GetComponent<RectTransform>();
+				rec.localPosition = new Vector3(0,0,0);
+				rec.offsetMin = new Vector3(0,0,0);
+				rec.offsetMax = new Vector3(0,0,0);
+				lpMg.GetComponent<lockPickController>().setDoor(this);
+			}
+		}
 
 		//estado = state.aberto;
 		//gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 
 	}
+
+	// void Start() {
+	// }
 
 	void Update(){
 		//Debug.Log(estado);

@@ -15,6 +15,7 @@ public class lockPickController : MonoBehaviour {
 	Animator anim;
 	FirstPersonController firstPerson;
 	Lanterna lanterna;
+	porta p;
 
 	// Cycle between pins
 	void CycleRight() {
@@ -38,6 +39,10 @@ public class lockPickController : MonoBehaviour {
 		} else {
 			pins[selected].PushSlider();
 		}
+	}
+
+	public void setDoor(porta p) {
+		this.p = p;
 	}
 
 	// Use this for initialization
@@ -69,6 +74,7 @@ public class lockPickController : MonoBehaviour {
 		if(order.Count <= 0) {
 			lanterna.enabled = true;
 			firstPerson.enabled = true;
+			p.estado = porta.state.fechado;
 			Destroy(gameObject);
 		}
 
