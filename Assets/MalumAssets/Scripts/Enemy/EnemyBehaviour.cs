@@ -31,7 +31,7 @@ public class EnemyBehaviour : MonoBehaviour {
             }
         }
         if (myHead == null) {
-            Debug.LogError("ERRO, a estatua " +name+" não possui um objeto Head! sera criado um temporario");
+            Debug.LogError("ERRO, a estatua " +name+" não possui um objeto Head!");
             myHead = Instantiate(new GameObject("Head"), transform).transform;
             myHead.position = new Vector3(0f, 1f, 0f);
         }
