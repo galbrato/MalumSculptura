@@ -5,6 +5,7 @@ using Tobii.Gaming;
 
 public class Lanterna : MonoBehaviour {
 
+	private Player jogador;
     private Light myLight;
     public int nRays = 8;
     public int nCircles = 3;
@@ -24,6 +25,7 @@ public class Lanterna : MonoBehaviour {
 
     void Start() {
         myLight = gameObject.GetComponent<Light>();
+    	jogador = FindObjectOfType<Player>().GetComponent<Player>();
     }
 
 
@@ -44,6 +46,8 @@ public class Lanterna : MonoBehaviour {
 
         gameObject.transform.rotation = Quaternion.LookRotation(ray.direction);
 
+		jogador.dirVisao = ray.direction;
+        //Debug.Log(ray.direction);
         Vector3 dir = ray.direction;
         RayDetection(dir, myLight.range);
         for (int c = 1; c < nCircles; c++) {

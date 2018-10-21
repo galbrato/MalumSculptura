@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 	[HideInInspector]
 	public Vector3 dirVisao;
 
+	private bool getmousebutton;
+	private bool getmousebuttondown;
 	void Start () {
 		trans = GetComponent<Transform>();
 	}
@@ -14,21 +16,23 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		getmousebutton = Input.GetMouseButton(0);
+		getmousebuttondown = Input.GetMouseButtonDown(0);
 		//interagir com objeto
-		if(Input.GetMouseButton(0) ||Input.GetMouseButtonDown(0) ){
+		if(getmousebutton ||getmousebuttondown ){
 			RaycastHit hit;
 			Physics.Raycast(trans.position, dirVisao, out hit, 100f);
 			//Debug.DrawRay(trans.position, dirVisao * 10, Color.yellow);
 			GameObject gmO = hit.collider.gameObject;
-
 			if (gmO != null) {
-				Debug.Log("PEI");
             	interagivel inte = gmO.GetComponent<interagivel>();
 				if(inte != null){
-					if(Input.GetMouseButton(0))
+					if(getmousebutton){
 						inte.interagir();
-					else	
+					}
+					if(getmousebuttondown){
 						inte.interagir2();
+					}
 				}
 			}
 		}

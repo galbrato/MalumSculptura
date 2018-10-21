@@ -369,7 +369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ab83045e21a6a40baf2fbb24db899b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ativo: 1
   relogio: {fileID: 0}
 --- !u!114 &114232124627634220
 MonoBehaviour:
@@ -382,7 +381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ab83045e21a6a40baf2fbb24db899b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ativo: 1
   relogio: {fileID: 0}
 --- !u!114 &114773152019368352
 MonoBehaviour:
@@ -399,6 +397,10 @@ MonoBehaviour:
   tempoDeJogo: 3000
   tempo: 0
   tempoAtivoMax: 100
-  DandoCordaTempo: 10
+  forcaDarCorda: 5
   pontP: {fileID: 114232124627634220}
   pontG: {fileID: 114139755293397638}
+  winding: []
+  audioWinding: {fileID: 0}
+  audioTick: {fileID: 0}
+  audioBatidaHora: {fileID: 0}

@@ -44,7 +44,7 @@ public class Relogio : interagivel {
 		pontG.comeco(6*60, GetComponent<Relogio>());
 	}
 
-	public override void interacao2(){
+	public override void interacao(){
 		if(pdDarCorda1 == false || pdDarCorda2 == false)
 			return;
 			

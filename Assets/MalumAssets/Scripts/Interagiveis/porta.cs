@@ -16,6 +16,8 @@ public class porta : interagivel {
 	private float anguloAnterior;
 	private int sentido= 1;
 
+	public AudioSource audioOpen;
+	public AudioSource audioClose;
 	protected override void comeco(){
 		
 		anguloInicial = gira.eulerAngles.y;
@@ -41,10 +43,10 @@ public class porta : interagivel {
 			estado = state.fechando;
 		else if(estado == state.fechado)
 			estado = state.abrindo;
-		else if(estado == state.fechando)
-			estado = state.paAbrindo;
-		else if(estado == state.abrindo)
-			estado = state.paFechando;
+		//else if(estado == state.fechando)
+		//	estado = state.paAbrindo;
+		//else if(estado == state.abrindo)
+		//	estado = state.paFechando;
 		else if(estado == state.paAbrindo)
 			estado = state.abrindo;
 		else if(estado == state.paFechando)
@@ -56,6 +58,7 @@ public class porta : interagivel {
 	}
 
 	void Update(){
+		//Debug.Log(estado);
 
 		//arrumando rotacao y para ser menor que 360 e maior que 0
 		if(gira.eulerAngles.y < 0){
@@ -73,7 +76,7 @@ public class porta : interagivel {
 
 			//caso termine de abrir
 			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior <   anguloMax ){
-
+				audioOpen.Play();
 				estado = state.aberto;
 				gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 			}
@@ -83,7 +86,7 @@ public class porta : interagivel {
 
 			//caso termine de fechar
 			if( sentido*gira.eulerAngles.y  <  anguloInicial && sentido*anguloAnterior >  anguloInicial){
-
+				audioClose.Play();
 				estado = state.fechado;
 				gira.eulerAngles = new Vector3(0,anguloInicial * sentido,0);
 			

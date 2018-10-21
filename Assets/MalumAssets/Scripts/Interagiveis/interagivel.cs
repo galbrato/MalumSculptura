@@ -17,10 +17,8 @@ public class interagivel : MonoBehaviour {
 
 	//player interage com objeto(botao pressionado)
 	public void interagir(){
-		Debug.Log("haha, interagi");
 		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
 			return;
-
 		interacao();
 	}
 
