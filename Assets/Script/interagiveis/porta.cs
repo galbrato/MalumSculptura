@@ -72,7 +72,7 @@ public class porta : interagivel {
 			gira.Rotate(Vector3.up * Time.deltaTime * velA);
 
 			//caso termine de abrir
-			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior <   anguloMax ){
+			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior < anguloMax ){
 
 				estado = state.aberto;
 				gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
