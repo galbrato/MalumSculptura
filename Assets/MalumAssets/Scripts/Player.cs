@@ -16,13 +16,13 @@ public class Player : MonoBehaviour {
 
 		//interagir com objeto
 		if(Input.GetMouseButton(0) ||Input.GetMouseButtonDown(0) ){
-
 			RaycastHit hit;
 			Physics.Raycast(trans.position, dirVisao, out hit, 100f);
 			//Debug.DrawRay(trans.position, dirVisao * 10, Color.yellow);
 			GameObject gmO = hit.collider.gameObject;
 
 			if (gmO != null) {
+				Debug.Log("PEI");
             	interagivel inte = gmO.GetComponent<interagivel>();
 				if(inte != null){
 					if(Input.GetMouseButton(0))
