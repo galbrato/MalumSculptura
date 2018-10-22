@@ -10,8 +10,8 @@ public class interagivel : MonoBehaviour {
 
 	void Start(){
 		pla = FindObjectOfType<Player>();
-		plaTrans = pla.GetComponent<Transform>();
-		trans = GetComponent<Transform>();
+		plaTrans = pla.transform;
+		trans = this.transform;
 		comeco();
 	}
 
