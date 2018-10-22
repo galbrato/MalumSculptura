@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class porta : interagivel {
 	public float anguloMax;
@@ -8,15 +9,23 @@ public class porta : interagivel {
 	public float velF;//velocidade de fechamento
 	public bool horario = true;//sentido da rotacao
 	public Transform gira;//objeto que gira
+	Canvas cv;
+	private GameObject lpMg;
+	public GameObject minigamePrefab;
 
-	private state estado = state.fechado;
-	enum state {aberto,fechado,abrindo,fechando,paAbrindo,paFechando};
+	public state estado = state.trancado;
+	public enum state {aberto,fechado,trancado,abrindo,fechando,paAbrindo,paFechando};
 
 	private float anguloInicial;
 	private float anguloAnterior;
 	private int sentido= 1;
 
+	public AudioSource audioAbrindo;//ruído abrindo a porta
+	public AudioSource audioFechando;//ruído fechando a porta
+	public AudioSource audioFechar;//pancada da porta fechadondo
 	protected override void comeco(){
+		
+		cv = FindObjectOfType<Canvas>();
 		
 		anguloInicial = gira.eulerAngles.y;
 
@@ -37,23 +46,41 @@ public class porta : interagivel {
 	//interacao do ambiente / inimico com porta
 	public override void interacao2(){
 		//maquina de estado
-		if(estado == state.aberto)
+		if(estado == state.aberto){
 			estado = state.fechando;
-		else if(estado == state.fechado)
+			audioFechando.Play();
+		}
+		else if(estado == state.fechado){
 			estado = state.abrindo;
-		else if(estado == state.fechando)
-			estado = state.paAbrindo;
-		else if(estado == state.abrindo)
-			estado = state.paFechando;
+			audioAbrindo.Play();
+		}
+		//else if(estado == state.fechando)
+		//	estado = state.paAbrindo;
+		//else if(estado == state.abrindo)
+		//	estado = state.paFechando;
 		else if(estado == state.paAbrindo)
 			estado = state.abrindo;
 		else if(estado == state.paFechando)
 			estado = state.fechando;
+		else if(estado == state.trancado){
+			if (lpMg == null || lpMg.active == false) {
+				lpMg = Instantiate(minigamePrefab) as GameObject;
+				lpMg.transform.SetParent(cv.transform);
+				RectTransform rec = lpMg.transform.GetComponent<RectTransform>();
+				rec.localPosition = new Vector3(0,0,0);
+				rec.offsetMin = new Vector3(0,0,0);
+				rec.offsetMax = new Vector3(0,0,0);
+				lpMg.GetComponent<lockPickController>().setDoor(this);
+			}
+		}
 
 		//estado = state.aberto;
 		//gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 
 	}
+
+	// void Start() {
+	// }
 
 	void Update(){
 
@@ -73,7 +100,6 @@ public class porta : interagivel {
 
 			//caso termine de abrir
 			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior <   anguloMax ){
-
 				estado = state.aberto;
 				gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 			}
@@ -83,7 +109,7 @@ public class porta : interagivel {
 
 			//caso termine de fechar
 			if( sentido*gira.eulerAngles.y  <  anguloInicial && sentido*anguloAnterior >  anguloInicial){
-
+				audioFechar.Play();
 				estado = state.fechado;
 				gira.eulerAngles = new Vector3(0,anguloInicial * sentido,0);
 			

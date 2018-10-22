@@ -19,7 +19,6 @@ public class interagivel : MonoBehaviour {
 	public void interagir(){
 		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
 			return;
-
 		interacao();
 	}
 

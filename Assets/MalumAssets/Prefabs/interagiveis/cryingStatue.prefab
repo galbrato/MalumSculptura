@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1172b2a9444b3fa43b9d516a7970de15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distMin: 0
   maxTimer: 0
   distSpawn: 0
-  distInt: 0
   observado: 0
