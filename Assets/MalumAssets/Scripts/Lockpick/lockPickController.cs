@@ -17,9 +17,16 @@ public class lockPickController : MonoBehaviour {
 	Lanterna lanterna;
 	porta p;
 
+	private AudioSource destrancandoPorta;//som de porta destrancando(está no prefab player)
+	private AudioSource acertarPino;//som de pancada quandoa certa um pino(está no prefab player)
+	public AudioSource audioMover;//ruído quando é movido para lado o "martelinho"
+	public AudioSource audioClick;//quando pin é colocado no luagr certo(está no prefab player)
+	public AudioClip[] moverPick;
+
 	// Cycle between pins
 	void CycleRight() {
 		if(selected + 1 < pins.Length) selected++;
+		tocarSomMoverPick();
 		// Set new cursor target position
 		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + 85;
 		speed = (targetPosition - cursor.anchoredPosition.x)/5f;
@@ -27,12 +34,14 @@ public class lockPickController : MonoBehaviour {
 
 	void CycleLeft() {
 		if(selected > 0) selected--;
+		tocarSomMoverPick();
 		// Change cursor target position
 		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + 85;
 		speed = (targetPosition - cursor.anchoredPosition.x)/5f;
 	}
 
 	void PushPin() {
+		acertarPino.Play();
 		if(selected == order.Peek()) {
 			pins[selected].PushSliderToTarget();
 			order.Pop();
@@ -66,12 +75,18 @@ public class lockPickController : MonoBehaviour {
 
 		firstPerson.enabled = false;
 		lanterna.enabled = false;
+
+		//achando audios
+		acertarPino = GameObject.Find("audioSourcePino").GetComponent<AudioSource>();
+		destrancandoPorta= GameObject.Find("audioSourceDestrancandoPorta").GetComponent<AudioSource>();
+		audioClick= GameObject.Find("audioClickLockPick").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// Checking win condition
 		if(order.Count <= 0) {
+			destrancandoPorta.Play();
 			lanterna.enabled = true;
 			firstPerson.enabled = true;
 			p.estado = porta.state.fechado;
@@ -87,6 +102,13 @@ public class lockPickController : MonoBehaviour {
 		if(Input.GetButtonDown("Fire1") && pins[selected].ready) anim.SetTrigger("Pushpin");
 	}
 
+	void tocarSomMoverPick(){
+		if(!audioMover.isPlaying && Random.Range(0,5)==0){
+			//selecionando um som aleatório
+			audioMover.clip = moverPick[(int) Random.Range(0f, moverPick.Length -1) ]; 
+			audioMover.Play();
+		}
+	}
 	void FixedUpdate() {
 		if(cursor.anchoredPosition.x == targetPosition) speed = 0;
 		else cursor.anchoredPosition = new Vector2(cursor.anchoredPosition.x + speed, cursor.anchoredPosition.y);

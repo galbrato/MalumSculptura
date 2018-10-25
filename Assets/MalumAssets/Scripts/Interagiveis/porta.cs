@@ -14,7 +14,7 @@ public class porta : interagivel {
 	public GameObject minigamePrefab;
 
 	public state estado = state.trancado;
-	public enum state {aberto,fechado,trancado,abrindo,fechando,paAbrindo,paFechando};
+	public enum state {aberto,fechado,trancado,abrindo,fechando};
 
 	private float anguloInicial;
 	private float anguloAnterior;
@@ -54,14 +54,6 @@ public class porta : interagivel {
 			estado = state.abrindo;
 			audioAbrindo.Play();
 		}
-		//else if(estado == state.fechando)
-		//	estado = state.paAbrindo;
-		//else if(estado == state.abrindo)
-		//	estado = state.paFechando;
-		else if(estado == state.paAbrindo)
-			estado = state.abrindo;
-		else if(estado == state.paFechando)
-			estado = state.fechando;
 		else if(estado == state.trancado){
 			if (lpMg == null || lpMg.active == false) {
 				lpMg = Instantiate(minigamePrefab) as GameObject;
@@ -73,14 +65,9 @@ public class porta : interagivel {
 				lpMg.GetComponent<lockPickController>().setDoor(this);
 			}
 		}
-
-		//estado = state.aberto;
-		//gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
-
 	}
 
-	// void Start() {
-	// }
+
 
 	void Update(){
 

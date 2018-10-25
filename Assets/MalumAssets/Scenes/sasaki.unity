@@ -1188,7 +1188,7 @@ Prefab:
     - target: {fileID: 114527434004886018, guid: 51e3bd5a4262927459f25f43bf53eaf7,
         type: 2}
       propertyPath: velF
-      value: 33
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 114527434004886018, guid: 51e3bd5a4262927459f25f43bf53eaf7,
         type: 2}
@@ -1570,10 +1570,11 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.22100002
-      objectReference: {fileID: 0}
+    - target: {fileID: 82577388618389112, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3687a10ede608774f9bbe555a41858c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabAsset: 0
@@ -3913,7 +3914,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 78d0225b117e6404a9aa799be6eb6400, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
