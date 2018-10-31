@@ -18,10 +18,17 @@ public class pinController : MonoBehaviour {
 	public float gravity = 0.3f;
 	public bool ready;
 
+	public bool tocarSomDestravamento = false; 
+	public AudioSource audioClick;//audio quando pin entra na posicao certa
+
 	void UpdateSlider() {
 		if(sliderHeightTarget > 0 && sliderHeight < sliderHeightTarget) {
 			sliderFallSpeed = 0f;
 			sliderHeight = sliderHeightTarget;
+			if(tocarSomDestravamento){
+				audioClick.Play();
+				tocarSomDestravamento = false;
+			}
 		}
 		if(sliderHeight < sliderHeightMin){
 			sliderFallSpeed = 0f;
@@ -46,6 +53,7 @@ public class pinController : MonoBehaviour {
 		gravity += 0.2f;
 		sliderHeight = sliderHeightMax;
 		ready = false;
+		tocarSomDestravamento = true;
 		sliderHeightTarget = pin.rect.height/2f;
 	}
 
@@ -63,6 +71,7 @@ public class pinController : MonoBehaviour {
 		sliderHeight = sliderHeightMin;
 
 		sliderHeightTarget = -100;
+		
 	}
 	
 	// Update is called once per frame

@@ -20,7 +20,6 @@ public class lockPickController : MonoBehaviour {
 	private AudioSource destrancandoPorta;//som de porta destrancando(está no prefab player)
 	private AudioSource acertarPino;//som de pancada quandoa certa um pino(está no prefab player)
 	public AudioSource audioMover;//ruído quando é movido para lado o "martelinho"
-	public AudioSource audioClick;//quando pin é colocado no luagr certo(está no prefab player)
 	public AudioClip[] moverPick;
 
 	// Cycle between pins
@@ -79,7 +78,6 @@ public class lockPickController : MonoBehaviour {
 		//achando audios
 		acertarPino = GameObject.Find("audioSourcePino").GetComponent<AudioSource>();
 		destrancandoPorta= GameObject.Find("audioSourceDestrancandoPorta").GetComponent<AudioSource>();
-		audioClick= GameObject.Find("audioClickLockPick").GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
