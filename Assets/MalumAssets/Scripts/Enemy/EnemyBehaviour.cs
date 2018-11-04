@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour {
     [SerializeField] bool debug = true;
     public float SightRange = 10;
     public bool stop;
+
+    private bool EndGame;
     
     private Transform Player;
     private Animator StateMachine;
@@ -18,6 +20,8 @@ public class EnemyBehaviour : MonoBehaviour {
     Transform myHead;
 
     private void Awake() {
+        EndGame = false;
+
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         mAgent = GetComponent<NavMeshAgent>();
         StateMachine = GetComponent<Animator>();
@@ -41,7 +45,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	void Update () {
         StateMachine.SetBool("CanSeePlayer", CanSeePlayer());
         if (stop) {
-            stop = false;
+            if(!EndGame)stop = false;
         } else {
             mAgent.speed = Speed;
         }
@@ -68,14 +72,14 @@ public class EnemyBehaviour : MonoBehaviour {
     }
 
     public void GameOver() {
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 
     public void JumpScare() {
-        GetComponent<AudioSource>().Play();
+        GetComponentInChildren<AudioSource>().Play();
         Camera.main.transform.LookAt(myHead);
         Invoke("GameOver", 2);
-        Lanterna.isntance.LightOn();
+        Lanterna.instance.LightOn();
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -84,7 +88,8 @@ public class EnemyBehaviour : MonoBehaviour {
             Invoke("JumpScare", 2);
             Player.GetComponent<FirstPersonController>().enabled = false;
             Stop();
-            Lanterna.isntance.LightOff();
+            EndGame = true;
+            Lanterna.instance.LightOff();
         }
     }
 

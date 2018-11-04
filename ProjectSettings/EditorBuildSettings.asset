@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MalumAssets/Scenes/cartaz.unity
-    guid: e98221653d32671439f99b70cafc2fd4
+    path: Assets/MalumAssets/Scenes/CartazHouseTest.unity
+    guid: 181f4e1a563bf6d4c877a9e20cf12c43
   m_configObjects: {}

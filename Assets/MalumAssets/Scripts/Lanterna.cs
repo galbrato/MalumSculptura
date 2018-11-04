@@ -5,7 +5,8 @@ using Tobii.Gaming;
 
 public class Lanterna : MonoBehaviour {
 
-	private Player jogador;
+    public bool seekMouse = true;
+    private Player jogador;
     private Light myLight;
     public int nRays = 8;
     public int nCircles = 3;
@@ -13,23 +14,66 @@ public class Lanterna : MonoBehaviour {
     private EnemyBehaviour saveEnemy;
     public bool debug = false;
 
-    public static Lanterna isntance;
+    public bool isTurnedOn = true;
+
+    //variaveis da bateria
+    public float MaxBaterry = 100f;
+    public float BatteryDrainPerSecond = 1f;
+    public float BatteryRechargePerSecond = 3f;
+    public float ActualBattery = 100f;
+
+    public float HoldDelay = 0.1f;
+    private float HoldDelayCaunter;
+
+    public float LightDecressPoint = 5;
+
+    public static Lanterna instance = null;
+
+    private float OriginalRange;
 
     private void Awake() {
-        if (isntance == null) {
-            isntance = this;
-        } else {
-            Destroy(this);
-        }
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
     }
 
     void Start() {
+        HoldDelayCaunter = HoldDelay;
         myLight = gameObject.GetComponent<Light>();
-    	jogador = FindObjectOfType<Player>().GetComponent<Player>();
+        OriginalRange = myLight.range;
+    	//jogador = FindObjectOfType<Player>().GetComponent<Player>();
     }
 
 
     void Update() {
+        if (Input.GetButtonDown("Fire1")) {
+            LightOff();
+        }
+
+        if (Input.GetButtonUp("Fire1") ) {
+            LightOn();
+        }
+
+        if (!isTurnedOn) {
+            Recharge();
+        }
+
+        if(isTurnedOn && ActualBattery > 0f) {
+            ActualBattery -= BatteryDrainPerSecond * Time.deltaTime;
+        }
+
+        if(ActualBattery < 0) {
+            LightOff();
+        }
+
+        if((ActualBattery/MaxBaterry)*100 < LightDecressPoint) {
+            myLight.range = OriginalRange * (ActualBattery / (MaxBaterry * (LightDecressPoint/100)));
+        } else {
+            myLight.range = OriginalRange;
+        }
+
+        if (isTurnedOn == false) return;
         Vector3 olhando;
         Ray ray;
 
@@ -44,11 +88,12 @@ public class Lanterna : MonoBehaviour {
 			}*/
         }
 
-        gameObject.transform.rotation = Quaternion.LookRotation(ray.direction);
+        if (seekMouse) gameObject.transform.rotation = Quaternion.LookRotation(ray.direction);
+        else gameObject.transform.rotation = Camera.main.transform.rotation;
 
-		jogador.dirVisao = ray.direction;
+        //jogador.dirVisao = ray.direction;
         //Debug.Log(ray.direction);
-        Vector3 dir = ray.direction;
+        Vector3 dir = (seekMouse ? ray.direction : Camera.main.transform.forward);
         RayDetection(dir, myLight.range);
         for (int c = 1; c < nCircles; c++) {
 
@@ -61,7 +106,6 @@ public class Lanterna : MonoBehaviour {
                 //mandar o inimigo ficar paradão
             }
         }
-
     }
 
     string RayDetection(Vector3 direction, float maxDist) {
@@ -81,10 +125,22 @@ public class Lanterna : MonoBehaviour {
 
     public void LightOff() {
         myLight.enabled = false;
+        isTurnedOn = false;
+    }
+
+    public void TrueLightOn() {
+        myLight.enabled = true;
     }
 
     public void LightOn() {
-        myLight.enabled = true;
+        isTurnedOn = true;
+        Invoke("TrueLightOn", 0.1f);
+    }
+
+    private void Recharge() {
+        if (ActualBattery < MaxBaterry) {
+            ActualBattery += BatteryRechargePerSecond * Time.deltaTime;
+        }
     }
 
 }
