@@ -19,11 +19,13 @@ public class Relogio : interagivel {
 	public Ponteiro1 pontP;//transform com objeto ponteiro pequeno
 	public Ponteiro1  pontG;//transform com objeto ponteiro grande
 	
-	public AudioClip[] winding;
-	public AudioSource audioWinding;
-	public AudioSource audioTick;
-	//public AudioSource audioWindingMax;
-	public AudioSource audioBatidaHora;
+	public AudioClip[] windingClip;
+	private AudioSource audioWinding;
+	private AudioSource audioTick;
+	public AudioClip tickClip;
+
+	private AudioSource audioBatidaHora;
+	public AudioClip batidaClip;
 	int horaAtual ;
 
 	protected override void comeco() {
@@ -42,6 +44,13 @@ public class Relogio : interagivel {
 
 		pontP.comeco(6, GetComponent<Relogio>());
 		pontG.comeco(6*60, GetComponent<Relogio>());
+
+		//colocando os audios
+		audioWinding = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+		audioTick = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+		audioTick.clip = tickClip;
+		audioBatidaHora = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+		audioBatidaHora.clip = batidaClip;
 	}
 
 	public override void interacao(){
@@ -53,7 +62,7 @@ public class Relogio : interagivel {
 
 		//caso chegue no valor maximo
 		if(!(tempoAtivo + forcaDarCorda> tempoAtivoMax)){
-			audioWinding.clip = winding[(int) Random.Range(0f, winding.Length -1) ]; 
+			audioWinding.clip = windingClip[(int) Random.Range(0f, windingClip.Length -1) ]; 
 			audioWinding.Play();
 		}else{
 			//audioWindingMax.Play();
@@ -79,6 +88,9 @@ public class Relogio : interagivel {
 		//termino do jogo
 		if(tempo <= 0f){
 			Debug.Log("acaba o jogo");
+			audioWinding.Stop();
+			audioTick.Stop();
+			audioBatidaHora.Play();
 		}
 
 		//mudar de hora
