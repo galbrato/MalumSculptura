@@ -16,8 +16,7 @@ public class Ponteiro1 : MonoBehaviour {
 	}
 	
 	void Update(){
-
-		trans.localEulerAngles = new Vector3(trans.localEulerAngles.x,trans.localEulerAngles.y,((relogio.tempo) % umCiclo / umCiclo) * 360);
+		trans.localEulerAngles = new Vector3(trans.localEulerAngles.x,((relogio.tempo) % umCiclo / umCiclo) * 360, trans.localEulerAngles.z);
 
 	}
 }
