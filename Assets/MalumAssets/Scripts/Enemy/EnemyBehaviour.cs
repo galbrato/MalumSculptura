@@ -88,6 +88,7 @@ public class EnemyBehaviour : MonoBehaviour {
         
         Debug.Log("colidi com o " + other.gameObject.name);
 
+
         if (other.gameObject.CompareTag("Player")) {
             TriggerEnterCounter++;
         }
@@ -102,6 +103,10 @@ public class EnemyBehaviour : MonoBehaviour {
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             TriggerEnterCounter--;
+        }
+
+        if (other.CompareTag("Porta")) {
+            other.gameObject.GetComponent<porta>().Fechar();
         }
     }
 

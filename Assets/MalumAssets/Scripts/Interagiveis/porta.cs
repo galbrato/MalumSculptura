@@ -41,20 +41,25 @@ public class porta : interagivel {
 		anguloMax *= sentido;
 		anguloInicial *= sentido;
 	}
-
+    public void Abrir() {
+        estado = state.abrindo;
+        audioAbrindo.Play();
+    }
+    public void Fechar() {
+        estado = state.fechando;
+        audioFechando.Play();
+    }
 
 	//interacao do ambiente / inimico com porta
 	public override void interacao2(){
 		//maquina de estado
 		if(estado == state.aberto){
-			estado = state.fechando;
-			audioFechando.Play();
+            Fechar();
 		}
 		else if(estado == state.fechado){
-			estado = state.abrindo;
-			audioAbrindo.Play();
-		}
-		else if(estado == state.trancado){
+            Abrir();
+
+        } else if(estado == state.trancado){
 			if (lpMg == null || lpMg.activeSelf == false) {
 				lpMg = Instantiate(minigamePrefab) as GameObject;
 				lpMg.transform.SetParent(cv.transform);
