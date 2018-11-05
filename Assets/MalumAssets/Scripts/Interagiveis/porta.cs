@@ -55,7 +55,7 @@ public class porta : interagivel {
 			audioAbrindo.Play();
 		}
 		else if(estado == state.trancado){
-			if (lpMg == null || lpMg.active == false) {
+			if (lpMg == null || lpMg.activeSelf == false) {
 				lpMg = Instantiate(minigamePrefab) as GameObject;
 				lpMg.transform.SetParent(cv.transform);
 				RectTransform rec = lpMg.transform.GetComponent<RectTransform>();
