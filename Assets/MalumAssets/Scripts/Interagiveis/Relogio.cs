@@ -57,6 +57,9 @@ public class Relogio : interagivel {
 	}
 
 	public override void interacao(){
+		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
+			return;
+
 		if(pdDarCorda1 == false || pdDarCorda2 == false)
 			return;
 			

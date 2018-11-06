@@ -82,8 +82,9 @@ public class lockPickController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		p.textInteragir = "";
-		
+		p.superficie1.textInteragir = "";
+		p.superficie2.textInteragir = "";
+
 		// Checking win condition
 		if(order.Count <= 0) {
 			destrancandoPorta.Play();

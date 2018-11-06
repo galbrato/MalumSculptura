@@ -1,5 +1,75 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3999643107866667548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2902996590001429491}
+  - component: {fileID: 2900203313729364765}
+  - component: {fileID: 4916167910753474619}
+  - component: {fileID: 4132030509663774352}
+  m_Layer: 0
+  m_Name: superficieInteragivel1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2902996590001429491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999643107866667548}
+  m_LocalRotation: {x: 0.00000008146034, y: -0.00000008742278, z: 7.12149e-15, w: 1}
+  m_LocalPosition: {x: -1, y: 1.42, z: -0.001}
+  m_LocalScale: {x: 1.958449, y: 2.83, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 5301746744274109779}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2900203313729364765
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999643107866667548}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &4916167910753474619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999643107866667548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4132030509663774352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999643107866667548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22947f20efdf5d4e93566ac41e20511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textInteragir: 
+  distMin: 4
+  Id: -1
+  Porta: {fileID: 7164102218458751412}
 --- !u!1 &5303047755619844903
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,10 +97,82 @@ Transform:
   m_LocalPosition: {x: 15.924099, y: -0.5, z: -9.867611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2902996590001429491}
   - {fileID: 7129860453049658360}
+  - {fileID: 6584057568115155478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6872605676231606536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6584057568115155478}
+  - component: {fileID: 3221834723638592259}
+  - component: {fileID: 8293593202237563176}
+  - component: {fileID: 8861179057048717876}
+  m_Layer: 0
+  m_Name: superficieInteragivel2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6584057568115155478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872605676231606536}
+  m_LocalRotation: {x: 0.00000008146034, y: -0.00000008742278, z: 7.12149e-15, w: 1}
+  m_LocalPosition: {x: -1, y: 1.42, z: -0.036}
+  m_LocalScale: {x: 1.9584495, y: 2.83, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 5301746744274109779}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3221834723638592259
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872605676231606536}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &8293593202237563176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872605676231606536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8861179057048717876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872605676231606536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22947f20efdf5d4e93566ac41e20511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textInteragir: 
+  distMin: 4
+  Id: 1
+  Porta: {fileID: 7164102218458751412}
 --- !u!1 &7124843294731240690
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +210,7 @@ Transform:
   m_LocalScale: {x: 2.225, y: 1.434, z: 1}
   m_Children: []
   m_Father: {fileID: 5301746744274109779}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7103404777657655488
 MeshFilter:
@@ -258,7 +400,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -447,19 +589,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79214072c109694f8fbd50b3f1fe7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textInteragir: Abrir
-  distMin: 2
-  anguloMax: 90
-  velA: 360
-  velF: 360
-  horario: 1
+  superficie1: {fileID: 4132030509663774352}
+  superficie2: {fileID: 8861179057048717876}
+  variacaoAng: 90
+  velA: 50
+  velF: 50
   gira: {fileID: 5301746744274109779}
   minigamePrefab: {fileID: 1260888849146252, guid: b7a23536ff82dc44f80e56927ad26f85,
     type: 3}
   estado: 1
   audioAbrindo: {fileID: 8869314548620298114}
-  audioFechando: {fileID: 8526381123488298739}
-  audioFechar: {fileID: 7124843294731240689}
+  audioFechando: {fileID: 7124843294731240689}
+  audioFechar: {fileID: 8526381123488298739}
 --- !u!54 &7035453105802921262
 Rigidbody:
   m_ObjectHideFlags: 0
