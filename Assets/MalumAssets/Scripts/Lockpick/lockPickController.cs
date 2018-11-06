@@ -11,6 +11,8 @@ public class lockPickController : MonoBehaviour {
 	pinController[] pins;
 	public RectTransform cursor;
 	float targetPosition;
+
+	float size;
 	public float speed;
 	Animator anim;
 	FirstPersonController firstPerson;
@@ -27,7 +29,7 @@ public class lockPickController : MonoBehaviour {
 		if(selected + 1 < pins.Length) selected++;
 		tocarSomMoverPick();
 		// Set new cursor target position
-		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + 85;
+		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + size;
 		speed = (targetPosition - cursor.anchoredPosition.x)/5f;
 	}
 
@@ -35,7 +37,7 @@ public class lockPickController : MonoBehaviour {
 		if(selected > 0) selected--;
 		tocarSomMoverPick();
 		// Change cursor target position
-		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + 85;
+		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + size;
 		speed = (targetPosition - cursor.anchoredPosition.x)/5f;
 	}
 
@@ -74,6 +76,8 @@ public class lockPickController : MonoBehaviour {
 
 		firstPerson.enabled = false;
 		lanterna.enabled = false;
+
+		size = cursor.anchoredPosition.x;
 
 		//achando audios
 		acertarPino = GameObject.Find("audioSourcePino").GetComponent<AudioSource>();
