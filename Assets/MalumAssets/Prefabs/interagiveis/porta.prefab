@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79214072c109694f8fbd50b3f1fe7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textInteragir: Abrir
   distMin: 2
   anguloMax: 90
   velA: 360

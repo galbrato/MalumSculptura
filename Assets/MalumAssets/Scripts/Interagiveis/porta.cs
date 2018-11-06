@@ -40,13 +40,15 @@ public class porta : interagivel {
 		velF *= sentido;
 		anguloMax *= sentido;
 		anguloInicial *= sentido;
+		atualizarEstado(estado);
+
 	}
     public void Abrir() {
-        estado = state.abrindo;
+        atualizarEstado(state.abrindo);
         audioAbrindo.Play();
     }
     public void Fechar() {
-        estado = state.fechando;
+        atualizarEstado(state.fechando);
         audioFechando.Play();
     }
 
@@ -92,7 +94,7 @@ public class porta : interagivel {
 
 			//caso termine de abrir
 			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior <   anguloMax ){
-				estado = state.aberto;
+				atualizarEstado(state.aberto);
 				gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
 			}
 		}
@@ -102,12 +104,28 @@ public class porta : interagivel {
 			//caso termine de fechar
 			if( sentido*gira.eulerAngles.y  <  anguloInicial && sentido*anguloAnterior >  anguloInicial){
 				audioFechar.Play();
-				estado = state.fechado;
+				atualizarEstado(state.fechado);
 				gira.eulerAngles = new Vector3(0,anguloInicial * sentido,0);
 			
 			}
 			
 		}
 	}
+
+
+	public void atualizarEstado(state valor){
+		estado = valor;
+		if(estado == state.aberto){
+            textInteragir = "Fechar";
+		}else if(estado == state.fechado){
+            textInteragir = "Abrir";
+		}else if(estado == state.trancado){
+			textInteragir = "Destrancar";
+		}else{
+			textInteragir = "";
+		}
+	}
+
+
 
 }

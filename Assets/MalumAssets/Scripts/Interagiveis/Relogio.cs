@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class Relogio : interagivel {
-	public float tempoDeJogo = 100f;//tempo da fase
+	public float tempoDeJogo = 30f;//tempo da fase
 	[HideInInspector]
 	public float tempo;
 
@@ -26,8 +26,8 @@ public class Relogio : interagivel {
 
 	private AudioSource audioBatidaHora;
 	public AudioClip batidaClip;
-	int horaAtual ;
-
+	//int horaAtual ;
+	bool aconteceuBatidaFinal = false;
 	protected override void comeco() {
 
 		if(pontP == null){
@@ -36,14 +36,14 @@ public class Relogio : interagivel {
 			print(gameObject.name +"não apresenta script ponteiro");
 
 		//colocando valores iniciais
-		tempo = tempoDeJogo;
-		tempoAtivo = 10;//tempoAtivoMax - 1;
-		horaAtual = (int)tempoDeJogo/60 -1;
+		tempo = 0;
+		tempoAtivo = tempoAtivoMax/2;
+		//horaAtual = (int)tempoDeJogo/60 -1;
 
 		plaFpc = pla.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController >();	
 
-		pontP.comeco(6, GetComponent<Relogio>());
-		pontG.comeco(6*60, GetComponent<Relogio>());
+		pontP.comeco(GetComponent<Relogio>(),tempoDeJogo/6);
+		pontG.comeco(GetComponent<Relogio>(),tempoDeJogo/(6*12));
 
 		//colocando os audios
 		audioWinding = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
@@ -51,6 +51,9 @@ public class Relogio : interagivel {
 		audioTick.clip = tickClip;
 		audioBatidaHora = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
 		audioBatidaHora.clip = batidaClip;
+
+		textInteragir = "Dar Corda";
+		audioTick.Play();
 	}
 
 	public override void interacao(){
@@ -60,12 +63,13 @@ public class Relogio : interagivel {
 		pdDarCorda2 = false;
 
 
-		//caso chegue no valor maximo
+		//nao caso chegue no valor maximo
 		if(!(tempoAtivo + forcaDarCorda> tempoAtivoMax)){
 			audioWinding.clip = windingClip[(int) Random.Range(0f, windingClip.Length -1) ]; 
 			audioWinding.Play();
-		}else{
+		}else{//caso chegue no valor maximo
 			//audioWindingMax.Play();
+			textInteragir = "";
 			StartCoroutine(cooldownDarCordaMax());
 			tempoAtivo = tempoAtivoMax - forcaDarCorda;
 		}
@@ -79,25 +83,26 @@ public class Relogio : interagivel {
 		//caso relogio ativo
 		if(tempoAtivo > 0f){
 			tempoAtivo -= Time.deltaTime; 
-			tempo -= Time.deltaTime;
+			tempo += Time.deltaTime;
 		}else{
 			audioTick.enabled = false;
 		}
 
 
 		//termino do jogo
-		if(tempo <= 0f){
+		if(tempo >= tempoDeJogo && !aconteceuBatidaFinal){
+			audioBatidaHora.Play();
 			Debug.Log("acaba o jogo");
 			audioWinding.Stop();
 			audioTick.Stop();
-			audioBatidaHora.Play();
+			aconteceuBatidaFinal = true;
 		}
 
 		//mudar de hora
-		if(horaAtual != (int)tempo/60){
-			horaAtual = (int)tempo/60;
-			audioBatidaHora.Play();
-		}
+		//if(horaAtual != (int)tempo/60){
+		//	horaAtual = (int)tempo/60;
+		//	audioBatidaHora.Play();
+		//}
 	}
 
 
@@ -107,6 +112,7 @@ public class Relogio : interagivel {
 		pdDarCorda1 = false;
 	    yield return new WaitForSeconds(8f);
 		pdDarCorda1 = true;
+		textInteragir = "Dar Corda";
 	}
 
 	IEnumerator cooldownDarCorda(){
