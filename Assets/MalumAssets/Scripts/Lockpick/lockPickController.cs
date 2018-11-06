@@ -91,7 +91,10 @@ public class lockPickController : MonoBehaviour {
 			destrancandoPorta.Play();
 			lanterna.enabled = true;
 			firstPerson.enabled = true;
-			p.estado = porta.state.fechado;
+			// just checking if the door p exists
+			if(p) {
+				p.estado = porta.state.fechado;
+			}
 			Destroy(gameObject);
 		}
 
@@ -102,6 +105,11 @@ public class lockPickController : MonoBehaviour {
 		}
 		// If the current pin is idle, allow me to push it 
 		if(Input.GetButtonDown("Fire1") && pins[selected].ready) anim.SetTrigger("Pushpin");
+		
+		// Checking if the player wants to leave the minigame
+		if(Input.GetButtonDown("Fire2")){
+			Destroy(gameObject);
+		}
 	}
 
 	void tocarSomMoverPick(){
