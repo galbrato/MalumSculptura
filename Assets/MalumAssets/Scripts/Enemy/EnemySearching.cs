@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemySearching : StateMachineBehaviour {
     private float counter;
     [SerializeField] float TimePrediction = 1;
+    [SerializeField] float RunSpeed = 3.5f;
     private bool firstEnter = true;
     private Transform Player;
     private NavMeshAgent mAgent;
@@ -19,6 +20,7 @@ public class EnemySearching : StateMachineBehaviour {
         }
         animator.SetBool("SearchingPlayer", true);
         counter = 0;
+        mAgent.speed = RunSpeed;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -19,6 +19,8 @@ public class EnemyBehaviour : MonoBehaviour {
 
     Transform myHead;
 
+    private int TriggerEnterCounter = 0;
+
     private void Awake() {
         EndGame = false;
 
@@ -81,15 +83,30 @@ public class EnemyBehaviour : MonoBehaviour {
         Invoke("GameOver", 2);
         Lanterna.instance.LightOn();
     }
+   
+    private void OnTriggerEnter(Collider other) {
+        
+        Debug.Log("colidi com o " + other.gameObject.name);
 
-    private void OnCollisionEnter(Collision collision) {
-        Debug.Log("colidi com o " + collision.gameObject.name);
-        if (!stop && collision.gameObject.CompareTag("Player")) {
+
+        if (other.gameObject.CompareTag("Player")) {
+            TriggerEnterCounter++;
+        }
+        if (!stop && TriggerEnterCounter == 2) {
             Invoke("JumpScare", 2);
             Player.GetComponent<FirstPersonController>().enabled = false;
             Stop();
             EndGame = true;
             Lanterna.instance.LightOff();
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            TriggerEnterCounter--;
+        }
+
+        if (other.CompareTag("Porta")) {
+            other.gameObject.GetComponent<porta>().Fechar();
         }
     }
 

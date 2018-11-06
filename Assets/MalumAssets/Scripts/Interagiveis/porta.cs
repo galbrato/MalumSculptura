@@ -14,7 +14,7 @@ public class porta : interagivel {
 	public GameObject minigamePrefab;
 
 	public state estado = state.trancado;
-	public enum state {aberto,fechado,trancado,abrindo,fechando,paAbrindo,paFechando};
+	public enum state {aberto,fechado,trancado,abrindo,fechando};
 
 	private float anguloInicial;
 	private float anguloAnterior;
@@ -41,29 +41,26 @@ public class porta : interagivel {
 		anguloMax *= sentido;
 		anguloInicial *= sentido;
 	}
-
+    public void Abrir() {
+        estado = state.abrindo;
+        audioAbrindo.Play();
+    }
+    public void Fechar() {
+        estado = state.fechando;
+        audioFechando.Play();
+    }
 
 	//interacao do ambiente / inimico com porta
 	public override void interacao2(){
 		//maquina de estado
 		if(estado == state.aberto){
-			estado = state.fechando;
-			audioFechando.Play();
+            Fechar();
 		}
 		else if(estado == state.fechado){
-			estado = state.abrindo;
-			audioAbrindo.Play();
-		}
-		//else if(estado == state.fechando)
-		//	estado = state.paAbrindo;
-		//else if(estado == state.abrindo)
-		//	estado = state.paFechando;
-		else if(estado == state.paAbrindo)
-			estado = state.abrindo;
-		else if(estado == state.paFechando)
-			estado = state.fechando;
-		else if(estado == state.trancado){
-			if (lpMg == null || lpMg.active == false) {
+            Abrir();
+
+        } else if(estado == state.trancado){
+			if (lpMg == null || lpMg.activeSelf == false) {
 				lpMg = Instantiate(minigamePrefab) as GameObject;
 				lpMg.transform.SetParent(cv.transform);
 				RectTransform rec = lpMg.transform.GetComponent<RectTransform>();
@@ -73,14 +70,9 @@ public class porta : interagivel {
 				lpMg.GetComponent<lockPickController>().setDoor(this);
 			}
 		}
-
-		//estado = state.aberto;
-		//gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
-
 	}
 
-	// void Start() {
-	// }
+
 
 	void Update(){
 

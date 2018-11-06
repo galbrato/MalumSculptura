@@ -8,6 +8,7 @@ public class EnemyPatroling : StateMachineBehaviour {
     private NavMeshAgent mAgent;
     private List<Transform> StatueSpots;
     private Transform DestinationSpot;
+    [SerializeField] float Speed = 2f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (firstEnter) {
@@ -25,6 +26,8 @@ public class EnemyPatroling : StateMachineBehaviour {
                     StatueSpots.Add(s.transform);
                 }
             }
+
+            mAgent.speed = Speed;
         }
         DestinationSpot = StatueSpots[Random.Range(0, StatueSpots.Count)];
         mAgent.SetDestination(DestinationSpot.position);
@@ -40,7 +43,6 @@ public class EnemyPatroling : StateMachineBehaviour {
             mAgent.SetDestination(DestinationSpot.position);
         }
         mAgent.SetDestination(DestinationSpot.position);
-        Debug.Log("my destination:" + DestinationSpot.position);
     }
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

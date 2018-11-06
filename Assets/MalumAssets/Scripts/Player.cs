@@ -16,12 +16,12 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		getmousebutton = Input.GetMouseButton(0);
-		getmousebuttondown = Input.GetMouseButtonDown(0);
+		getmousebutton = Input.GetMouseButton(1);
+		getmousebuttondown = Input.GetMouseButtonDown(1);
 		//interagir com objeto
 		if(getmousebutton ||getmousebuttondown ){
 			RaycastHit hit;
-			Physics.Raycast(trans.position, dirVisao, out hit, 100f);
+			Physics.Raycast(trans.position, Camera.main.transform.forward, out hit, 100f);
 			//Debug.DrawRay(trans.position, dirVisao * 10, Color.yellow);
 			GameObject gmO = hit.collider.gameObject;
 			if (gmO != null) {

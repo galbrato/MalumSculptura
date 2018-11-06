@@ -8,19 +8,22 @@ public class EnemyChasing : StateMachineBehaviour {
     private bool firstEnter = true;
     private Transform Player;
     private NavMeshAgent mAgent;
-	
+    [SerializeField] float RunSpeed = 3.5f;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if (firstEnter) {
             Player = GameObject.FindGameObjectWithTag("Player").transform;
             mAgent = animator.gameObject.GetComponent<NavMeshAgent>();
             firstEnter = false;
         }
         mAgent.enabled = true;
+        mAgent.speed = RunSpeed;
+
     }
 
-	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         if(mAgent.isActiveAndEnabled)mAgent.SetDestination(Player.position);
         Debug.DrawRay(mAgent.destination, Vector3.up * 100,Color.red);
 
