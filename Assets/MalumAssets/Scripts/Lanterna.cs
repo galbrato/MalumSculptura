@@ -106,7 +106,7 @@ public class Lanterna : MonoBehaviour {
                 if (saveChorona == null || saveChorona.name != col.name) {
                     saveChorona = col.gameObject.GetComponent<cryingStatue>();
                 }
-                saveChorona.isVisible = true;
+                //saveChorona.isVisible = true;
             }
         }
     }
