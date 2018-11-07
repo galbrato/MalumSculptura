@@ -18,7 +18,8 @@ public class cryingStatue : interagivel {
 	int nivelChoro = 0;//0=sem choro;1=com choro;2=puto
 
 	public  Renderer m_Renderer;
-	public Material texturaChoro,texturaSemChoro;
+	public Material texturaChoro;
+	public Material texturaSemChoro;
 	MeshRenderer mesh;
 
 
@@ -99,11 +100,12 @@ public class cryingStatue : interagivel {
 			//procurando spawn diferente do atual
 			aux = (spawnAtual == oldSpawn);
 			//procura spawn com distancia minima
-			aux |= (spawnAtual.gameObject.GetComponent<MeshRenderer>().isVisible);
+			aux |= (spawnAtual.obsertado());
 
 		}
 
 		trans.position = spawnAtual.gameObject.transform.position;
+		spawnAtual.teleporte();
 		teleportes++;
 	}
 

@@ -26,8 +26,11 @@ public class porta : MonoBehaviour {
 	public AudioSource audioAbrindo;//ruído abrindo a porta
 	public AudioSource audioFechando;//ruído fechando a porta
 	public AudioSource audioFechar;//pancada da porta fechadondo
+
+	[HideInInspector]
+	public MeshRenderer selfRender;
 	private void Start(){
-		
+		selfRender = GetComponent<MeshRenderer>();
 		cv = FindObjectOfType<Canvas>();
 		
 		anguloInicial = gira.eulerAngles.y;
@@ -142,4 +145,9 @@ public class porta : MonoBehaviour {
 
 
 
+	//cryingSpawn chama esta funcao quando cryingStatue teleporta para a sala
+	public void interacao4(){
+		atualizarEstado(state.trancado);
+		gira.eulerAngles = new Vector3(gira.eulerAngles.x,anguloInicial,gira.eulerAngles.z);
+	}
 }
