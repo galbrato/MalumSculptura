@@ -86,6 +86,9 @@ public class lockPickController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		p.superficie1.textInteragir = "";
+		p.superficie2.textInteragir = "";
+
 		// Checking win condition
 		if(order.Count <= 0) {
 			destrancandoPorta.Play();
@@ -93,8 +96,10 @@ public class lockPickController : MonoBehaviour {
 			firstPerson.enabled = true;
 			// just checking if the door p exists
 			if(p) {
-				p.estado = porta.state.fechado;
-			}
+				//p.estado = porta.state.fechado;
+                p.atualizarEstado(porta.state.fechado);
+            }
+			
 			Destroy(gameObject);
 		}
 

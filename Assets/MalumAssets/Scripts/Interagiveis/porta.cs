@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class porta : interagivel {
-	public float anguloMax;
+public class porta : MonoBehaviour {
+	public SuperficieInteragivel superficie1;
+	public SuperficieInteragivel superficie2;
+	public float variacaoAng;
+	private float anguloMax;
 	public float velA;//velocidade de abertura
 	public float velF;//velocidade de fechamento
-	public bool horario = true;//sentido da rotacao
+
 	public Transform gira;//objeto que gira
 	Canvas cv;
 	private GameObject lpMg;
@@ -23,35 +26,52 @@ public class porta : interagivel {
 	public AudioSource audioAbrindo;//ruído abrindo a porta
 	public AudioSource audioFechando;//ruído fechando a porta
 	public AudioSource audioFechar;//pancada da porta fechadondo
-	protected override void comeco(){
+	private void Start(){
 		
 		cv = FindObjectOfType<Canvas>();
 		
 		anguloInicial = gira.eulerAngles.y;
 
+		if(anguloInicial < 1)anguloInicial = 1;
 		//evitando bugs com 0
-		if(anguloInicial == 0)anguloInicial = 1;
-
-		//arrumando variaveis segundo do movimentando
-		if(!horario)
-			sentido = -1;
+		anguloMax = (anguloMax+anguloInicial)%360;
+		if(anguloMax < 1)anguloMax = 1;
 
 		velA *= sentido;
 		velF *= sentido;
 		anguloMax *= sentido;
 		anguloInicial *= sentido;
+		atualizarEstado(estado);
+
 	}
     public void Abrir() {
-        estado = state.abrindo;
+        atualizarEstado(state.abrindo);
         audioAbrindo.Play();
     }
     public void Fechar() {
-        estado = state.fechando;
+        atualizarEstado(state.fechando);
         audioFechando.Play();
     }
 
-	//interacao do ambiente / inimico com porta
-	public override void interacao2(){
+	
+	//funcao chamada por superficieInteragivel
+	public void interacao3(int id){
+
+		if(estado == state.fechado)
+			sentido = id;
+
+			velA = Mathf.Abs(velA)*sentido;
+			velF = Mathf.Abs(velF)*sentido;
+			if(sentido == 1)
+				anguloMax = anguloInicial + variacaoAng;
+			else{
+				anguloMax = (anguloInicial + variacaoAng+180)%360;
+			}
+			if(anguloMax == 0)anguloMax = 1;
+			if(anguloMax == 360)anguloMax = 359;
+			anguloInicial = Mathf.Abs(anguloInicial);
+	
+		
 		//maquina de estado
 		if(estado == state.aberto){
             Fechar();
@@ -75,14 +95,7 @@ public class porta : interagivel {
 
 
 	void Update(){
-
-		//arrumando rotacao y para ser menor que 360 e maior que 0
-		if(gira.eulerAngles.y < 0){
-			gira.eulerAngles = new Vector3(0,gira.eulerAngles.y + 360,0);
-		}else if (gira.eulerAngles.y > 360){
-			gira.eulerAngles = new Vector3(0,gira.eulerAngles.y %360,0);
-		}
-
+		
 		anguloAnterior = gira.eulerAngles.y;
 
 
@@ -91,23 +104,42 @@ public class porta : interagivel {
 			gira.Rotate(Vector3.up * Time.deltaTime * velA);
 
 			//caso termine de abrir
-			if( sentido*gira.eulerAngles.y  > anguloMax  && sentido*anguloAnterior <   anguloMax ){
-				estado = state.aberto;
-				gira.eulerAngles = new Vector3(0,anguloMax * sentido ,0);
+			if( sentido*gira.eulerAngles.y  > anguloMax * sentido  && sentido*anguloAnterior <   anguloMax * sentido ){
+				atualizarEstado(state.aberto);
+				gira.eulerAngles = new Vector3(0,anguloMax  ,0);
 			}
 		}
 		else if(estado == state.fechando){
 			gira.Rotate(Vector3.down * Time.deltaTime * velF);
 
 			//caso termine de fechar
-			if( sentido*gira.eulerAngles.y  <  anguloInicial && sentido*anguloAnterior >  anguloInicial){
+			if( sentido*gira.eulerAngles.y  <  anguloInicial *sentido && sentido*anguloAnterior >  anguloInicial* sentido){
 				audioFechar.Play();
-				estado = state.fechado;
-				gira.eulerAngles = new Vector3(0,anguloInicial * sentido,0);
+				atualizarEstado(state.fechado);
+				gira.eulerAngles = new Vector3(0,anguloInicial ,0);
 			
 			}
 			
 		}
 	}
+
+
+	public void atualizarEstado(state valor){
+		estado = valor;
+		string textoSuperficie;
+		if(estado == state.aberto){
+            textoSuperficie = "Fechar";
+		}else if(estado == state.fechado){
+            textoSuperficie = "Abrir";
+		}else if(estado == state.trancado){
+			textoSuperficie = "Destrancar";
+		}else{
+			textoSuperficie = "";
+		}
+		superficie1.textInteragir = textoSuperficie;
+		superficie2.textInteragir = textoSuperficie;
+	}
+
+
 
 }
