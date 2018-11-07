@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 	private bool getmousebutton;
 	private bool getmousebuttondown;
 	private Text txtObjInteragivel;
+
+	public LayerMask layerInteragivel;
 	void Start () {
 		trans = GetComponent<Transform>();
 		txtObjInteragivel = GameObject.Find("txtObjInteragivel").GetComponent<Text>();
@@ -24,21 +26,22 @@ public class Player : MonoBehaviour {
 
 		//lancando um raycast, dectando objeto interagivel
 		RaycastHit hit;
-		Physics.Raycast(trans.position, Camera.main.transform.forward, out hit, 100f);
+		if(Physics.Raycast(trans.position, Camera.main.transform.forward, out hit, 100f,layerInteragivel)){
 
-		GameObject gmO = hit.collider.gameObject;
-		if (gmO != null) {
-         	interagivel inte = gmO.GetComponent<interagivel>();
-			if(inte != null){
+			GameObject gmO = hit.collider.gameObject;
+			if (gmO != null) {
+				interagivel inte = gmO.GetComponent<interagivel>();
+				if(inte != null){
 
-				//mostrando texto do objeto interagivel
-				inte.apontado( txtObjInteragivel);
-				//interagindo
-				if(getmousebutton){
-					inte.interagir();
-				}
-				if(getmousebuttondown){
-					inte.interagir2();
+					//mostrando texto do objeto interagivel
+					inte.apontado( txtObjInteragivel);
+					//interagindo
+					if(getmousebutton){
+						inte.interagir();
+					}
+					if(getmousebuttondown){
+						inte.interagir2();
+					}
 				}
 			}
 		}
