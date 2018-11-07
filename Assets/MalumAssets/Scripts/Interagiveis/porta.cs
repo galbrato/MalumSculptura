@@ -147,7 +147,7 @@ public class porta : MonoBehaviour {
 
 	//cryingSpawn chama esta funcao quando cryingStatue teleporta para a sala
 	public void interacao4(){
-		atualizarEstado(state.fechado);
+		atualizarEstado(state.trancado);
 		gira.eulerAngles = new Vector3(gira.eulerAngles.x,anguloInicial,gira.eulerAngles.z);
 	}
 }
