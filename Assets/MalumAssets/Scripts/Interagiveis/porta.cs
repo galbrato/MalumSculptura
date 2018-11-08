@@ -20,7 +20,7 @@ public class porta : MonoBehaviour {
 	public enum state {aberto,fechado,trancado,abrindo,fechando};
 
 	private float anguloInicial;
-	private float anguloAnterior;
+
 	private int sentido= 1;
 
 	public AudioSource audioAbrindo;//ruído abrindo a porta
@@ -122,8 +122,8 @@ public class porta : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log(anguloMax+" "+anguloInicial+" "+gira.eulerAngles.y);
-		anguloAnterior = gira.eulerAngles.y;
+		//Debug.Log(anguloMax+" "+anguloInicial+" "+gira.eulerAngles.y);
+	
 
 		if(gira.eulerAngles.y> 360)
 			gira.position = new Vector3(gira.eulerAngles.x,(gira.eulerAngles.y)%360,gira.eulerAngles.z);
@@ -140,7 +140,7 @@ public class porta : MonoBehaviour {
 			gira.Rotate(Vector3.up * Time.deltaTime * velA);
 
 			//caso termine de abrir
-			if( sentido*gira.eulerAngles.y  > anguloMax * sentido  && sentido*anguloAnterior <   anguloMax * sentido ){
+			if( Mathf.Abs(gira.eulerAngles.y - anguloMax) <  5){
 				atualizarEstado(state.aberto);
 				gira.eulerAngles = new Vector3(0,anguloMax  ,0);
 			}
@@ -149,7 +149,7 @@ public class porta : MonoBehaviour {
 			gira.Rotate(Vector3.down * Time.deltaTime * velF);
 
 			//caso termine de fechar
-			if( sentido*gira.eulerAngles.y  <  anguloInicial *sentido && sentido*anguloAnterior >  anguloInicial* sentido){
+			if( Mathf.Abs(gira.eulerAngles.y - anguloInicial) <  5){
 				audioFechar.Play();
 				atualizarEstado(state.fechado);
 				gira.eulerAngles = new Vector3(0,anguloInicial ,0);
