@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class porta : MonoBehaviour {
 	public SuperficieInteragivel superficie1;
-	public SuperficieInteragivel superficie2;
+	[HideInInspector]
+	public bool trancadoPorEstatua = false;
 	public float variacaoAng;
 	private float anguloMax;
 	public float velA;//velocidade de abertura
@@ -98,29 +99,6 @@ public class porta : MonoBehaviour {
 	}
 
 
-
-	//funcao chamada por superficieInteragivel quando estatua interage(abrindo porta)
-	public void interacao3(int id){
-
-
-		velA = Mathf.Abs(velA)*sentido;
-		velF = Mathf.Abs(velF)*sentido;
-		if(sentido == 1)
-			anguloMax = anguloInicial + variacaoAng;
-		else{
-			anguloMax = anguloInicial - variacaoAng;
-			if(anguloMax < 0)
-				anguloMax = 360 + anguloMax;
-		}
-		if(anguloMax == 0)anguloMax = 1;
-		if(anguloMax == 360)anguloMax = 359;
-		anguloInicial = Mathf.Abs(anguloInicial);
-	
-		if(estado==state.fechado || estado==state.fechado)
-			Abrir();
-
-	}
-
 	void Update(){
 		//Debug.Log(anguloMax+" "+anguloInicial+" "+gira.eulerAngles.y);
 	
@@ -150,6 +128,10 @@ public class porta : MonoBehaviour {
 			//caso termine de fechar
 			if( Mathf.Abs(gira.eulerAngles.y - anguloInicial) <  5){
 				audioFechar.Play();
+				if(trancadoPorEstatua){
+					trancadoPorEstatua = false;
+					atualizarEstado(state.trancado);
+				}
 				atualizarEstado(state.fechado);
 			
 			}
@@ -161,7 +143,10 @@ public class porta : MonoBehaviour {
 	public void atualizarEstado(state valor){
 		estado = valor;
 		string textoSuperficie;
-		if(estado == state.aberto){
+		if(trancadoPorEstatua){
+			textoSuperficie = "";
+		}
+		else if(estado == state.aberto){
             textoSuperficie = "Fechar";
 		}else if(estado == state.fechado){
             textoSuperficie = "Abrir";
@@ -171,7 +156,6 @@ public class porta : MonoBehaviour {
 			textoSuperficie = "";
 		}
 		superficie1.textInteragir = textoSuperficie;
-		superficie2.textInteragir = textoSuperficie;
 	}
 
 
@@ -182,6 +166,27 @@ public class porta : MonoBehaviour {
 		gira.eulerAngles = new Vector3(gira.eulerAngles.x,anguloInicial,gira.eulerAngles.z);
 	}
 
+	//funcao chamada por superficieInteragivel quando estatua interage(abrindo porta)
+	public void EstatuaAbre(int id){
+
+		sentido = id;
+		velA = Mathf.Abs(velA)*sentido;
+		velF = Mathf.Abs(velF)*sentido;
+		if(sentido == 1)
+			anguloMax = anguloInicial + variacaoAng;
+		else{
+			anguloMax = anguloInicial - variacaoAng;
+			if(anguloMax < 0)
+				anguloMax = 360 + anguloMax;
+		}
+		if(anguloMax == 0)anguloMax = 1;
+		if(anguloMax == 360)anguloMax = 359;
+		anguloInicial = Mathf.Abs(anguloInicial);
+	
+		if(estado==state.fechado || estado==state.fechado)
+			Abrir();
+
+	}
 
 
 }

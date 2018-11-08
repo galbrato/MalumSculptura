@@ -108,9 +108,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         
         Debug.Log("colidi com o " + other.gameObject.name);
-        if (other.CompareTag("Porta")) {
-            other.gameObject.GetComponent<SuperficieInteragivel>().interacao3(transform);
-        }
+
 
         if (other.gameObject.CompareTag("Player")) {
             TriggerEnterCounter++;
@@ -134,9 +132,6 @@ public class EnemyBehaviour : MonoBehaviour {
             TriggerEnterCounter--;
         }
 
-        if (other.CompareTag("Porta")) {
-            other.gameObject.GetComponent<SuperficieInteragivel>().interacao3(transform);
-        }
     }
 
 }

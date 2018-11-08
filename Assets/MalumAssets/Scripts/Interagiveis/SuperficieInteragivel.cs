@@ -39,35 +39,35 @@ public class SuperficieInteragivel : interagivel{
     }
 
     //caso estátua abra a porta
-    public void interacao3(Transform other){
+    public void colisaoEntrarEstatua(Transform other){
         //caso porta nao aberta
         if(Porta.estado == porta.state.aberto)
             return;
         if(anguloInicialPai == 0 ){
             if(other.position.z > trans.position.z)
-                Porta.interacao3(-1);
+                Porta.EstatuaAbre(-1);
             else
-                Porta.interacao3(1);
+                Porta.EstatuaAbre(1);
         }else if(anguloInicialPai == 90 ){
             if(other.position.x > trans.position.x)
-                Porta.interacao3(-1);
+                Porta.EstatuaAbre(-1);
             else
-                Porta.interacao3(1);
+                Porta.EstatuaAbre(1);
         }else if( anguloInicialPai == 180){
             if(other.position.z > trans.position.z)
-                Porta.interacao3(1);
+                Porta.EstatuaAbre(1);
             else
-                Porta.interacao3(-1);
+                Porta.EstatuaAbre(-1);
         }else if( anguloInicialPai == 270){
             if(other.position.x > trans.position.x)
-                Porta.interacao3(1);
+                Porta.EstatuaAbre(1);
             else
-                Porta.interacao3(-1);
+                Porta.EstatuaAbre(-1);
         }
     }
 
     //estatua fechando porta
-    public void InteracaoEstatuaFechar(){
+    public void colisaoSairEstatua(){
         if(Porta.estado == porta.state.fechado)
             return;
         Porta.Fechar();
