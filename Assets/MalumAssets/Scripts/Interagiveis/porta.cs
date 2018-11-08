@@ -142,7 +142,6 @@ public class porta : MonoBehaviour {
 			//caso termine de abrir
 			if( Mathf.Abs(gira.eulerAngles.y - anguloMax) <  5){
 				atualizarEstado(state.aberto);
-				gira.eulerAngles = new Vector3(0,anguloMax  ,0);
 			}
 		}
 		else if(estado == state.fechando){
@@ -152,7 +151,6 @@ public class porta : MonoBehaviour {
 			if( Mathf.Abs(gira.eulerAngles.y - anguloInicial) <  5){
 				audioFechar.Play();
 				atualizarEstado(state.fechado);
-				gira.eulerAngles = new Vector3(0,anguloInicial ,0);
 			
 			}
 			
