@@ -7,6 +7,8 @@ public class porta : MonoBehaviour {
 	public SuperficieInteragivel superficie1;
 	[HideInInspector]
 	public bool trancadoPorEstatua = false;
+	[HideInInspector]
+	public bool estatuaColidindo = false;
 	public float variacaoAng;
 	private float anguloMax;
 	public float velA;//velocidade de abertura
@@ -60,6 +62,8 @@ public class porta : MonoBehaviour {
 	
 	//funcao chamada por superficieInteragivel quando player interage
 	public void interacao2(int id){
+		if(estatuaColidindo)
+			return;
 
 		if(estado == state.fechado)
 			sentido = id;
@@ -143,7 +147,7 @@ public class porta : MonoBehaviour {
 	public void atualizarEstado(state valor){
 		estado = valor;
 		string textoSuperficie;
-		if(trancadoPorEstatua){
+		if(estatuaColidindo){
 			textoSuperficie = "";
 		}
 		else if(estado == state.aberto){
@@ -189,4 +193,22 @@ public class porta : MonoBehaviour {
 	}
 
 
+	public void EstatuaFecha(){
+
+		velA = Mathf.Abs(velA)*sentido;
+		velF = Mathf.Abs(velF)*sentido;
+		if(sentido == 1)
+			anguloMax = anguloInicial + variacaoAng;
+		else{
+			anguloMax = anguloInicial - variacaoAng;
+			if(anguloMax < 0)
+				anguloMax = 360 + anguloMax;
+		}
+		if(anguloMax == 0)anguloMax = 1;
+		if(anguloMax == 360)anguloMax = 359;
+		anguloInicial = Mathf.Abs(anguloInicial);
+	
+		if(estado==state.abrindo || estado==state.aberto)
+			Fechar();
+	}
 }

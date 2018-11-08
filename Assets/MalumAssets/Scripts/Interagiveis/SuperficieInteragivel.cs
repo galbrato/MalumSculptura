@@ -40,6 +40,7 @@ public class SuperficieInteragivel : interagivel{
 
     //caso estátua abra a porta
     public void colisaoEntrarEstatua(Transform other){
+            Porta.estatuaColidindo = true;
         //caso porta nao aberta
         if(Porta.estado == porta.state.aberto)
             return;
@@ -68,8 +69,9 @@ public class SuperficieInteragivel : interagivel{
 
     //estatua fechando porta
     public void colisaoSairEstatua(){
+        Porta.estatuaColidindo = false;
         if(Porta.estado == porta.state.fechado)
             return;
-        Porta.Fechar();
+        Porta.EstatuaFecha();
     }
 }
