@@ -5,18 +5,21 @@ using UnityEngine;
 public class Ponteiro1 : MonoBehaviour {
 	[HideInInspector]
 	public Relogio relogio;
+
 	private Transform trans;
-	private float umCiclo;
+
+	private float cicloHora;
 
 	//funcao de start chamada depois de achar relogio
-	public void comeco(int divisaoDoCiclo, Relogio rel){
+	public void comeco(Relogio rel,float ciclo){
 		relogio = rel;
+
 		trans = GetComponent<Transform>();
-		umCiclo = relogio.tempoDeJogo / divisaoDoCiclo;
+		cicloHora = ciclo;
 	}
 	
 	void Update(){
-		trans.localEulerAngles = new Vector3(trans.localEulerAngles.x,((relogio.tempo) % umCiclo / umCiclo) * 360, trans.localEulerAngles.z);
+		trans.localEulerAngles = new Vector3(trans.localEulerAngles.x,90 + (relogio.tempo)/cicloHora* 30 , trans.localEulerAngles.z);
 
 	}
 }

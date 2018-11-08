@@ -38,6 +38,7 @@ public class EnemyBehaviour : MonoBehaviour {
         }
         if (myHead == null) {
             Debug.LogError("ERRO, a estatua " +name+" não possui um objeto Head!");
+            Lanterna.instance.LightOn();
             myHead = Instantiate(new GameObject("Head"), transform).transform;
             myHead.position = new Vector3(0f, 1f, 0f);
         }

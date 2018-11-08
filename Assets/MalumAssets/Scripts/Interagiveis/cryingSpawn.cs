@@ -3,15 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class cryingSpawn : MonoBehaviour {
+    public MeshRenderer[] meshPortas;
+    public porta[] portas;
+    private MeshRenderer selff;
 
-//	[HideInInspector]
-//	public bool observado = false;
+    void Start(){
+        selff = GetComponent<MeshRenderer>();
+    }
+    public bool obsertado(){
+        if(selff.isVisible)
+            return true;
+        
+        for(int i = 0;i<meshPortas.Length;i++){
+            if(meshPortas[i].isVisible){
+                return true;
+            }
 
-//	public void serObservado(){
-//		observado = true;
-//	}
+        }
+         for(int i = 0;i<portas.Length;i++){
+            if(portas[i].selfRender.isVisible){
+                return true;
+            }
 
-//	void LateUpdate(){
-//		observado = false;
-//	}
+        }
+
+        return false;
+    }
+
+
+    public void teleporte(){
+        for(int i = 0;i<portas.Length;i++){
+            portas[i].interacao4();
+
+        }
+    }
 }

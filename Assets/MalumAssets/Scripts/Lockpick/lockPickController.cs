@@ -11,6 +11,8 @@ public class lockPickController : MonoBehaviour {
 	pinController[] pins;
 	public RectTransform cursor;
 	float targetPosition;
+
+	float size;
 	public float speed;
 	Animator anim;
 	FirstPersonController firstPerson;
@@ -27,7 +29,7 @@ public class lockPickController : MonoBehaviour {
 		if(selected + 1 < pins.Length) selected++;
 		tocarSomMoverPick();
 		// Set new cursor target position
-		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + 85;
+		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + size;
 		speed = (targetPosition - cursor.anchoredPosition.x)/5f;
 	}
 
@@ -35,7 +37,7 @@ public class lockPickController : MonoBehaviour {
 		if(selected > 0) selected--;
 		tocarSomMoverPick();
 		// Change cursor target position
-		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + 85;
+		targetPosition = pins[selected].GetComponent<RectTransform>().anchoredPosition.x + size;
 		speed = (targetPosition - cursor.anchoredPosition.x)/5f;
 	}
 
@@ -75,6 +77,8 @@ public class lockPickController : MonoBehaviour {
 		firstPerson.enabled = false;
 		lanterna.enabled = false;
 
+		size = cursor.anchoredPosition.x;
+
 		//achando audios
 		acertarPino = GameObject.Find("audioSourcePino").GetComponent<AudioSource>();
 		destrancandoPorta= GameObject.Find("audioSourceDestrancandoPorta").GetComponent<AudioSource>();
@@ -82,12 +86,20 @@ public class lockPickController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		p.superficie1.textInteragir = "";
+		p.superficie2.textInteragir = "";
+
 		// Checking win condition
 		if(order.Count <= 0) {
 			destrancandoPorta.Play();
 			lanterna.enabled = true;
 			firstPerson.enabled = true;
-			p.estado = porta.state.fechado;
+			// just checking if the door p exists
+			if(p) {
+				//p.estado = porta.state.fechado;
+                p.atualizarEstado(porta.state.fechado);
+            }
+			
 			Destroy(gameObject);
 		}
 
@@ -98,6 +110,11 @@ public class lockPickController : MonoBehaviour {
 		}
 		// If the current pin is idle, allow me to push it 
 		if(Input.GetButtonDown("Fire1") && pins[selected].ready) anim.SetTrigger("Pushpin");
+		
+		// Checking if the player wants to leave the minigame
+		if(Input.GetButtonDown("Fire2")){
+			Destroy(gameObject);
+		}
 	}
 
 	void tocarSomMoverPick(){

@@ -445,8 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c941401f5d645114b812717b45a6ec1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textInteragir: 
   distMin: 100
-  tempoDeJogo: 3000
+  tempoDeJogo: 180
   tempo: 0
   tempoAtivoMax: 100
   forcaDarCorda: 5

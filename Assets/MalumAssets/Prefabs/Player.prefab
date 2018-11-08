@@ -194,8 +194,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963917836702984}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4665196975048440}
@@ -252,17 +252,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seekMouse: 1
-  nRays: 8
-  nCircles: 3
+  nRays: 100
+  nCircles: 30
   addicionalAngle: 5
-  debug: 0
+  debug: 1
   isTurnedOn: 1
-  MaxBaterry: 100
-  BatteryDrainPerSecond: 1
-  BatteryRechargePerSecond: 3
-  ActualBattery: 100
-  HoldDelay: 0.1
-  LightDecressPoint: 5
+  BaterryDuration: 60
+  BaterryRecoveryDuration: 30
+  BaterryCounter: 0
+  LightDecressPoint: 6
 --- !u!1 &1998250777855408
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +274,7 @@ GameObject:
   - component: {fileID: 114559490313099926}
   - component: {fileID: 54217791704400684}
   - component: {fileID: 82377693280557474}
+  - component: {fileID: 1554782629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -555,6 +554,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1554782629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998250777855408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d9b5f8f36f4ec4a932bca2425409c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirVisao: {x: 0, y: 0, z: 0}
 --- !u!1 &5581428730906127651
 GameObject:
   m_ObjectHideFlags: 0

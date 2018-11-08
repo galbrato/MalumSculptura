@@ -10,14 +10,18 @@ public class cryingStatue : interagivel {
 	cryingSpawn[] spawns;
 	cryingSpawn spawnAtual;
 
-	bool necessitaMudarPos = false;
-	bool puto = false;
+	public MeshRenderer posInicial;//posição onde será teleportada pela primeira vez a cryingStatue
+	public MeshRenderer posSegunda;//posição que será teleportada pela segunda vez a cryingStatue
+	private int teleportes = 0;//quantos teleportes a cryingStatue já fez
 
-	public float distSpawn;//distancia minimamente longe do player para spawnar num ponto
+	bool necessitaMudarPos = true;
+	int nivelChoro = 0;//0=sem choro;1=com choro;2=puto
 
+	public  Renderer m_Renderer;
+	public Material texturaChoro;
+	public Material texturaSemChoro;
 	MeshRenderer mesh;
 
-	private Vector3 posObservar;
 
 	[HideInInspector]
 	public bool observado = false;
@@ -25,53 +29,61 @@ public class cryingStatue : interagivel {
 	protected override void comeco(){
 		spawns =  FindObjectsOfType<cryingSpawn>();
 		mesh = gameObject.GetComponent<MeshRenderer>();
-		timer = maxTimer;
-		posObservar = new Vector3(trans.position.x,  trans.position.y,  trans.position.z ) ;
-
-		//definindo posicao inicial
-		bool aux = true;
-		for(int i=0;i<20 && aux;i++){
-			spawnAtual = spawns[ Random.Range(0,spawns.Length)];
-			aux = (Vector3.Distance(spawnAtual.gameObject.transform.position, plaTrans.position) < distSpawn);
-		}
-		trans.position = spawnAtual.gameObject.transform.position;
+		timer = maxTimer * 0.75f;
 	}
 
 	public void setMaxTimer(float novoValor){
 		maxTimer = novoValor;
 	}
 
+
 	//player interage com a estátua
-	public void interagiracao(){
+	public override void interacao2(){
+
 		timer = maxTimer;
+		nivelChoro = 0;
 		necessitaMudarPos = true;
+		m_Renderer.material = texturaSemChoro;
+		textInteragir = "";
 	}
 
 	void Update() {
 		observado = mesh.isVisible;
-        timer -= Time.deltaTime;
 
-		if(timer <= 0f){
-			puto = true;
+		timer -= Time.deltaTime;
+
+		if(timer <= maxTimer * 0.75f){
+			//mudando testura
+			if(nivelChoro == 0 && !observado){
+				m_Renderer.material = texturaChoro;
+				textInteragir = "Enxugar lágrimas";
+				nivelChoro = 1;
+			}
+			
+			if(timer <= 0f && nivelChoro == 1){
+				nivelChoro = 2;
+			}
 		}
 
 		//matar player
 		if(observado){
-			if(puto)
+			if(nivelChoro == 2 && Vector3.Distance(trans.position, plaTrans.position) < distMin*1.5)
 				Debug.Log("Jump Scare e Matar Player");
 		}
 		else{
 			//mudar de posicao
 			if(necessitaMudarPos){
 				necessitaMudarPos = false;
-				mudarDePos();
+				if(teleportes>1)
+					mudarDePos();
+				else if(teleportes==1){
+					mudarDePos(posSegunda);
+				}
+				else if(teleportes==0){
+					mudarDePos(posInicial);
+				}
 			}
 
-			//olhando para o player
-			posObservar.x = plaTrans.position.x;
-			posObservar.z = plaTrans.position.z;
- 			this.transform.LookAt( posObservar ) ;
-			trans.eulerAngles = new Vector3(0f,trans.eulerAngles.y,0f);
 		}
 
     }
@@ -84,19 +96,29 @@ public class cryingStatue : interagivel {
 
 			spawnAtual = spawns[ Random.Range(0,spawns.Length)];
 
+			Transform oq = spawnAtual.gameObject.GetComponent<Transform>();
 			//procurando spawn diferente do atual
 			aux = (spawnAtual == oldSpawn);
 			//procura spawn com distancia minima
-			aux |= (Vector3.Distance(spawnAtual.gameObject.transform.position, plaTrans.position) < distSpawn);
-			//procurando spawn nao observado(precisa ser modificado)
-			aux |= (observado);
+			aux |= (spawnAtual.obsertado());
 
 		}
 
 		trans.position = spawnAtual.gameObject.transform.position;
+		spawnAtual.teleporte();
+		teleportes++;
 	}
 
+	//tenta teleportar crying statue caso spawn já definido
+	void mudarDePos(MeshRenderer spawn){
+
+		if(!spawn.isVisible && !observado){
+			trans.position = spawn.gameObject.transform.position;
+			teleportes++;
+		}
+	}
 	void LateUpdate(){
 		observado = false;
 	}
 }
+
