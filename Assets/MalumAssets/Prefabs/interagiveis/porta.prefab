@@ -68,8 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textInteragir: 
   distMin: 4
-  Id: -1
   Porta: {fileID: 7164102218458751412}
+  pai: {fileID: 5303047755619844903}
 --- !u!1 &5303047755619844903
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,8 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textInteragir: 
   distMin: 4
-  Id: 1
   Porta: {fileID: 7164102218458751412}
+  pai: {fileID: 5303047755619844903}
 --- !u!1 &7124843294731240690
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +491,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d15f8cc0d5a7d9b4a85cad0803af544f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c5b47f32a2f1a50479f9c73a8a0215f4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -601,6 +601,7 @@ MonoBehaviour:
   audioAbrindo: {fileID: 8869314548620298114}
   audioFechando: {fileID: 7124843294731240689}
   audioFechar: {fileID: 8526381123488298739}
+  selfRender: {fileID: 0}
 --- !u!54 &7035453105802921262
 Rigidbody:
   m_ObjectHideFlags: 0

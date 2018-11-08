@@ -73,7 +73,6 @@ public class cryingStatue : interagivel {
 		else{
 			//mudar de posicao
 			if(necessitaMudarPos){
-				necessitaMudarPos = false;
 				if(teleportes>1)
 					mudarDePos();
 				else if(teleportes==1){
@@ -92,8 +91,8 @@ public class cryingStatue : interagivel {
 		cryingSpawn oldSpawn = spawnAtual;
 
 		bool aux = true;
-		for(int i=0;i<20 && aux;i++){
-
+		for(int i=0;i<30 && aux;i++){
+			
 			spawnAtual = spawns[ Random.Range(0,spawns.Length)];
 
 			Transform oq = spawnAtual.gameObject.GetComponent<Transform>();
@@ -103,10 +102,12 @@ public class cryingStatue : interagivel {
 			aux |= (spawnAtual.obsertado());
 
 		}
-
-		trans.position = spawnAtual.gameObject.transform.position;
-		spawnAtual.teleporte();
-		teleportes++;
+		if(aux == false){
+			necessitaMudarPos = false;
+			trans.position = spawnAtual.gameObject.transform.position;
+			spawnAtual.teleporte();
+			teleportes++;
+		}
 	}
 
 	//tenta teleportar crying statue caso spawn já definido
@@ -115,6 +116,7 @@ public class cryingStatue : interagivel {
 		if(!spawn.isVisible && !observado){
 			trans.position = spawn.gameObject.transform.position;
 			teleportes++;
+			necessitaMudarPos = false;
 		}
 	}
 	void LateUpdate(){
