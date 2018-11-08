@@ -10,18 +10,20 @@ public class KillPlayer : MonoBehaviour{
     Transform myHead;
     private FirstPersonController player;
     public AudioSource Grito;
-    public GameObject poseChorando;
-    public GameObject poseAtacando;
+   bool morreu = false;
     // Start is called before the first frame update
     void Start(){
         //Invoke("doit", 0.1f);
+        
+    }
+
+    private void OnEnable() {
         doit();
     }
 
     void doit() {
-        poseChorando.SetActive(false);
-        poseAtacando.SetActive(true);
-
+        GetComponent<BoxCollider>().enabled = false;
+ 
         mAgent = GetComponent<NavMeshAgent>();
         mAgent.enabled = true;
         mAgent.SetDestination(Camera.main.transform.position);
@@ -53,7 +55,7 @@ public class KillPlayer : MonoBehaviour{
 
         Vector3 dir = (myPosition - playerPosition);
         mAgent.speed = 3 + 1.5f*dir.magnitude;
-        if (dir.magnitude <=JumpScareDistance) {
+        if (dir.magnitude <=JumpScareDistance ) {
             
             transform.position = (playerPosition + (dir.normalized * JumpScareDistance));
             transform.LookAt(playerPosition);
@@ -61,7 +63,8 @@ public class KillPlayer : MonoBehaviour{
             Lanterna.instance.LightOn();
             Lanterna.instance.seekMouse = false;
             mAgent.speed = 0;
-            Grito.Play();
+            if(!morreu) Grito.Play();
+            morreu = true;
         }
     }
     

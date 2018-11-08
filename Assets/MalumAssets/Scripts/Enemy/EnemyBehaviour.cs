@@ -21,6 +21,9 @@ public class EnemyBehaviour : MonoBehaviour {
 
     private int TriggerEnterCounter = 0;
 
+    public GameObject PoseFingida;
+    public GameObject PoseJumpScare;
+
     private void Awake() {
         EndGame = false;
 
@@ -52,7 +55,9 @@ public class EnemyBehaviour : MonoBehaviour {
         } else {
             mAgent.speed = Speed;
         }
-
+        Vector3 aux = Camera.main.transform.position;
+        aux.y = transform.position.y;
+        transform.LookAt(aux);
     }
 
     private bool CanSeePlayer() {
@@ -79,9 +84,27 @@ public class EnemyBehaviour : MonoBehaviour {
     }
 
     public void JumpScare() {
-        GetComponentInChildren<AudioSource>().Play();
+        //calculando posição do player
+        Vector3 playerPosition = Camera.main.transform.position;
+        playerPosition.y = transform.position.y;
+
+
+        //Calculadno posição da estatua
+        Vector3 myPosition = transform.position;
+        myPosition.y = transform.position.y;
+
+
+        Vector3 dir = (myPosition - playerPosition);
+
+        transform.position = (playerPosition + (dir.normalized * 0.95f));
+        transform.LookAt(playerPosition);
+
+        PoseFingida.SetActive(false);
+        PoseJumpScare.SetActive(true);
+
         Camera.main.transform.LookAt(myHead);
-        Invoke("GameOver", 2);
+        GetComponentInChildren<AudioSource>().Play();
+        Invoke("GameOver", 1);
         Lanterna.instance.LightOn();
     }
    
@@ -93,12 +116,18 @@ public class EnemyBehaviour : MonoBehaviour {
         if (other.gameObject.CompareTag("Player")) {
             TriggerEnterCounter++;
         }
-        if (!stop && TriggerEnterCounter == 2) {
-            Invoke("JumpScare", 2);
+        if (!stop && TriggerEnterCounter == 1) {
             Player.GetComponent<FirstPersonController>().enabled = false;
             Stop();
             EndGame = true;
             Lanterna.instance.LightOff();
+
+            mAgent.enabled = false;
+            StateMachine.enabled = false;
+           
+            Invoke("JumpScare", 2);
+
+
         }
     }
     private void OnTriggerExit(Collider other) {

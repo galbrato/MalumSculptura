@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 3b835f71df7999b418885f49e84fc320
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: e2:polySurface1
+    100002: e2:polySurface11
+    100004: e2:polySurface2
+    100006: e2:polySurface3
+    100008: e2:polySurface5
+    100010: e2:polySurface7
+    100012: e2:polySurface9
+    100014: e2:transform1
+    100016: e2:transform2
+    100018: e2:transform3
+    100020: e2:transform4
+    100022: e2:transform5
+    100024: e2:transform6
+    100026: //RootNode
+    100028: group1
+    100030: polySurface10
+    100032: polySurface11
+    100034: polySurface12
+    100036: polySurface13
+    100038: polySurface14
+    100040: polySurface15
+    100042: polySurface16
+    100044: polySurface17
+    100046: polySurface2
+    100048: polySurface2 1
+    100050: polySurface3
+    100052: polySurface5
+    100054: polySurface6
+    100056: polySurface7
+    100058: polySurface8
+    100060: polySurface8 1
+    100062: polySurface9
+    100064: Rig:back
+    100066: Rig:backctrl1
+    100068: Rig:basehead
+    100070: Rig:baseneck
+    100072: Rig:baseshoulder
+    100074: Rig:belly
+    100076: Rig:bellyctrl
+    100078: Rig:chest
+    100080: Rig:chest1
+    100082: Rig:face
+    100084: Rig:global1
+    100086: Rig:headctrl
+    100088: Rig:hips1
+    100090: Rig:hipsctrl
+    100092: Rig:joint1
+    100094: Rig:joint2
+    100096: Rig:joint3
+    100098: Rig:L_ankle
+    100100: Rig:L_ball
+    100102: Rig:L_ballreverse
+    100104: Rig:L_calcanhar
+    100106: Rig:L_elbow
+    100108: Rig:L_hand
+    100110: Rig:L_handctrl
+    100112: Rig:L_heelreverse
+    100114: Rig:L_index
+    100116: Rig:L_index 1
+    100118: Rig:L_index 2
+    100120: Rig:L_indexctrl
+    100122: Rig:L_indexctrl5
+    100124: Rig:L_knee
+    100126: Rig:L_leg
+    100128: Rig:L_legctrl
+    100130: Rig:L_middle
+    100132: Rig:L_middle 1
+    100134: Rig:L_middle 2
+    100136: Rig:L_middlectrl
+    100138: Rig:L_middlectrl5
+    100140: Rig:L_middlefoot
+    100142: Rig:L_pinky
+    100144: Rig:L_pinky 1
+    100146: Rig:L_pinky 2
+    100148: Rig:L_pinky 3
+    100150: Rig:L_pinky9
+    100152: Rig:L_pinkyctrl
+    100154: Rig:L_ring
+    100156: Rig:L_ring 1
+    100158: Rig:L_ring 2
+    100160: Rig:L_ringctrl
+    100162: Rig:L_ringctrl5
+    100164: Rig:L_shoulder
+    100166: Rig:L_shoulder1
+    100168: Rig:L_shoulderctrl
+    100170: Rig:L_thumb
+    100172: Rig:L_thumb 1
+    100174: Rig:L_thumb 2
+    100176: Rig:L_thumbctrl3
+    100178: Rig:L_toereverse
+    100180: Rig:L_wrist
+    100182: Rig:Neck
+    100184: Rig:neck
+    100186: Rig:R_ankle
+    100188: Rig:R_ball
+    100190: Rig:R_ballreverse
+    100192: Rig:R_calcanhar
+    100194: Rig:R_elbow
+    100196: Rig:R_hand
+    100198: Rig:R_heelreverse
+    100200: Rig:R_index
+    100202: Rig:R_index1
+    100204: Rig:R_index2
+    100206: Rig:R_index3
+    100208: Rig:R_indexctrl
+    100210: Rig:R_indexctrl6
+    100212: Rig:R_knee
+    100214: Rig:R_leg
+    100216: Rig:R_legctrl
+    100218: Rig:R_middle
+    100220: Rig:R_middle2
+    100222: Rig:R_middle3
+    100224: Rig:R_middle4
+    100226: Rig:R_middlectrl
+    100228: Rig:R_middlectrl6
+    100230: Rig:R_middlefoot
+    100232: Rig:R_pinky
+    100234: Rig:R_pinky1
+    100236: Rig:R_pinky10
+    100238: Rig:R_pinky3
+    100240: Rig:R_pinky4
+    100242: Rig:R_pinkyctrl
+    100244: Rig:R_ring
+    100246: Rig:R_ring1
+    100248: Rig:R_ring2
+    100250: Rig:R_ring4
+    100252: Rig:R_ringctrl
+    100254: Rig:R_ringctrl6
+    100256: Rig:R_shoulder
+    100258: Rig:R_shoulder1
+    100260: Rig:R_shoulderctrl
+    100262: Rig:R_thumb
+    100264: Rig:R_thumb1
+    100266: Rig:R_thumb2
+    100268: Rig:R_thumbctrl
+    100270: Rig:R_toereverse
+    100272: Rig:R_wrist
+    100274: Rig:R_wristctrl
+    100276: Rig:root
+    100278: Rig:rootctrl
+    100280: Rig:something
+    100282: transform1
+    100284: transform10
+    100286: transform11
+    100288: transform12
+    100290: transform13
+    100292: transform14
+    100294: transform15
+    100296: transform16
+    100298: transform3
+    100300: transform4
+    100302: transform5
+    100304: transform6
+    100306: transform7
+    100308: transform8
+    100310: transform9
+    400000: e2:polySurface1
+    400002: e2:polySurface11
+    400004: e2:polySurface2
+    400006: e2:polySurface3
+    400008: e2:polySurface5
+    400010: e2:polySurface7
+    400012: e2:polySurface9
+    400014: e2:transform1
+    400016: e2:transform2
+    400018: e2:transform3
+    400020: e2:transform4
+    400022: e2:transform5
+    400024: e2:transform6
+    400026: //RootNode
+    400028: group1
+    400030: polySurface10
+    400032: polySurface11
+    400034: polySurface12
+    400036: polySurface13
+    400038: polySurface14
+    400040: polySurface15
+    400042: polySurface16
+    400044: polySurface17
+    400046: polySurface2
+    400048: polySurface2 1
+    400050: polySurface3
+    400052: polySurface5
+    400054: polySurface6
+    400056: polySurface7
+    400058: polySurface8
+    400060: polySurface8 1
+    400062: polySurface9
+    400064: Rig:back
+    400066: Rig:backctrl1
+    400068: Rig:basehead
+    400070: Rig:baseneck
+    400072: Rig:baseshoulder
+    400074: Rig:belly
+    400076: Rig:bellyctrl
+    400078: Rig:chest
+    400080: Rig:chest1
+    400082: Rig:face
+    400084: Rig:global1
+    400086: Rig:headctrl
+    400088: Rig:hips1
+    400090: Rig:hipsctrl
+    400092: Rig:joint1
+    400094: Rig:joint2
+    400096: Rig:joint3
+    400098: Rig:L_ankle
+    400100: Rig:L_ball
+    400102: Rig:L_ballreverse
+    400104: Rig:L_calcanhar
+    400106: Rig:L_elbow
+    400108: Rig:L_hand
+    400110: Rig:L_handctrl
+    400112: Rig:L_heelreverse
+    400114: Rig:L_index
+    400116: Rig:L_index 1
+    400118: Rig:L_index 2
+    400120: Rig:L_indexctrl
+    400122: Rig:L_indexctrl5
+    400124: Rig:L_knee
+    400126: Rig:L_leg
+    400128: Rig:L_legctrl
+    400130: Rig:L_middle
+    400132: Rig:L_middle 1
+    400134: Rig:L_middle 2
+    400136: Rig:L_middlectrl
+    400138: Rig:L_middlectrl5
+    400140: Rig:L_middlefoot
+    400142: Rig:L_pinky
+    400144: Rig:L_pinky 1
+    400146: Rig:L_pinky 2
+    400148: Rig:L_pinky 3
+    400150: Rig:L_pinky9
+    400152: Rig:L_pinkyctrl
+    400154: Rig:L_ring
+    400156: Rig:L_ring 1
+    400158: Rig:L_ring 2
+    400160: Rig:L_ringctrl
+    400162: Rig:L_ringctrl5
+    400164: Rig:L_shoulder
+    400166: Rig:L_shoulder1
+    400168: Rig:L_shoulderctrl
+    400170: Rig:L_thumb
+    400172: Rig:L_thumb 1
+    400174: Rig:L_thumb 2
+    400176: Rig:L_thumbctrl3
+    400178: Rig:L_toereverse
+    400180: Rig:L_wrist
+    400182: Rig:Neck
+    400184: Rig:neck
+    400186: Rig:R_ankle
+    400188: Rig:R_ball
+    400190: Rig:R_ballreverse
+    400192: Rig:R_calcanhar
+    400194: Rig:R_elbow
+    400196: Rig:R_hand
+    400198: Rig:R_heelreverse
+    400200: Rig:R_index
+    400202: Rig:R_index1
+    400204: Rig:R_index2
+    400206: Rig:R_index3
+    400208: Rig:R_indexctrl
+    400210: Rig:R_indexctrl6
+    400212: Rig:R_knee
+    400214: Rig:R_leg
+    400216: Rig:R_legctrl
+    400218: Rig:R_middle
+    400220: Rig:R_middle2
+    400222: Rig:R_middle3
+    400224: Rig:R_middle4
+    400226: Rig:R_middlectrl
+    400228: Rig:R_middlectrl6
+    400230: Rig:R_middlefoot
+    400232: Rig:R_pinky
+    400234: Rig:R_pinky1
+    400236: Rig:R_pinky10
+    400238: Rig:R_pinky3
+    400240: Rig:R_pinky4
+    400242: Rig:R_pinkyctrl
+    400244: Rig:R_ring
+    400246: Rig:R_ring1
+    400248: Rig:R_ring2
+    400250: Rig:R_ring4
+    400252: Rig:R_ringctrl
+    400254: Rig:R_ringctrl6
+    400256: Rig:R_shoulder
+    400258: Rig:R_shoulder1
+    400260: Rig:R_shoulderctrl
+    400262: Rig:R_thumb
+    400264: Rig:R_thumb1
+    400266: Rig:R_thumb2
+    400268: Rig:R_thumbctrl
+    400270: Rig:R_toereverse
+    400272: Rig:R_wrist
+    400274: Rig:R_wristctrl
+    400276: Rig:root
+    400278: Rig:rootctrl
+    400280: Rig:something
+    400282: transform1
+    400284: transform10
+    400286: transform11
+    400288: transform12
+    400290: transform13
+    400292: transform14
+    400294: transform15
+    400296: transform16
+    400298: transform3
+    400300: transform4
+    400302: transform5
+    400304: transform6
+    400306: transform7
+    400308: transform8
+    400310: transform9
+    2100000: lambert1
+    2300000: polySurface17
+    3300000: polySurface17
+    4300000: polySurface7
+    4300002: polySurface17
+    4300004: polySurface8
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface7
+    13700002: polySurface8
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 6
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

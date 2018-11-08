@@ -1,0 +1,1004 @@
+fileFormatVersion: 2
+guid: 42ccc80c31402734281738bf577f1b1d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: cabelo
+    100002: corpo
+    100004: e2:polySurface1
+    100006: e2:polySurface11
+    100008: e2:polySurface2
+    100010: e2:polySurface3
+    100012: e2:polySurface5
+    100014: e2:polySurface7
+    100016: e2:polySurface9
+    100018: e2:transform1
+    100020: e2:transform2
+    100022: e2:transform3
+    100024: e2:transform4
+    100026: e2:transform5
+    100028: e2:transform6
+    100030: //RootNode
+    100032: group1
+    100034: olhos
+    100036: polySurface2
+    100038: polySurface2 1
+    100040: polySurface3
+    100042: Rig:back
+    100044: Rig:backctrl1
+    100046: Rig:basehead
+    100048: Rig:baseneck
+    100050: Rig:baseshoulder
+    100052: Rig:belly
+    100054: Rig:bellyctrl
+    100056: Rig:chest
+    100058: Rig:chest1
+    100060: Rig:eyes
+    100062: Rig:face
+    100064: Rig:global1
+    100066: Rig:headctrl
+    100068: Rig:hips1
+    100070: Rig:hipsctrl
+    100072: Rig:joint1
+    100074: Rig:joint2
+    100076: Rig:joint3
+    100078: Rig:L_ankle
+    100080: Rig:L_ball
+    100082: Rig:L_ballreverse
+    100084: Rig:L_calcanhar
+    100086: Rig:L_elbow
+    100088: Rig:L_eye
+    100090: Rig:L_hand
+    100092: Rig:L_handctrl
+    100094: Rig:L_heelreverse
+    100096: Rig:L_index
+    100098: Rig:L_index 1
+    100100: Rig:L_index 10
+    100102: Rig:L_index 11
+    100104: Rig:L_index 12
+    100106: Rig:L_index 13
+    100108: Rig:L_index 14
+    100110: Rig:L_index 15
+    100112: Rig:L_index 16
+    100114: Rig:L_index 17
+    100116: Rig:L_index 18
+    100118: Rig:L_index 19
+    100120: Rig:L_index 2
+    100122: Rig:L_index 20
+    100124: Rig:L_index 21
+    100126: Rig:L_index 22
+    100128: Rig:L_index 23
+    100130: Rig:L_index 24
+    100132: Rig:L_index 25
+    100134: Rig:L_index 26
+    100136: Rig:L_index 27
+    100138: Rig:L_index 28
+    100140: Rig:L_index 29
+    100142: Rig:L_index 3
+    100144: Rig:L_index 30
+    100146: Rig:L_index 4
+    100148: Rig:L_index 5
+    100150: Rig:L_index 6
+    100152: Rig:L_index 7
+    100154: Rig:L_index 8
+    100156: Rig:L_index 9
+    100158: Rig:L_index1
+    100160: Rig:L_index10
+    100162: Rig:L_index11
+    100164: Rig:L_index12
+    100166: Rig:L_index13
+    100168: Rig:L_index14
+    100170: Rig:L_index15
+    100172: Rig:L_index16
+    100174: Rig:L_index17
+    100176: Rig:L_index18
+    100178: Rig:L_index19
+    100180: Rig:L_index2
+    100182: Rig:L_index20
+    100184: Rig:L_index21
+    100186: Rig:L_index22
+    100188: Rig:L_index23
+    100190: Rig:L_index24
+    100192: Rig:L_index25
+    100194: Rig:L_index26
+    100196: Rig:L_index27
+    100198: Rig:L_index28
+    100200: Rig:L_index29
+    100202: Rig:L_index3
+    100204: Rig:L_index4
+    100206: Rig:L_index5
+    100208: Rig:L_index6
+    100210: Rig:L_index7
+    100212: Rig:L_index8
+    100214: Rig:L_index9
+    100216: Rig:L_indexctrl
+    100218: Rig:L_indexctrl5
+    100220: Rig:L_knee
+    100222: Rig:L_leg
+    100224: Rig:L_legctrl
+    100226: Rig:L_middle
+    100228: Rig:L_middle 1
+    100230: Rig:L_middle 10
+    100232: Rig:L_middle 11
+    100234: Rig:L_middle 12
+    100236: Rig:L_middle 13
+    100238: Rig:L_middle 14
+    100240: Rig:L_middle 15
+    100242: Rig:L_middle 16
+    100244: Rig:L_middle 17
+    100246: Rig:L_middle 18
+    100248: Rig:L_middle 19
+    100250: Rig:L_middle 2
+    100252: Rig:L_middle 20
+    100254: Rig:L_middle 21
+    100256: Rig:L_middle 22
+    100258: Rig:L_middle 23
+    100260: Rig:L_middle 24
+    100262: Rig:L_middle 25
+    100264: Rig:L_middle 26
+    100266: Rig:L_middle 27
+    100268: Rig:L_middle 28
+    100270: Rig:L_middle 29
+    100272: Rig:L_middle 3
+    100274: Rig:L_middle 30
+    100276: Rig:L_middle 4
+    100278: Rig:L_middle 5
+    100280: Rig:L_middle 6
+    100282: Rig:L_middle 7
+    100284: Rig:L_middle 8
+    100286: Rig:L_middle 9
+    100288: Rig:L_middle1
+    100290: Rig:L_middle10
+    100292: Rig:L_middle11
+    100294: Rig:L_middle12
+    100296: Rig:L_middle13
+    100298: Rig:L_middle14
+    100300: Rig:L_middle15
+    100302: Rig:L_middle16
+    100304: Rig:L_middle17
+    100306: Rig:L_middle18
+    100308: Rig:L_middle19
+    100310: Rig:L_middle2
+    100312: Rig:L_middle20
+    100314: Rig:L_middle21
+    100316: Rig:L_middle22
+    100318: Rig:L_middle23
+    100320: Rig:L_middle24
+    100322: Rig:L_middle25
+    100324: Rig:L_middle26
+    100326: Rig:L_middle27
+    100328: Rig:L_middle28
+    100330: Rig:L_middle29
+    100332: Rig:L_middle3
+    100334: Rig:L_middle4
+    100336: Rig:L_middle5
+    100338: Rig:L_middle6
+    100340: Rig:L_middle7
+    100342: Rig:L_middle8
+    100344: Rig:L_middle9
+    100346: Rig:L_middlectrl
+    100348: Rig:L_middlectrl5
+    100350: Rig:L_middlefoot
+    100352: Rig:L_pinky
+    100354: Rig:L_pinky 1
+    100356: Rig:L_pinky 10
+    100358: Rig:L_pinky 11
+    100360: Rig:L_pinky 12
+    100362: Rig:L_pinky 13
+    100364: Rig:L_pinky 14
+    100366: Rig:L_pinky 15
+    100368: Rig:L_pinky 16
+    100370: Rig:L_pinky 17
+    100372: Rig:L_pinky 18
+    100374: Rig:L_pinky 19
+    100376: Rig:L_pinky 2
+    100378: Rig:L_pinky 20
+    100380: Rig:L_pinky 21
+    100382: Rig:L_pinky 22
+    100384: Rig:L_pinky 23
+    100386: Rig:L_pinky 24
+    100388: Rig:L_pinky 25
+    100390: Rig:L_pinky 26
+    100392: Rig:L_pinky 27
+    100394: Rig:L_pinky 28
+    100396: Rig:L_pinky 29
+    100398: Rig:L_pinky 3
+    100400: Rig:L_pinky 30
+    100402: Rig:L_pinky 31
+    100404: Rig:L_pinky 32
+    100406: Rig:L_pinky 33
+    100408: Rig:L_pinky 34
+    100410: Rig:L_pinky 35
+    100412: Rig:L_pinky 36
+    100414: Rig:L_pinky 37
+    100416: Rig:L_pinky 38
+    100418: Rig:L_pinky 39
+    100420: Rig:L_pinky 4
+    100422: Rig:L_pinky 40
+    100424: Rig:L_pinky 41
+    100426: Rig:L_pinky 42
+    100428: Rig:L_pinky 43
+    100430: Rig:L_pinky 44
+    100432: Rig:L_pinky 45
+    100434: Rig:L_pinky 46
+    100436: Rig:L_pinky 47
+    100438: Rig:L_pinky 48
+    100440: Rig:L_pinky 49
+    100442: Rig:L_pinky 5
+    100444: Rig:L_pinky 50
+    100446: Rig:L_pinky 51
+    100448: Rig:L_pinky 52
+    100450: Rig:L_pinky 53
+    100452: Rig:L_pinky 54
+    100454: Rig:L_pinky 55
+    100456: Rig:L_pinky 56
+    100458: Rig:L_pinky 57
+    100460: Rig:L_pinky 58
+    100462: Rig:L_pinky 59
+    100464: Rig:L_pinky 6
+    100466: Rig:L_pinky 60
+    100468: Rig:L_pinky 7
+    100470: Rig:L_pinky 8
+    100472: Rig:L_pinky 9
+    100474: Rig:L_pinky10
+    100476: Rig:L_pinky11
+    100478: Rig:L_pinky12
+    100480: Rig:L_pinky13
+    100482: Rig:L_pinky14
+    100484: Rig:L_pinky15
+    100486: Rig:L_pinky16
+    100488: Rig:L_pinky17
+    100490: Rig:L_pinky18
+    100492: Rig:L_pinky19
+    100494: Rig:L_pinky20
+    100496: Rig:L_pinky21
+    100498: Rig:L_pinky22
+    100500: Rig:L_pinky23
+    100502: Rig:L_pinky24
+    100504: Rig:L_pinky25
+    100506: Rig:L_pinky26
+    100508: Rig:L_pinky27
+    100510: Rig:L_pinky28
+    100512: Rig:L_pinky29
+    100514: Rig:L_pinky30
+    100516: Rig:L_pinky31
+    100518: Rig:L_pinky32
+    100520: Rig:L_pinky33
+    100522: Rig:L_pinky34
+    100524: Rig:L_pinky35
+    100526: Rig:L_pinky36
+    100528: Rig:L_pinky37
+    100530: Rig:L_pinky38
+    100532: Rig:L_pinky9
+    100534: Rig:L_pinkyctrl
+    100536: Rig:L_ring
+    100538: Rig:L_ring 1
+    100540: Rig:L_ring 10
+    100542: Rig:L_ring 11
+    100544: Rig:L_ring 12
+    100546: Rig:L_ring 13
+    100548: Rig:L_ring 14
+    100550: Rig:L_ring 15
+    100552: Rig:L_ring 16
+    100554: Rig:L_ring 17
+    100556: Rig:L_ring 18
+    100558: Rig:L_ring 19
+    100560: Rig:L_ring 2
+    100562: Rig:L_ring 20
+    100564: Rig:L_ring 21
+    100566: Rig:L_ring 22
+    100568: Rig:L_ring 23
+    100570: Rig:L_ring 24
+    100572: Rig:L_ring 25
+    100574: Rig:L_ring 26
+    100576: Rig:L_ring 27
+    100578: Rig:L_ring 28
+    100580: Rig:L_ring 29
+    100582: Rig:L_ring 3
+    100584: Rig:L_ring 30
+    100586: Rig:L_ring 4
+    100588: Rig:L_ring 5
+    100590: Rig:L_ring 6
+    100592: Rig:L_ring 7
+    100594: Rig:L_ring 8
+    100596: Rig:L_ring 9
+    100598: Rig:L_ring1
+    100600: Rig:L_ring10
+    100602: Rig:L_ring11
+    100604: Rig:L_ring12
+    100606: Rig:L_ring13
+    100608: Rig:L_ring14
+    100610: Rig:L_ring15
+    100612: Rig:L_ring16
+    100614: Rig:L_ring17
+    100616: Rig:L_ring18
+    100618: Rig:L_ring19
+    100620: Rig:L_ring2
+    100622: Rig:L_ring20
+    100624: Rig:L_ring21
+    100626: Rig:L_ring22
+    100628: Rig:L_ring23
+    100630: Rig:L_ring24
+    100632: Rig:L_ring25
+    100634: Rig:L_ring26
+    100636: Rig:L_ring27
+    100638: Rig:L_ring28
+    100640: Rig:L_ring29
+    100642: Rig:L_ring3
+    100644: Rig:L_ring4
+    100646: Rig:L_ring5
+    100648: Rig:L_ring6
+    100650: Rig:L_ring7
+    100652: Rig:L_ring8
+    100654: Rig:L_ring9
+    100656: Rig:L_ringctrl
+    100658: Rig:L_ringctrl5
+    100660: Rig:L_shoulder
+    100662: Rig:L_shoulder1
+    100664: Rig:L_shoulderctrl
+    100666: Rig:L_thumb
+    100668: Rig:L_thumb 1
+    100670: Rig:L_thumb 10
+    100672: Rig:L_thumb 11
+    100674: Rig:L_thumb 12
+    100676: Rig:L_thumb 13
+    100678: Rig:L_thumb 14
+    100680: Rig:L_thumb 15
+    100682: Rig:L_thumb 16
+    100684: Rig:L_thumb 17
+    100686: Rig:L_thumb 18
+    100688: Rig:L_thumb 19
+    100690: Rig:L_thumb 2
+    100692: Rig:L_thumb 20
+    100694: Rig:L_thumb 21
+    100696: Rig:L_thumb 22
+    100698: Rig:L_thumb 23
+    100700: Rig:L_thumb 24
+    100702: Rig:L_thumb 25
+    100704: Rig:L_thumb 26
+    100706: Rig:L_thumb 27
+    100708: Rig:L_thumb 28
+    100710: Rig:L_thumb 29
+    100712: Rig:L_thumb 3
+    100714: Rig:L_thumb 30
+    100716: Rig:L_thumb 4
+    100718: Rig:L_thumb 5
+    100720: Rig:L_thumb 6
+    100722: Rig:L_thumb 7
+    100724: Rig:L_thumb 8
+    100726: Rig:L_thumb 9
+    100728: Rig:L_thumb1
+    100730: Rig:L_thumb10
+    100732: Rig:L_thumb11
+    100734: Rig:L_thumb12
+    100736: Rig:L_thumb13
+    100738: Rig:L_thumb14
+    100740: Rig:L_thumb15
+    100742: Rig:L_thumb16
+    100744: Rig:L_thumb17
+    100746: Rig:L_thumb18
+    100748: Rig:L_thumb19
+    100750: Rig:L_thumb2
+    100752: Rig:L_thumb20
+    100754: Rig:L_thumb21
+    100756: Rig:L_thumb22
+    100758: Rig:L_thumb23
+    100760: Rig:L_thumb24
+    100762: Rig:L_thumb25
+    100764: Rig:L_thumb26
+    100766: Rig:L_thumb27
+    100768: Rig:L_thumb28
+    100770: Rig:L_thumb29
+    100772: Rig:L_thumb3
+    100774: Rig:L_thumb4
+    100776: Rig:L_thumb5
+    100778: Rig:L_thumb6
+    100780: Rig:L_thumb7
+    100782: Rig:L_thumb8
+    100784: Rig:L_thumb9
+    100786: Rig:L_thumbctrl3
+    100788: Rig:L_toereverse
+    100790: Rig:L_wrist
+    100792: Rig:Neck
+    100794: Rig:neck
+    100796: Rig:R_ankle
+    100798: Rig:R_ball
+    100800: Rig:R_ballreverse
+    100802: Rig:R_calcanhar
+    100804: Rig:R_elbow
+    100806: Rig:R_eye
+    100808: Rig:R_hand
+    100810: Rig:R_heelreverse
+    100812: Rig:R_index
+    100814: Rig:R_index1
+    100816: Rig:R_index2
+    100818: Rig:R_index3
+    100820: Rig:R_indexctrl
+    100822: Rig:R_indexctrl6
+    100824: Rig:R_knee
+    100826: Rig:R_leg
+    100828: Rig:R_legctrl
+    100830: Rig:R_middle
+    100832: Rig:R_middle2
+    100834: Rig:R_middle3
+    100836: Rig:R_middle4
+    100838: Rig:R_middlectrl
+    100840: Rig:R_middlectrl6
+    100842: Rig:R_middlefoot
+    100844: Rig:R_pinky
+    100846: Rig:R_pinky1
+    100848: Rig:R_pinky10
+    100850: Rig:R_pinky3
+    100852: Rig:R_pinky4
+    100854: Rig:R_pinkyctrl
+    100856: Rig:R_ring
+    100858: Rig:R_ring1
+    100860: Rig:R_ring2
+    100862: Rig:R_ring4
+    100864: Rig:R_ringctrl
+    100866: Rig:R_ringctrl6
+    100868: Rig:R_shoulder
+    100870: Rig:R_shoulder1
+    100872: Rig:R_shoulderctrl
+    100874: Rig:R_thumb
+    100876: Rig:R_thumb1
+    100878: Rig:R_thumb2
+    100880: Rig:R_thumbctrl
+    100882: Rig:R_toereverse
+    100884: Rig:R_wrist
+    100886: Rig:R_wristctrl
+    100888: Rig:root
+    100890: Rig:rootctrl
+    100892: Rig:something
+    100894: rosto
+    100896: transform1
+    100898: transform3
+    100900: transform4
+    400000: cabelo
+    400002: corpo
+    400004: e2:polySurface1
+    400006: e2:polySurface11
+    400008: e2:polySurface2
+    400010: e2:polySurface3
+    400012: e2:polySurface5
+    400014: e2:polySurface7
+    400016: e2:polySurface9
+    400018: e2:transform1
+    400020: e2:transform2
+    400022: e2:transform3
+    400024: e2:transform4
+    400026: e2:transform5
+    400028: e2:transform6
+    400030: //RootNode
+    400032: group1
+    400034: olhos
+    400036: polySurface2
+    400038: polySurface2 1
+    400040: polySurface3
+    400042: Rig:back
+    400044: Rig:backctrl1
+    400046: Rig:basehead
+    400048: Rig:baseneck
+    400050: Rig:baseshoulder
+    400052: Rig:belly
+    400054: Rig:bellyctrl
+    400056: Rig:chest
+    400058: Rig:chest1
+    400060: Rig:eyes
+    400062: Rig:face
+    400064: Rig:global1
+    400066: Rig:headctrl
+    400068: Rig:hips1
+    400070: Rig:hipsctrl
+    400072: Rig:joint1
+    400074: Rig:joint2
+    400076: Rig:joint3
+    400078: Rig:L_ankle
+    400080: Rig:L_ball
+    400082: Rig:L_ballreverse
+    400084: Rig:L_calcanhar
+    400086: Rig:L_elbow
+    400088: Rig:L_eye
+    400090: Rig:L_hand
+    400092: Rig:L_handctrl
+    400094: Rig:L_heelreverse
+    400096: Rig:L_index
+    400098: Rig:L_index 1
+    400100: Rig:L_index 10
+    400102: Rig:L_index 11
+    400104: Rig:L_index 12
+    400106: Rig:L_index 13
+    400108: Rig:L_index 14
+    400110: Rig:L_index 15
+    400112: Rig:L_index 16
+    400114: Rig:L_index 17
+    400116: Rig:L_index 18
+    400118: Rig:L_index 19
+    400120: Rig:L_index 2
+    400122: Rig:L_index 20
+    400124: Rig:L_index 21
+    400126: Rig:L_index 22
+    400128: Rig:L_index 23
+    400130: Rig:L_index 24
+    400132: Rig:L_index 25
+    400134: Rig:L_index 26
+    400136: Rig:L_index 27
+    400138: Rig:L_index 28
+    400140: Rig:L_index 29
+    400142: Rig:L_index 3
+    400144: Rig:L_index 30
+    400146: Rig:L_index 4
+    400148: Rig:L_index 5
+    400150: Rig:L_index 6
+    400152: Rig:L_index 7
+    400154: Rig:L_index 8
+    400156: Rig:L_index 9
+    400158: Rig:L_index1
+    400160: Rig:L_index10
+    400162: Rig:L_index11
+    400164: Rig:L_index12
+    400166: Rig:L_index13
+    400168: Rig:L_index14
+    400170: Rig:L_index15
+    400172: Rig:L_index16
+    400174: Rig:L_index17
+    400176: Rig:L_index18
+    400178: Rig:L_index19
+    400180: Rig:L_index2
+    400182: Rig:L_index20
+    400184: Rig:L_index21
+    400186: Rig:L_index22
+    400188: Rig:L_index23
+    400190: Rig:L_index24
+    400192: Rig:L_index25
+    400194: Rig:L_index26
+    400196: Rig:L_index27
+    400198: Rig:L_index28
+    400200: Rig:L_index29
+    400202: Rig:L_index3
+    400204: Rig:L_index4
+    400206: Rig:L_index5
+    400208: Rig:L_index6
+    400210: Rig:L_index7
+    400212: Rig:L_index8
+    400214: Rig:L_index9
+    400216: Rig:L_indexctrl
+    400218: Rig:L_indexctrl5
+    400220: Rig:L_knee
+    400222: Rig:L_leg
+    400224: Rig:L_legctrl
+    400226: Rig:L_middle
+    400228: Rig:L_middle 1
+    400230: Rig:L_middle 10
+    400232: Rig:L_middle 11
+    400234: Rig:L_middle 12
+    400236: Rig:L_middle 13
+    400238: Rig:L_middle 14
+    400240: Rig:L_middle 15
+    400242: Rig:L_middle 16
+    400244: Rig:L_middle 17
+    400246: Rig:L_middle 18
+    400248: Rig:L_middle 19
+    400250: Rig:L_middle 2
+    400252: Rig:L_middle 20
+    400254: Rig:L_middle 21
+    400256: Rig:L_middle 22
+    400258: Rig:L_middle 23
+    400260: Rig:L_middle 24
+    400262: Rig:L_middle 25
+    400264: Rig:L_middle 26
+    400266: Rig:L_middle 27
+    400268: Rig:L_middle 28
+    400270: Rig:L_middle 29
+    400272: Rig:L_middle 3
+    400274: Rig:L_middle 30
+    400276: Rig:L_middle 4
+    400278: Rig:L_middle 5
+    400280: Rig:L_middle 6
+    400282: Rig:L_middle 7
+    400284: Rig:L_middle 8
+    400286: Rig:L_middle 9
+    400288: Rig:L_middle1
+    400290: Rig:L_middle10
+    400292: Rig:L_middle11
+    400294: Rig:L_middle12
+    400296: Rig:L_middle13
+    400298: Rig:L_middle14
+    400300: Rig:L_middle15
+    400302: Rig:L_middle16
+    400304: Rig:L_middle17
+    400306: Rig:L_middle18
+    400308: Rig:L_middle19
+    400310: Rig:L_middle2
+    400312: Rig:L_middle20
+    400314: Rig:L_middle21
+    400316: Rig:L_middle22
+    400318: Rig:L_middle23
+    400320: Rig:L_middle24
+    400322: Rig:L_middle25
+    400324: Rig:L_middle26
+    400326: Rig:L_middle27
+    400328: Rig:L_middle28
+    400330: Rig:L_middle29
+    400332: Rig:L_middle3
+    400334: Rig:L_middle4
+    400336: Rig:L_middle5
+    400338: Rig:L_middle6
+    400340: Rig:L_middle7
+    400342: Rig:L_middle8
+    400344: Rig:L_middle9
+    400346: Rig:L_middlectrl
+    400348: Rig:L_middlectrl5
+    400350: Rig:L_middlefoot
+    400352: Rig:L_pinky
+    400354: Rig:L_pinky 1
+    400356: Rig:L_pinky 10
+    400358: Rig:L_pinky 11
+    400360: Rig:L_pinky 12
+    400362: Rig:L_pinky 13
+    400364: Rig:L_pinky 14
+    400366: Rig:L_pinky 15
+    400368: Rig:L_pinky 16
+    400370: Rig:L_pinky 17
+    400372: Rig:L_pinky 18
+    400374: Rig:L_pinky 19
+    400376: Rig:L_pinky 2
+    400378: Rig:L_pinky 20
+    400380: Rig:L_pinky 21
+    400382: Rig:L_pinky 22
+    400384: Rig:L_pinky 23
+    400386: Rig:L_pinky 24
+    400388: Rig:L_pinky 25
+    400390: Rig:L_pinky 26
+    400392: Rig:L_pinky 27
+    400394: Rig:L_pinky 28
+    400396: Rig:L_pinky 29
+    400398: Rig:L_pinky 3
+    400400: Rig:L_pinky 30
+    400402: Rig:L_pinky 31
+    400404: Rig:L_pinky 32
+    400406: Rig:L_pinky 33
+    400408: Rig:L_pinky 34
+    400410: Rig:L_pinky 35
+    400412: Rig:L_pinky 36
+    400414: Rig:L_pinky 37
+    400416: Rig:L_pinky 38
+    400418: Rig:L_pinky 39
+    400420: Rig:L_pinky 4
+    400422: Rig:L_pinky 40
+    400424: Rig:L_pinky 41
+    400426: Rig:L_pinky 42
+    400428: Rig:L_pinky 43
+    400430: Rig:L_pinky 44
+    400432: Rig:L_pinky 45
+    400434: Rig:L_pinky 46
+    400436: Rig:L_pinky 47
+    400438: Rig:L_pinky 48
+    400440: Rig:L_pinky 49
+    400442: Rig:L_pinky 5
+    400444: Rig:L_pinky 50
+    400446: Rig:L_pinky 51
+    400448: Rig:L_pinky 52
+    400450: Rig:L_pinky 53
+    400452: Rig:L_pinky 54
+    400454: Rig:L_pinky 55
+    400456: Rig:L_pinky 56
+    400458: Rig:L_pinky 57
+    400460: Rig:L_pinky 58
+    400462: Rig:L_pinky 59
+    400464: Rig:L_pinky 6
+    400466: Rig:L_pinky 60
+    400468: Rig:L_pinky 7
+    400470: Rig:L_pinky 8
+    400472: Rig:L_pinky 9
+    400474: Rig:L_pinky10
+    400476: Rig:L_pinky11
+    400478: Rig:L_pinky12
+    400480: Rig:L_pinky13
+    400482: Rig:L_pinky14
+    400484: Rig:L_pinky15
+    400486: Rig:L_pinky16
+    400488: Rig:L_pinky17
+    400490: Rig:L_pinky18
+    400492: Rig:L_pinky19
+    400494: Rig:L_pinky20
+    400496: Rig:L_pinky21
+    400498: Rig:L_pinky22
+    400500: Rig:L_pinky23
+    400502: Rig:L_pinky24
+    400504: Rig:L_pinky25
+    400506: Rig:L_pinky26
+    400508: Rig:L_pinky27
+    400510: Rig:L_pinky28
+    400512: Rig:L_pinky29
+    400514: Rig:L_pinky30
+    400516: Rig:L_pinky31
+    400518: Rig:L_pinky32
+    400520: Rig:L_pinky33
+    400522: Rig:L_pinky34
+    400524: Rig:L_pinky35
+    400526: Rig:L_pinky36
+    400528: Rig:L_pinky37
+    400530: Rig:L_pinky38
+    400532: Rig:L_pinky9
+    400534: Rig:L_pinkyctrl
+    400536: Rig:L_ring
+    400538: Rig:L_ring 1
+    400540: Rig:L_ring 10
+    400542: Rig:L_ring 11
+    400544: Rig:L_ring 12
+    400546: Rig:L_ring 13
+    400548: Rig:L_ring 14
+    400550: Rig:L_ring 15
+    400552: Rig:L_ring 16
+    400554: Rig:L_ring 17
+    400556: Rig:L_ring 18
+    400558: Rig:L_ring 19
+    400560: Rig:L_ring 2
+    400562: Rig:L_ring 20
+    400564: Rig:L_ring 21
+    400566: Rig:L_ring 22
+    400568: Rig:L_ring 23
+    400570: Rig:L_ring 24
+    400572: Rig:L_ring 25
+    400574: Rig:L_ring 26
+    400576: Rig:L_ring 27
+    400578: Rig:L_ring 28
+    400580: Rig:L_ring 29
+    400582: Rig:L_ring 3
+    400584: Rig:L_ring 30
+    400586: Rig:L_ring 4
+    400588: Rig:L_ring 5
+    400590: Rig:L_ring 6
+    400592: Rig:L_ring 7
+    400594: Rig:L_ring 8
+    400596: Rig:L_ring 9
+    400598: Rig:L_ring1
+    400600: Rig:L_ring10
+    400602: Rig:L_ring11
+    400604: Rig:L_ring12
+    400606: Rig:L_ring13
+    400608: Rig:L_ring14
+    400610: Rig:L_ring15
+    400612: Rig:L_ring16
+    400614: Rig:L_ring17
+    400616: Rig:L_ring18
+    400618: Rig:L_ring19
+    400620: Rig:L_ring2
+    400622: Rig:L_ring20
+    400624: Rig:L_ring21
+    400626: Rig:L_ring22
+    400628: Rig:L_ring23
+    400630: Rig:L_ring24
+    400632: Rig:L_ring25
+    400634: Rig:L_ring26
+    400636: Rig:L_ring27
+    400638: Rig:L_ring28
+    400640: Rig:L_ring29
+    400642: Rig:L_ring3
+    400644: Rig:L_ring4
+    400646: Rig:L_ring5
+    400648: Rig:L_ring6
+    400650: Rig:L_ring7
+    400652: Rig:L_ring8
+    400654: Rig:L_ring9
+    400656: Rig:L_ringctrl
+    400658: Rig:L_ringctrl5
+    400660: Rig:L_shoulder
+    400662: Rig:L_shoulder1
+    400664: Rig:L_shoulderctrl
+    400666: Rig:L_thumb
+    400668: Rig:L_thumb 1
+    400670: Rig:L_thumb 10
+    400672: Rig:L_thumb 11
+    400674: Rig:L_thumb 12
+    400676: Rig:L_thumb 13
+    400678: Rig:L_thumb 14
+    400680: Rig:L_thumb 15
+    400682: Rig:L_thumb 16
+    400684: Rig:L_thumb 17
+    400686: Rig:L_thumb 18
+    400688: Rig:L_thumb 19
+    400690: Rig:L_thumb 2
+    400692: Rig:L_thumb 20
+    400694: Rig:L_thumb 21
+    400696: Rig:L_thumb 22
+    400698: Rig:L_thumb 23
+    400700: Rig:L_thumb 24
+    400702: Rig:L_thumb 25
+    400704: Rig:L_thumb 26
+    400706: Rig:L_thumb 27
+    400708: Rig:L_thumb 28
+    400710: Rig:L_thumb 29
+    400712: Rig:L_thumb 3
+    400714: Rig:L_thumb 30
+    400716: Rig:L_thumb 4
+    400718: Rig:L_thumb 5
+    400720: Rig:L_thumb 6
+    400722: Rig:L_thumb 7
+    400724: Rig:L_thumb 8
+    400726: Rig:L_thumb 9
+    400728: Rig:L_thumb1
+    400730: Rig:L_thumb10
+    400732: Rig:L_thumb11
+    400734: Rig:L_thumb12
+    400736: Rig:L_thumb13
+    400738: Rig:L_thumb14
+    400740: Rig:L_thumb15
+    400742: Rig:L_thumb16
+    400744: Rig:L_thumb17
+    400746: Rig:L_thumb18
+    400748: Rig:L_thumb19
+    400750: Rig:L_thumb2
+    400752: Rig:L_thumb20
+    400754: Rig:L_thumb21
+    400756: Rig:L_thumb22
+    400758: Rig:L_thumb23
+    400760: Rig:L_thumb24
+    400762: Rig:L_thumb25
+    400764: Rig:L_thumb26
+    400766: Rig:L_thumb27
+    400768: Rig:L_thumb28
+    400770: Rig:L_thumb29
+    400772: Rig:L_thumb3
+    400774: Rig:L_thumb4
+    400776: Rig:L_thumb5
+    400778: Rig:L_thumb6
+    400780: Rig:L_thumb7
+    400782: Rig:L_thumb8
+    400784: Rig:L_thumb9
+    400786: Rig:L_thumbctrl3
+    400788: Rig:L_toereverse
+    400790: Rig:L_wrist
+    400792: Rig:Neck
+    400794: Rig:neck
+    400796: Rig:R_ankle
+    400798: Rig:R_ball
+    400800: Rig:R_ballreverse
+    400802: Rig:R_calcanhar
+    400804: Rig:R_elbow
+    400806: Rig:R_eye
+    400808: Rig:R_hand
+    400810: Rig:R_heelreverse
+    400812: Rig:R_index
+    400814: Rig:R_index1
+    400816: Rig:R_index2
+    400818: Rig:R_index3
+    400820: Rig:R_indexctrl
+    400822: Rig:R_indexctrl6
+    400824: Rig:R_knee
+    400826: Rig:R_leg
+    400828: Rig:R_legctrl
+    400830: Rig:R_middle
+    400832: Rig:R_middle2
+    400834: Rig:R_middle3
+    400836: Rig:R_middle4
+    400838: Rig:R_middlectrl
+    400840: Rig:R_middlectrl6
+    400842: Rig:R_middlefoot
+    400844: Rig:R_pinky
+    400846: Rig:R_pinky1
+    400848: Rig:R_pinky10
+    400850: Rig:R_pinky3
+    400852: Rig:R_pinky4
+    400854: Rig:R_pinkyctrl
+    400856: Rig:R_ring
+    400858: Rig:R_ring1
+    400860: Rig:R_ring2
+    400862: Rig:R_ring4
+    400864: Rig:R_ringctrl
+    400866: Rig:R_ringctrl6
+    400868: Rig:R_shoulder
+    400870: Rig:R_shoulder1
+    400872: Rig:R_shoulderctrl
+    400874: Rig:R_thumb
+    400876: Rig:R_thumb1
+    400878: Rig:R_thumb2
+    400880: Rig:R_thumbctrl
+    400882: Rig:R_toereverse
+    400884: Rig:R_wrist
+    400886: Rig:R_wristctrl
+    400888: Rig:root
+    400890: Rig:rootctrl
+    400892: Rig:something
+    400894: rosto
+    400896: transform1
+    400898: transform3
+    400900: transform4
+    2100000: lambert1
+    4300000: cabelo
+    4300002: rosto
+    4300004: olhos
+    4300006: corpo
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: cabelo
+    13700002: corpo
+    13700004: olhos
+    13700006: rosto
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 6
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
