@@ -119,7 +119,6 @@ public class Lanterna : MonoBehaviour {
         }
     }
 
-
     Collider RayDetection(Vector3 origin ,Vector3 direction, float maxDist) {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, direction, out hit, maxDist)) {
@@ -150,6 +149,7 @@ public class Lanterna : MonoBehaviour {
 
 
     public void LightOff() {
+        if (isTurnedOn) DesligarSound.Play();
         myLight.enabled = false;
         isTurnedOn = false;
     }
@@ -159,6 +159,7 @@ public class Lanterna : MonoBehaviour {
     }
 
     public void LightOn() {
+        if (!isTurnedOn) LigarSound.Play();
         isTurnedOn = true;
         Invoke("TrueLightOn", 0.2f);
     }
