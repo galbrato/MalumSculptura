@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 1988689344248510944}
   - component: {fileID: 3512149740253017931}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: colisaoComEstatua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
