@@ -591,7 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   superficie1: {fileID: 4132030509663774352}
   superficie2: {fileID: 8861179057048717876}
-  variacaoAng: 90
+  variacaoAng: 85
   velA: 50
   velF: 50
   gira: {fileID: 5301746744274109779}
