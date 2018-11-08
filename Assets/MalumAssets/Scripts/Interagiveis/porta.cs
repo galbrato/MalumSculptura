@@ -57,8 +57,8 @@ public class porta : MonoBehaviour {
     }
 
 	
-	//funcao chamada por superficieInteragivel
-	public void interacao3(int id){
+	//funcao chamada por superficieInteragivel quando player interage
+	public void interacao2(int id){
 
 		if(estado == state.fechado)
 			sentido = id;
@@ -68,7 +68,9 @@ public class porta : MonoBehaviour {
 			if(sentido == 1)
 				anguloMax = anguloInicial + variacaoAng;
 			else{
-				anguloMax = (anguloInicial + variacaoAng+180)%360;
+				anguloMax = anguloInicial - variacaoAng;
+				if(anguloMax < 0)
+					anguloMax = 360 + anguloMax;
 			}
 			if(anguloMax == 0)anguloMax = 1;
 			if(anguloMax == 360)anguloMax = 359;
@@ -97,10 +99,41 @@ public class porta : MonoBehaviour {
 
 
 
+	//funcao chamada por superficieInteragivel quando estatua interage(abrindo porta)
+	public void interacao3(int id){
+
+
+		velA = Mathf.Abs(velA)*sentido;
+		velF = Mathf.Abs(velF)*sentido;
+		if(sentido == 1)
+			anguloMax = anguloInicial + variacaoAng;
+		else{
+			anguloMax = anguloInicial - variacaoAng;
+			if(anguloMax < 0)
+				anguloMax = 360 + anguloMax;
+		}
+		if(anguloMax == 0)anguloMax = 1;
+		if(anguloMax == 360)anguloMax = 359;
+		anguloInicial = Mathf.Abs(anguloInicial);
+	
+		if(estado==state.fechado || estado==state.fechado)
+			Abrir();
+
+	}
+
 	void Update(){
-		
+		Debug.Log(anguloMax+" "+anguloInicial+" "+gira.eulerAngles.y);
 		anguloAnterior = gira.eulerAngles.y;
 
+		if(gira.eulerAngles.y> 360)
+			gira.position = new Vector3(gira.eulerAngles.x,(gira.eulerAngles.y)%360,gira.eulerAngles.z);
+		else if(gira.eulerAngles.y < 0){
+			float novoAngulo = gira.eulerAngles.y;
+			while(novoAngulo < 0){
+				novoAngulo+=360;
+			}
+			gira.position = new Vector3(gira.eulerAngles.x,novoAngulo,gira.eulerAngles.z);
+		}
 
 		//rotaciona 
 		if(estado == state.abrindo){
