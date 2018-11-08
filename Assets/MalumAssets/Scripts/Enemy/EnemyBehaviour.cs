@@ -55,10 +55,7 @@ public class EnemyBehaviour : MonoBehaviour {
         } else {
             mAgent.speed = Speed;
         }
-        Vector3 aux = Camera.main.transform.position;
-        aux.y = transform.position.y;
-        transform.LookAt(aux);
-    }
+   }
 
     private bool CanSeePlayer() {
         RaycastHit hit;
@@ -111,7 +108,9 @@ public class EnemyBehaviour : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         
         Debug.Log("colidi com o " + other.gameObject.name);
-
+        if (other.CompareTag("Porta")) {
+            other.gameObject.GetComponent<SuperficieInteragivel>().interacao3(transform);
+        }
 
         if (other.gameObject.CompareTag("Player")) {
             TriggerEnterCounter++;
@@ -136,7 +135,7 @@ public class EnemyBehaviour : MonoBehaviour {
         }
 
         if (other.CompareTag("Porta")) {
-            other.gameObject.GetComponent<porta>().Fechar();
+            other.gameObject.GetComponent<SuperficieInteragivel>().interacao3(transform);
         }
     }
 
