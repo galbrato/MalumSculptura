@@ -17,16 +17,13 @@ public class cryingStatue : interagivel {
 	bool necessitaMudarPos = true;
 	int nivelChoro = 0;//0=sem choro;1=com choro;2=puto
 
-	public  Renderer m_Renderer;
 
-	private Lanterna lanterna;
 
 
 	protected override void comeco(){
 		spawns =  FindObjectsOfType<cryingSpawn>();
 		timer = maxTimer * 0.85f;
 		mudarDePos(posInicial);
-		lanterna  =  FindObjectOfType<Lanterna>();
 	}
 
 
@@ -43,7 +40,7 @@ public class cryingStatue : interagivel {
 
 	void Update() {
 
-		Debug.Log(teleportes);
+		Debug.Log(teleportes+" "+timer);
 		timer -= Time.deltaTime;
 
 		if(timer <= maxTimer * 0.85f){
@@ -57,6 +54,8 @@ public class cryingStatue : interagivel {
 				nivelChoro = 2;
 				teleportes = -1;
 				textInteragir = "";
+				KillPlayer kill = GetComponent<KillPlayer>();
+				kill.enabled = true;
 				Debug.Log("Jump Scare e Matar Player");
 			}
 		}
@@ -107,11 +106,15 @@ public class cryingStatue : interagivel {
 
 
 	private void piscaLanterna() {
-		Debug.Log("a");
-        Invoke("piscaLanterna2", 0.1f);
+		necessitaMudarPos = false;
+
+        Invoke("piscaLanterna2", 1f);
     }
     private void piscaLanterna2(){
-        lanterna.isTurnedOn = false;
+        Lanterna.instance.LightOff();
+
+		Debug.Log("q");
+
 		if(teleportes>1)
 			mudarDePos();
 		else if(teleportes==1){
@@ -123,7 +126,7 @@ public class cryingStatue : interagivel {
         Invoke("piscaLanterna3", 0.1f);
     }
     private void piscaLanterna3(){
-        lanterna.isTurnedOn = true;
+        Lanterna.instance.LightOn();
     }
 }
 
