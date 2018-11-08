@@ -63,18 +63,18 @@ public class porta : MonoBehaviour {
 		if(estado == state.fechado)
 			sentido = id;
 
-			velA = Mathf.Abs(velA)*sentido;
-			velF = Mathf.Abs(velF)*sentido;
-			if(sentido == 1)
-				anguloMax = anguloInicial + variacaoAng;
-			else{
-				anguloMax = anguloInicial - variacaoAng;
-				if(anguloMax < 0)
-					anguloMax = 360 + anguloMax;
-			}
-			if(anguloMax == 0)anguloMax = 1;
-			if(anguloMax == 360)anguloMax = 359;
-			anguloInicial = Mathf.Abs(anguloInicial);
+		velA = Mathf.Abs(velA)*sentido;
+		velF = Mathf.Abs(velF)*sentido;
+		if(sentido == 1)
+			anguloMax = anguloInicial + variacaoAng;
+		else{
+			anguloMax = anguloInicial - variacaoAng;
+			if(anguloMax < 0)
+				anguloMax = 360 + anguloMax;
+		}
+		if(anguloMax == 0)anguloMax = 1;
+		if(anguloMax == 360)anguloMax = 359;
+		anguloInicial = Mathf.Abs(anguloInicial);
 	
 		
 		//maquina de estado
@@ -181,4 +181,7 @@ public class porta : MonoBehaviour {
 		atualizarEstado(state.trancado);
 		gira.eulerAngles = new Vector3(gira.eulerAngles.x,anguloInicial,gira.eulerAngles.z);
 	}
+
+
+
 }

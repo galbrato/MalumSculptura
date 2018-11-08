@@ -446,11 +446,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textInteragir: 
-  distMin: 100
-  tempoDeJogo: 180
+  distMin: 3
+  tempoDeJogo: 540
   tempo: 0
-  tempoAtivoMax: 100
-  forcaDarCorda: 5
+  tempoAtivoMax: 90
+  forcaDarCorda: 30
   pontP: {fileID: 2119122498390351921}
   pontG: {fileID: 6906043769543738915}
   windingClip:

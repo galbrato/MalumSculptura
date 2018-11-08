@@ -65,4 +65,11 @@ public class SuperficieInteragivel : interagivel{
                 Porta.interacao3(-1);
         }
     }
+
+    //estatua fechando porta
+    public void InteracaoEstatuaFechar(){
+        if(Porta.estado == porta.state.fechado)
+            return;
+        Porta.Fechar();
+    }
 }
