@@ -86,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpScareDistance: 0.4
   Grito: {fileID: 230163619}
-  poseChorando: {fileID: 5871455420530716729}
-  poseAtacando: {fileID: 5172627181009128976}
+  PoseChorando: {fileID: 5871455420530716729}
+  PoseAtacando: {fileID: 5172627181009128976}
 --- !u!114 &4145008913340143729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,10 +105,6 @@ MonoBehaviour:
   maxTimer: 30
   posInicial: {fileID: 0}
   posSegunda: {fileID: 0}
-  m_Renderer: {fileID: 0}
-  texturaChoro: {fileID: 2100000, guid: cc9bbe98e339a3241813767ea14f6912, type: 2}
-  texturaSemChoro: {fileID: 2100000, guid: 831748a65a695b943a9d0cc299f2121f, type: 2}
-  observado: 0
 --- !u!1 &2897046257661612267
 GameObject:
   m_ObjectHideFlags: 0

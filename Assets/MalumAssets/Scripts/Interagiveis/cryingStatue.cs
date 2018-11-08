@@ -40,7 +40,7 @@ public class cryingStatue : interagivel {
 
 	void Update() {
 
-		Debug.Log(teleportes+" "+timer);
+		//Debug.Log(teleportes+" "+timer);
 		timer -= Time.deltaTime;
 
 		if(timer <= maxTimer * 0.85f){

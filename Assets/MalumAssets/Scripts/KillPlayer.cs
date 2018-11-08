@@ -10,7 +10,10 @@ public class KillPlayer : MonoBehaviour{
     Transform myHead;
     private FirstPersonController player;
     public AudioSource Grito;
-   bool morreu = false;
+    bool morreu = false;
+    public GameObject PoseChorando;
+    public GameObject PoseAtacando;
+
     // Start is called before the first frame update
     void Start(){
         //Invoke("doit", 0.1f);
@@ -23,7 +26,10 @@ public class KillPlayer : MonoBehaviour{
 
     void doit() {
         GetComponent<BoxCollider>().enabled = false;
- 
+
+        PoseChorando.SetActive(false);
+        PoseAtacando.SetActive(true);
+
         mAgent = GetComponent<NavMeshAgent>();
         mAgent.enabled = true;
         mAgent.SetDestination(Camera.main.transform.position);

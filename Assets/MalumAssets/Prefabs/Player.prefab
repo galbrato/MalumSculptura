@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 20950838649337894}
   - component: {fileID: 81882514198434366}
   - component: {fileID: 124815518058739552}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4389505840404248}
   - component: {fileID: 33541732097414638}
   - component: {fileID: 23564652689248808}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4694408818929726}
   - component: {fileID: 108798813895120516}
   - component: {fileID: 114315836207589392}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Lanterna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,8 +213,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3
-  m_Range: 8.72
-  m_SpotAngle: 47
+  m_Range: 10.69
+  m_SpotAngle: 83
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -223,7 +223,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 6.3
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -251,16 +251,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce6506d777be9c4bb5f49916d88239c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seekMouse: 1
-  nRays: 100
-  nCircles: 30
+  seekMouse: 0
+  nRays: 60
+  nCircles: 20
   addicionalAngle: 5
   debug: 1
   isTurnedOn: 1
   BaterryDuration: 60
   BaterryRecoveryDuration: 30
   BaterryCounter: 0
-  LightDecressPoint: 6
+  LightDecressPoint: 90
 --- !u!1 &1998250777855408
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,9 @@ GameObject:
   - component: {fileID: 54217791704400684}
   - component: {fileID: 82377693280557474}
   - component: {fileID: 1554782629}
-  m_Layer: 0
+  - component: {fileID: 4175162745941364977}
+  - component: {fileID: 1554782635}
+  m_Layer: 1
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -334,7 +336,7 @@ MonoBehaviour:
   m_WalkSpeed: 3
   m_RunSpeed: 6
   m_RunstepLenghten: 0.7
-  m_JumpSpeed: 10
+  m_JumpSpeed: 0
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
   m_MouseLook:
@@ -567,6 +569,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirVisao: {x: 0, y: 0, z: 0}
+  layerInteragivel:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &4175162745941364977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998250777855408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d9b5f8f36f4ec4a932bca2425409c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirVisao: {x: 0, y: 0, z: 0}
+  layerInteragivel:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &1554782635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998250777855408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7059eabbc50d24e8482d454cf3913e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StaminaDuration: 4
+  ActualStamina: 0
 --- !u!1 &5581428730906127651
 GameObject:
   m_ObjectHideFlags: 0
