@@ -26,13 +26,21 @@ public class Lanterna : MonoBehaviour {
 
     public static Lanterna instance = null;
 
+    private AudioSource LigarSound;
+    private AudioSource DesligarSound;
+
     private float OriginalRange;
     private void Awake() {
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+
+        AudioSource[] ads = GetComponents<AudioSource>();
+        LigarSound = ads[0];
+        DesligarSound = ads[1];
     }
+
 
     void Start() {
         BaterryCounter = BaterryDuration;
@@ -47,7 +55,7 @@ public class Lanterna : MonoBehaviour {
             LightOff();
         }
 
-        if (Input.GetButtonUp("Fire1") ) {
+        if (Input.GetButtonUp("Fire1")) {
             LightOn();
         }
 
@@ -111,7 +119,6 @@ public class Lanterna : MonoBehaviour {
         }
     }
 
-
     Collider RayDetection(Vector3 origin ,Vector3 direction, float maxDist) {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, direction, out hit, maxDist)) {
@@ -142,17 +149,19 @@ public class Lanterna : MonoBehaviour {
 
 
     public void LightOff() {
+        if (isTurnedOn) DesligarSound.Play();
         myLight.enabled = false;
         isTurnedOn = false;
     }
 
     public void TrueLightOn() {
-        myLight.enabled = true;
+        if(isTurnedOn)myLight.enabled = true;
     }
 
     public void LightOn() {
+        if (!isTurnedOn) LigarSound.Play();
         isTurnedOn = true;
-        Invoke("TrueLightOn", 0.1f);
+        Invoke("TrueLightOn", 0.2f);
     }
 
     private void Recharge() {

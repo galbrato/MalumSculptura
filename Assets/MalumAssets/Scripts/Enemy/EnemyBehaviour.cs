@@ -24,7 +24,12 @@ public class EnemyBehaviour : MonoBehaviour {
     public GameObject PoseFingida;
     public GameObject PoseJumpScare;
 
+    public AudioSource StepAudioSource;
+
     private void Awake() {
+
+        lastPosition = transform.position;
+
         EndGame = false;
 
         Player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -47,8 +52,22 @@ public class EnemyBehaviour : MonoBehaviour {
         }
     }
 
+    private Vector3 lastPosition ;
 	// Update is called once per frame
 	void Update () {
+        
+        if ((lastPosition - transform.position).magnitude > 0.01f) {
+            Debug.Log("CORRE");
+            if (!StepAudioSource.isPlaying) {
+                StepAudioSource.Play();
+            }
+        } else {
+            Debug.Log("PARADINHA AI");
+            StepAudioSource.Stop();
+        }
+
+        lastPosition = transform.position;
+
         StateMachine.SetBool("CanSeePlayer", CanSeePlayer());
         if (stop) {
             if(!EndGame)stop = false;
