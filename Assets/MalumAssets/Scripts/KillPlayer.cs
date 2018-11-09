@@ -43,10 +43,13 @@ public class KillPlayer : MonoBehaviour{
                 break;
             }
         }
+        Lanterna.instance.enabled = false;
+
     }
 
     // Update is called once per frame
     void Update(){
+        if (morreu) return;
         //calculando posição do player
         Vector3 playerPosition = Camera.main.transform.position;
         playerPosition.y = transform.position.y;
