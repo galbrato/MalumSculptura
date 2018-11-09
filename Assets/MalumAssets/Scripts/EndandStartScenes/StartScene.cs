@@ -18,7 +18,7 @@ public class StartScene : MonoBehaviour{
         
         //comecar jogo
         if(Input.GetMouseButton(1)){
-            SceneManager.LoadScene("sasaki");
+            SceneManager.LoadScene("cartaz");
         }
     }
 
