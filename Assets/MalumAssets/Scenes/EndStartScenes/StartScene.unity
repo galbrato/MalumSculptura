@@ -387,8 +387,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoUi: {fileID: 340916946}
-  texto: "Bem vindo a mans\xE3o, ficarei a noite fora, tente sobreviver nela. Ah,
-    al\xE9m disso, recomendo dar corda no rel\xF3gio."
+  texto: "Ok, o desafio \xE9 o seguinte: a gente vai te deixar trancado nessa casa
+    macabra at\xE9 de manh\xE3. Quando der seis horas, a gente destranca a porta.
+    Se estiver demorando pro tempo passar, d\xE1 uma olhada no rel\xF3gio. Ah, e essa
+    lanterna que a gente te deu recarrega sozinha quando fica desligada. Boa sorte"
 --- !u!4 &533827534
 Transform:
   m_ObjectHideFlags: 0
