@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3800160327183018349}
   - component: {fileID: 2119122498390351921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PonteiroP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 2156128829625536847}
   - component: {fileID: 1107260540095104399}
   - component: {fileID: 4855390666331518044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5035247093438031248}
   - component: {fileID: 514667176688456870}
   - component: {fileID: 5180971407077192386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1198442643297330155}
   - component: {fileID: 3631667632997168706}
   - component: {fileID: 1936925819587173065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 7513581833457997027}
   - component: {fileID: 7513581833458799811}
   - component: {fileID: 7513581833459766787}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Clock_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 1886033305535588680}
   - component: {fileID: 4180657404352089079}
   - component: {fileID: 1598041688177119297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,10 +479,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 10
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -515,7 +515,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -578,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8574406635610192746}
   - component: {fileID: 6906043769543738915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PonteiroG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
