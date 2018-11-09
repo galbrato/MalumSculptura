@@ -43,6 +43,8 @@ public class KillPlayer : MonoBehaviour{
                 break;
             }
         }
+        Lanterna.instance.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -72,7 +74,6 @@ public class KillPlayer : MonoBehaviour{
             mAgent.speed = 0;
             if(!morreu) Grito.Play();
             morreu = true;
-            Lanterna.instance.enabled = false;
         }
     }
     
