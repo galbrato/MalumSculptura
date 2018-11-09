@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class EndScene : MonoBehaviour{
+
+public class StartScene : MonoBehaviour{
     public Text textoUi;
 
-    public string texto = "Parabéns, você sobreviveu esta noite.  Convide seus amigos para este desafio.";
+    public string texto = "Bem vindo a mansão, ficarei a noite fora, tente sobreviver nela. Ah, além disso, recomendo dar corda no relógio.";
     private string newTexto;
-    void Start (){
+    void Start (){     
+
         StartCoroutine(EscreverTela());
     }
     void Update () {
-
+        
+        //comecar jogo
         if(Input.GetMouseButton(1)){
-            SceneManager.LoadScene("MenuInicial");
-            //qual eh a cena menu??
-            //SceneManager.LoadScene("cenaInicial");
+            SceneManager.LoadScene("sasaki");
         }
     }
+
+
 
     IEnumerator EscreverTela(){
 

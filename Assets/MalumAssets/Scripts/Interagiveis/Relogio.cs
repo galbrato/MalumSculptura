@@ -82,7 +82,7 @@ public class Relogio : interagivel {
 	}
 
 	void Update () {
-
+		Debug.Log(tempo);
 		//caso relogio ativo
 		if(tempoAtivo > 0f){
 			tempoAtivo -= Time.deltaTime; 
@@ -95,7 +95,7 @@ public class Relogio : interagivel {
 		//termino do jogo
 		if(tempo >= tempoDeJogo && !aconteceuBatidaFinal){
 			audioBatidaHora.Play();
-			Debug.Log("acaba o jogo");
+			FindObjectOfType<EscurecerTela>().enabled = true;
 			audioWinding.Stop();
 			audioTick.Stop();
 			aconteceuBatidaFinal = true;
