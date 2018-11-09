@@ -5,47 +5,53 @@ using UnityEngine;
 public class cryingStatue : interagivel {
 	public float maxTimer;
 
+	public float tempoEntreTeleportes;
 	float timer;
-
+	bool cooldown = false;
 	cryingSpawn[] spawns;
 	cryingSpawn spawnAtual;
 
 	public MeshRenderer posInicial;//posição onde será teleportada pela primeira vez a cryingStatue
 	public MeshRenderer posSegunda;//posição que será teleportada pela segunda vez a cryingStatue
-	private int teleportes = 0;//quantos teleportes a cryingStatue já fez;caso -1, ela não dará mais teleportes
 
-	bool necessitaMudarPos = true;
+	bool necessitaMudarPos = false;
 	int nivelChoro = 0;//0=sem choro;1=com choro;2=puto
+	public Transform posVoid;//posicao caso fora da cena
 
     //variaveis para iniciar a estatua amaldiçoada
     public EnemyBehaviour CursedStatue;
     private bool FirstTime = true;
 
+	private Relogio relogio;
+	public bool ativadaUmaVez = false;
+	[HideInInspector]
+	private bool ativadaDuasVezes = false;
+
+	private BoxCollider m_colider;
 
 	protected override void comeco(){
         if(CursedStatue == null) {
             Debug.LogError("ME DA REFERENCIA PARA A ESTATUA AMALDIÇOADA");
         }
 		spawns =  FindObjectsOfType<cryingSpawn>();
-		timer = maxTimer * 0.85f;
-		mudarDePos(posInicial);
+		m_colider = GetComponent<BoxCollider>();
+		EntrarVoid();
 	}
 
 
 
 	//player interage com a estátua
 	public override void interacao2(){
-		if(nivelChoro != 0){
-			timer = maxTimer;
-			nivelChoro = 0;
-			necessitaMudarPos = true;
-			textInteragir = "";
-		}
+		timer = maxTimer;
+		nivelChoro = 0;
+		necessitaMudarPos = true;
+		textInteragir = "";
+		m_colider.enabled = false;
+
 	}
 
 	void Update() {
-
-		//Debug.Log(teleportes+" "+timer);
+		//Debug.Log(teleportes);
 		timer -= Time.deltaTime;
 
 		if(timer <= maxTimer * 0.85f){
@@ -57,7 +63,6 @@ public class cryingStatue : interagivel {
 			
 			if(timer <= 0f){
 				nivelChoro = 2;
-				teleportes = -1;
 				textInteragir = "";
 				KillPlayer kill = GetComponent<KillPlayer>();
 				kill.enabled = true;
@@ -67,7 +72,7 @@ public class cryingStatue : interagivel {
 
 
 		//mudar de posicao
-		if(teleportes > 0 && necessitaMudarPos){
+		if(necessitaMudarPos){
 			piscaLanterna();
 		}
 
@@ -75,66 +80,112 @@ public class cryingStatue : interagivel {
     }
 
 	void mudarDePos(){
+
 		cryingSpawn oldSpawn = spawnAtual;
+		timer = maxTimer;
 
 		bool aux = true;
 		for(int i=0;i<30 && aux;i++){
 			
 			spawnAtual = spawns[ Random.Range(0,spawns.Length)];
 
-			Transform oq = spawnAtual.gameObject.GetComponent<Transform>();
+//			Transform oq = spawnAtual.gameObject.GetComponent<Transform>();
 			//procurando spawn diferente do atual
 			aux = (spawnAtual == oldSpawn);
 			//procura spawn com distancia minima
 			aux |= (spawnAtual.obsertado());
 
 		}
-		if(aux == false){
-			necessitaMudarPos = false;
-			trans.position = spawnAtual.gameObject.transform.position;
-			spawnAtual.teleporte();
-			teleportes++;
-		}
+
+		textInteragir = "Enxugar lágrimas";
+		necessitaMudarPos = false;
+		trans.position = spawnAtual.gameObject.transform.position;
+		spawnAtual.teleporte();
+		m_colider.enabled = true;
 	}
 
 	//tenta teleportar crying statue caso spawn já definido
-	void mudarDePos(MeshRenderer spawn){
+	public void mudarDePos(MeshRenderer spawn){
 
-		if(!spawn.isVisible ){
-			trans.position = spawn.gameObject.transform.position;
-			teleportes++;
-			necessitaMudarPos = false;
-		}
+
+		textInteragir = "Enxugar lágrimas";
+		timer = maxTimer;
+		//Debug.Log(spawn.gameObject.transform.position);
+		trans.position = spawn.gameObject.transform.position;
+		
+		//Debug.Log("oque");
+		necessitaMudarPos = false;
+		spawn.gameObject.GetComponent<cryingSpawn>().teleporte();
+
+		if(ativadaDuasVezes)
+			StartCoroutine(mudarDePosicaoPeriodicamente());
+		
+		m_colider.enabled = true;
 	}
 
 
+	public void atualizarCooldown(){
+		cooldown = false;
+	}
+	public void piscaLanterna() {
 
-
-	private void piscaLanterna() {
+		if(cooldown == true)
+			return;
+		
+		cooldown = true;
+		Invoke("atualizarCooldown",1.2f);
 		necessitaMudarPos = false;
+
 
         Invoke("piscaLanterna2", 1f);
     }
     private void piscaLanterna2(){
         Lanterna.instance.LightOff();
 
-		Debug.Log("q");
 
-        if (teleportes > 1) {
-            mudarDePos();
-            if (FirstTime) {
-                FirstTime = false;
-                CursedStatue.enabled = true;
-            }
-        } else if (teleportes == 1) {
-            mudarDePos(posSegunda);
-        } else if (teleportes == 0) {
-            mudarDePos(posInicial);
-        }
+		//caso termina primeiro teleporte, ela irá na hora na nova posicao
+		if(!ativadaUmaVez){
+			mudarDePos(posInicial);
+			ativadaUmaVez = true;
+		}
+		else if(!ativadaDuasVezes){
+			mudarDePos(posSegunda);
+			ativadaDuasVezes = true;
+		}else{
+		//caso contrário vá para o void
+
+			EntrarVoid();
+		}
         Invoke("piscaLanterna3", 0.1f);
     }
     private void piscaLanterna3(){
         Lanterna.instance.LightOn();
     }
+
+
+IEnumerator mudarDePosicaoPeriodicamente() {
+
+    while(nivelChoro != 2) {
+        mudarDePos();
+
+        yield return new WaitForSeconds(tempoEntreTeleportes);
+    }
+}
+
+
+    private void EntrarVoid() {
+
+        timer = maxTimer * 10;//só para ter certeza
+
+        trans.position = posVoid.position;
+
+        if (ativadaUmaVez && ativadaDuasVezes) {
+            StartCoroutine(mudarDePosicaoPeriodicamente());
+            if (FirstTime) {
+                FirstTime = false;
+                CursedStatue.enabled = true;
+            }
+        }
+	}
 }
 

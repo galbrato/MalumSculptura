@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class Relogio : interagivel {
-    //variaveis para ligar a estatua que chora
-    public GameObject EstatuaAtormentada;
-    private bool FirtsCorda = true; 
 
 	public float tempoDeJogo = 30f;//tempo da fase
 	[HideInInspector]
@@ -33,6 +30,8 @@ public class Relogio : interagivel {
 	public AudioClip batidaClip;
 	//int horaAtual ;
 	bool aconteceuBatidaFinal = false;
+
+	private cryingStatue estatuaChorando;
 	protected override void comeco() {
         if(EstatuaAtormentada == null) {
             Debug.LogError("ME DA REFERENCIA PARA ESTATUA ATORMENTADA");
@@ -62,14 +61,12 @@ public class Relogio : interagivel {
 
 		textInteragir = "Dar Corda";
 		audioTick.Play();
+
+		estatuaChorando = FindObjectOfType<cryingStatue>();
 	}
 
 	public override void interacao(){
-        if (FirtsCorda) {
-            EstatuaAtormentada.SetActive(true);
-            FirtsCorda = false;
-        }
-
+ 
 
 		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
 			return;
@@ -79,6 +76,9 @@ public class Relogio : interagivel {
 			
 		pdDarCorda2 = false;
 
+		//caso primeira vez que da corda no relogio
+		if(!estatuaChorando.ativadaUmaVez)
+			estatuaChorando.piscaLanterna();
 
 		//nao caso chegue no valor maximo
 		if(!(tempoAtivo + forcaDarCorda> tempoAtivoMax)){
