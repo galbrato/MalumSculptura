@@ -175,8 +175,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6272383, y: 2.053449, z: 0.9235363}
-  m_Center: {x: -0.014337063, y: 1.0267245, z: 0.105137825}
+  m_Size: {x: 0.74409926, y: 2.053449, z: 1.1027219}
+  m_Center: {x: -0.010441614, y: 1.0267245, z: 0.015544564}
 --- !u!195 &4276472758530849018
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -398,8 +398,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19494793, y: 0.33587483, z: 0.2184053}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.08690109, y: 0.31904337, z: 0.117246434}
+  m_Center: {x: 0.013820054, y: -0.008415888, z: 0.0048171324}
 --- !u!1001 &5172627181009225904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: b4721ad7df25f824f86d0969c5573edc, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b4721ad7df25f824f86d0969c5573edc, type: 3}
       propertyPath: m_Name

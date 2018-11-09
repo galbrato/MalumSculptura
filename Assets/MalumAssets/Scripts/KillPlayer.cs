@@ -26,6 +26,8 @@ public class KillPlayer : MonoBehaviour{
 
     void doit() {
         GetComponent<BoxCollider>().enabled = false;
+        FindObjectOfType<Canvas>().gameObject.SetActive(false);
+
 
         PoseChorando.SetActive(false);
         PoseAtacando.SetActive(true);
@@ -73,6 +75,7 @@ public class KillPlayer : MonoBehaviour{
             Lanterna.instance.seekMouse = false;
             mAgent.speed = 0;
             if(!morreu) Grito.Play();
+
             morreu = true;
         }
     }

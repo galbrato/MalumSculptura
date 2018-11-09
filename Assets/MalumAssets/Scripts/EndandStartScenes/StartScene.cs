@@ -19,8 +19,16 @@ public class StartScene : MonoBehaviour{
     void Update () {
         if(audioIsOver)
         {
-            Destroy(textoUi);
-            Destroy(this.gameObject);
+            textoUi.enabled = false;
+        } else {
+            Vector3 player = Camera.main.transform.position;
+            Vector3 boku = transform.position;
+            if((boku - player).magnitude > 10) {
+                textoUi.enabled = false;
+            } else {
+                textoUi.enabled = true;
+
+            }
         }
     }
 

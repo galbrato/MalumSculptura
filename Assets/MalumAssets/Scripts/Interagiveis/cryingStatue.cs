@@ -100,7 +100,8 @@ public class cryingStatue : interagivel {
 		textInteragir = "Enxugar lágrimas";
 		necessitaMudarPos = false;
 		trans.position = spawnAtual.gameObject.transform.position;
-		spawnAtual.teleporte();
+		trans.rotation = spawnAtual.gameObject.transform.rotation;
+        spawnAtual.teleporte();
 		m_colider.enabled = true;
 	}
 
@@ -112,9 +113,10 @@ public class cryingStatue : interagivel {
 		timer = maxTimer;
 		//Debug.Log(spawn.gameObject.transform.position);
 		trans.position = spawn.gameObject.transform.position;
-		
-		//Debug.Log("oque");
-		necessitaMudarPos = false;
+		trans.rotation = spawn.gameObject.transform.rotation;
+
+        //Debug.Log("oque");
+        necessitaMudarPos = false;
 		spawn.gameObject.GetComponent<cryingSpawn>().teleporte();
 
 		if(ativadaDuasVezes)
