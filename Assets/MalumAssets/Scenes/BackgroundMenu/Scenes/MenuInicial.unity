@@ -432,15 +432,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'WASD - Andar
-
-    Shift - Correr
-
-    Lclick - Ligar/Desligar lanterna
-
-    RClick - Interagir
-
-'
+  m_Text: "WASD - Andar\nShift - Correr\nLclick - Ligar/Desligar lanterna \n(carrega
+    a bateria enquanto desligada)\nRClick - Interagir com objetos\n"
 --- !u!222 &183889250
 CanvasRenderer:
   m_ObjectHideFlags: 0

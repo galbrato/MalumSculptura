@@ -1305,7 +1305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4376946614432584, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.35
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 4376946614432584, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1313,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4376946614432584, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.15
+      value: -18.22
       objectReference: {fileID: 0}
     - target: {fileID: 4376946614432584, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1668,7 +1668,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-398698
+  m_Name: pb_Mesh-656234
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2495,6 +2495,11 @@ PrefabInstance:
       propertyPath: debug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114111351107032374, guid: f0c9b54f9b844e64e862219a5152ad32,
+        type: 3}
+      propertyPath: Speed
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c9b54f9b844e64e862219a5152ad32, type: 3}
 --- !u!114 &659790237 stripped
@@ -3284,7 +3289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901337731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10bcef26dfe0b8c4ab28ad7fa3f8020f, type: 3}
   m_Name: 
@@ -9019,7 +9024,7 @@ PrefabInstance:
     - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
         type: 3}
       propertyPath: maxTimer
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2193977529867054286, guid: 816d2991466014c4499af7ad3da5947a,
         type: 3}
@@ -9049,11 +9054,11 @@ PrefabInstance:
     - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
         type: 3}
       propertyPath: tempoEntreTeleportes
-      value: 60
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
       propertyPath: rolloffMode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
@@ -9091,6 +9096,10 @@ PrefabInstance:
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: MaxDistance
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
 --- !u!43 &2048547071
@@ -9099,7 +9108,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-422172
+  m_Name: pb_Mesh1046460
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10292,7 +10301,7 @@ PrefabInstance:
     - target: {fileID: 3702070300623588138, guid: 8b2010f4c185f1344ab733d644bb940f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5611565971385805876, guid: 8b2010f4c185f1344ab733d644bb940f,
         type: 3}

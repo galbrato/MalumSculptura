@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimePrediction: 1
-  RunSpeed: 3.5
+  RunSpeed: 3.2
 --- !u!114 &114520426911284454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8306d143a7d10842bdb8c0ea2ce47dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunSpeed: 3.5
+  RunSpeed: 3.2
 --- !u!114 &114807933631247006
 MonoBehaviour:
   m_ObjectHideFlags: 1
