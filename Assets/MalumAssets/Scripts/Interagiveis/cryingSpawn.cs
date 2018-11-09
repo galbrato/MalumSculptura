@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class cryingSpawn : MonoBehaviour {
-    public MeshRenderer[] meshPortas;
     public porta[] portas;
+
+    public MeshRenderer[] meshPortas;
     private MeshRenderer selff;
 
     void Start(){
@@ -14,11 +15,11 @@ public class cryingSpawn : MonoBehaviour {
         if(selff.isVisible)
             return true;
         
+
         for(int i = 0;i<meshPortas.Length;i++){
             if(meshPortas[i].isVisible){
                 return true;
             }
-
         }
          for(int i = 0;i<portas.Length;i++){
             if(portas[i].selfRender.isVisible){
@@ -34,6 +35,7 @@ public class cryingSpawn : MonoBehaviour {
     public void teleporte(){
         for(int i = 0;i<portas.Length;i++){
             portas[i].interacao4();
+           // Debug.Log(name);
 
         }
     }

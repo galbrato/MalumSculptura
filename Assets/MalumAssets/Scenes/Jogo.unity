@@ -175,6 +175,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8817116546d0e8d4ca521b8aae32cfe0, type: 3}
+--- !u!1 &125291358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125291359}
+  m_Layer: 0
+  m_Name: posVoid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125291359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125291358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.871229, y: 18.34927, z: -227.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &132168118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,6 +428,7 @@ GameObject:
   - component: {fileID: 283913916}
   - component: {fileID: 283913918}
   - component: {fileID: 283913917}
+  - component: {fileID: 283913919}
   m_Layer: 0
   m_Name: CryingSpot (4)
   m_TagString: Untagged
@@ -445,8 +476,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+--- !u!23 &283913919
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283913915}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &322035107
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &322035110
 BoxCollider:
@@ -650,9 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 850367542}
   - {fileID: 234938963}
@@ -1044,9 +1107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 850367542}
   - {fileID: 515660801}
@@ -1552,8 +1612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1915827516}
 --- !u!65 &500567027
@@ -2279,6 +2337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1320696507154070, guid: f0c9b54f9b844e64e862219a5152ad32, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c9b54f9b844e64e862219a5152ad32, type: 3}
 --- !u!114 &659790237 stripped
@@ -2551,10 +2613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1927965760}
-  - {fileID: 1742210528}
-  portas: []
+  portas:
+  - {fileID: 1301437435}
+  - {fileID: 1874811027}
 --- !u!65 &708103095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2613,7 +2674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708103093}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: -9.22, y: -0.5, z: -17.3}
+  m_LocalPosition: {x: -8.225, y: -0.092, z: -17.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1075343559}
@@ -2630,6 +2691,7 @@ GameObject:
   - component: {fileID: 729341349}
   - component: {fileID: 729341351}
   - component: {fileID: 729341350}
+  - component: {fileID: 729341352}
   m_Layer: 0
   m_Name: CryingSpot (3)
   m_TagString: Untagged
@@ -2677,8 +2739,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+--- !u!23 &729341352
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729341348}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1001 &743506622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2879,6 +2977,7 @@ GameObject:
   - component: {fileID: 866737811}
   - component: {fileID: 866737813}
   - component: {fileID: 866737812}
+  - component: {fileID: 866737814}
   m_Layer: 0
   m_Name: CryingSpot (6)
   m_TagString: Untagged
@@ -2926,8 +3025,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+--- !u!23 &866737814
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866737810}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &901337731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,6 +3153,7 @@ GameObject:
   - component: {fileID: 920196724}
   - component: {fileID: 920196726}
   - component: {fileID: 920196725}
+  - component: {fileID: 920196727}
   m_Layer: 0
   m_Name: CryingSpot (5)
   m_TagString: Untagged
@@ -3065,8 +3201,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+--- !u!23 &920196727
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920196723}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!4 &928581989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531277082286024, guid: 8817116546d0e8d4ca521b8aae32cfe0,
@@ -3118,7 +3290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &960833118
 BoxCollider:
@@ -3375,9 +3546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 262060587}
   - {fileID: 659790237}
@@ -4483,9 +4651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 659790237}
   - {fileID: 495781314}
@@ -5033,7 +5198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &1275905827
 BoxCollider:
@@ -5836,7 +6000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &1376011929
 BoxCollider:
@@ -5862,6 +6025,7 @@ GameObject:
   - component: {fileID: 1386408438}
   - component: {fileID: 1386408440}
   - component: {fileID: 1386408439}
+  - component: {fileID: 1386408441}
   m_Layer: 0
   m_Name: CryingSpot (1)
   m_TagString: Untagged
@@ -5909,11 +6073,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1874811027}
   - {fileID: 1301437435}
+--- !u!23 &1386408441
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386408437}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1394694159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,9 +6334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 1301437435}
   - {fileID: 1874811027}
@@ -7125,7 +7321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &1691590337
 BoxCollider:
@@ -7332,9 +7527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 262060587}
   - {fileID: 479928457}
@@ -7393,12 +7585,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4531277082286024, guid: 8817116546d0e8d4ca521b8aae32cfe0,
     type: 3}
   m_PrefabInstance: {fileID: 2062776383}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1742210528 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5493139515308501536, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1755575085
 Mesh:
@@ -8038,8 +8224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1577267010}
 --- !u!65 &1922572712
@@ -8137,9 +8321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 1990708115}
   - {fileID: 515660801}
@@ -8259,12 +8440,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1927965760 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8961964186654914908, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979195390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8485,6 +8660,26 @@ PrefabInstance:
       propertyPath: posSegunda
       value: 
       objectReference: {fileID: 708103096}
+    - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
+        type: 3}
+      propertyPath: maxTimer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
+        type: 3}
+      propertyPath: posVoid
+      value: 
+      objectReference: {fileID: 125291359}
+    - target: {fileID: 4276472758530849018, guid: 816d2991466014c4499af7ad3da5947a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
+        type: 3}
+      propertyPath: tempoEntreTeleportes
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
 --- !u!43 &2048547071
@@ -8713,6 +8908,7 @@ GameObject:
   - component: {fileID: 2096336571}
   - component: {fileID: 2096336573}
   - component: {fileID: 2096336572}
+  - component: {fileID: 2096336574}
   m_Layer: 0
   m_Name: CryingSpot
   m_TagString: Untagged
@@ -8760,10 +8956,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas: []
+--- !u!23 &2096336574
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096336570}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!43 &2100351833
 Mesh:
   m_ObjectHideFlags: 0
@@ -8935,6 +9165,7 @@ GameObject:
   - component: {fileID: 2107832283}
   - component: {fileID: 2107832285}
   - component: {fileID: 2107832284}
+  - component: {fileID: 2107832286}
   m_Layer: 0
   m_Name: CryingSpot (2)
   m_TagString: Untagged
@@ -8982,8 +9213,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+--- !u!23 &2107832286
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107832282}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &2110539393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,9 +9333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 850367542}
   - {fileID: 234938963}
@@ -9130,8 +9394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1990708115}
 --- !u!65 &2146165481

@@ -29,6 +29,8 @@ public class Relogio : interagivel {
 	public AudioClip batidaClip;
 	//int horaAtual ;
 	bool aconteceuBatidaFinal = false;
+
+	private cryingStatue estatuaChorando;
 	protected override void comeco() {
 
 		if(pontP == null){
@@ -55,6 +57,8 @@ public class Relogio : interagivel {
 
 		textInteragir = "Dar Corda";
 		audioTick.Play();
+
+		estatuaChorando = FindObjectOfType<cryingStatue>();
 	}
 
 	public override void interacao(){
@@ -66,6 +70,9 @@ public class Relogio : interagivel {
 			
 		pdDarCorda2 = false;
 
+		//caso primeira vez que da corda no relogio
+		if(!estatuaChorando.ativadaUmaVez)
+			estatuaChorando.piscaLanterna();
 
 		//nao caso chegue no valor maximo
 		if(!(tempoAtivo + forcaDarCorda> tempoAtivoMax)){
