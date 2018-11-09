@@ -96,7 +96,7 @@ public class EnemyBehaviour : MonoBehaviour {
     }
 
     public void GameOver() {
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 
     public void JumpScare() {

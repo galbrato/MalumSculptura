@@ -1073,12 +1073,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!23 &175975635 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 175975635, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203891144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &322035110
 BoxCollider:
@@ -1280,12 +1273,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &329115827 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 329115827, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &350178007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,9 +1318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1156181555}
-  - {fileID: 1498216260}
   portas:
   - {fileID: 850367542}
   - {fileID: 234938963}
@@ -1766,9 +1750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 175975635}
-  - {fileID: 1156181555}
   portas:
   - {fileID: 850367542}
   - {fileID: 515660801}
@@ -2079,8 +2060,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1336213667}
   portas:
   - {fileID: 1915827516}
 --- !u!65 &500567027
@@ -2145,12 +2124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79214072c109694f8fbd50b3f1fe7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!23 &561583213 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 561583213, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &562972046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2306,7 +2279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &708103095
 BoxCollider:
@@ -2790,7 +2762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &960833118
 BoxCollider:
@@ -3047,9 +3018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1862321371}
-  - {fileID: 1950644272}
   portas:
   - {fileID: 262060587}
   - {fileID: 659790237}
@@ -3851,12 +3819,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1156181555 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1156181555, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182993767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,9 +4106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1950644272}
-  - {fileID: 329115827}
   portas:
   - {fileID: 659790237}
   - {fileID: 495781314}
@@ -4200,12 +4159,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &1224845749 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1224845749, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1234800653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531277082286024, guid: 8817116546d0e8d4ca521b8aae32cfe0,
@@ -4243,7 +4196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &1275905827
 BoxCollider:
@@ -4536,12 +4488,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!23 &1336213667 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1336213667, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1385121485
 Mesh:
   m_ObjectHideFlags: 0
@@ -4875,9 +4821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 2029285764}
-  - {fileID: 2134047790}
   portas:
   - {fileID: 1301437435}
   - {fileID: 1874811027}
@@ -5091,12 +5034,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!23 &1498216260 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1498216260, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1553762573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5425,12 +5362,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 792511945}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &1676674398 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1676674398, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1678329015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531277082286024, guid: 8817116546d0e8d4ca521b8aae32cfe0,
@@ -5482,7 +5413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
 --- !u!65 &1691590337
 BoxCollider:
@@ -5788,9 +5718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1862321371}
-  - {fileID: 1676674398}
   portas:
   - {fileID: 262060587}
   - {fileID: 479928457}
@@ -6589,12 +6516,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!23 &1862321371 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1862321371, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1874811027 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5611565971385805876, guid: 8b2010f4c185f1344ab733d644bb940f,
@@ -6664,8 +6585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 1224845749}
   portas:
   - {fileID: 1577267010}
 --- !u!65 &1922572712
@@ -6763,9 +6682,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 561583213}
-  - {fileID: 175975635}
   portas:
   - {fileID: 1990708115}
   - {fileID: 515660801}
@@ -6885,12 +6801,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1950644272 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1950644272, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979195390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7162,12 +7072,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
---- !u!23 &2029285764 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2029285764, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2062776383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7217,12 +7121,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8817116546d0e8d4ca521b8aae32cfe0, type: 3}
---- !u!23 &2134047790 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2134047790, guid: 8b2010f4c185f1344ab733d644bb940f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987262470157489594}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146165478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7268,8 +7166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 561583213}
   portas:
   - {fileID: 1990708115}
 --- !u!65 &2146165481
@@ -7427,7 +7323,7 @@ PrefabInstance:
     - target: {fileID: 1886033305535588680, guid: 4cfb9e8fe64780940b68d8adbd7fa009,
         type: 3}
       propertyPath: tempoDeJogo
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfb9e8fe64780940b68d8adbd7fa009, type: 3}

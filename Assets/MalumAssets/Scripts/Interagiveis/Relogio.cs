@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class Relogio : interagivel {
+
 	public float tempoDeJogo = 30f;//tempo da fase
 	[HideInInspector]
 	public float tempo;
@@ -29,8 +30,10 @@ public class Relogio : interagivel {
 	public AudioClip batidaClip;
 	//int horaAtual ;
 	bool aconteceuBatidaFinal = false;
-	protected override void comeco() {
 
+	private cryingStatue estatuaChorando;
+	protected override void comeco() {
+      
 		if(pontP == null){
 			print(gameObject.name +"não apresenta script ponteiro");
 		}else if(pontG == null)
@@ -55,9 +58,13 @@ public class Relogio : interagivel {
 
 		textInteragir = "Dar Corda";
 		audioTick.Play();
+
+		estatuaChorando = FindObjectOfType<cryingStatue>();
 	}
 
 	public override void interacao(){
+ 
+
 		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
 			return;
 
@@ -66,6 +73,9 @@ public class Relogio : interagivel {
 			
 		pdDarCorda2 = false;
 
+		//caso primeira vez que da corda no relogio
+		if(!estatuaChorando.ativadaUmaVez)
+			estatuaChorando.piscaLanterna();
 
 		//nao caso chegue no valor maximo
 		if(!(tempoAtivo + forcaDarCorda> tempoAtivoMax)){
@@ -95,7 +105,7 @@ public class Relogio : interagivel {
 
 		//termino do jogo
 		if(tempo >= tempoDeJogo && !aconteceuBatidaFinal){
-			audioBatidaHora.Play();
+			//audioBatidaHora.Play();
 			FindObjectOfType<EscurecerTela>().enabled = true;
 			audioWinding.Stop();
 			audioTick.Stop();
