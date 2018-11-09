@@ -26,7 +26,7 @@ public class cryingStatue : interagivel {
 	public bool ativadaUmaVez = false;
 	[HideInInspector]
 	private bool ativadaDuasVezes = false;
-
+	private bool ativadoCorotina = false;
 	private BoxCollider m_colider;
 
 	protected override void comeco(){
@@ -153,7 +153,8 @@ public class cryingStatue : interagivel {
 			ativadaDuasVezes = true;
 		}else{
 		//caso contrário vá para o void
-
+			Debug.Log("entrarVoid");
+			necessitaMudarPos = false;
 			EntrarVoid();
 		}
         Invoke("piscaLanterna3", 0.1f);
@@ -179,8 +180,9 @@ IEnumerator mudarDePosicaoPeriodicamente() {
 
         trans.position = posVoid.position;
 
-        if (ativadaUmaVez && ativadaDuasVezes) {
+        if (ativadaUmaVez && ativadaDuasVezes && (!ativadoCorotina)) {
             StartCoroutine(mudarDePosicaoPeriodicamente());
+			ativadoCorotina = true;
             if (FirstTime) {
                 FirstTime = false;
                 CursedStatue.enabled = true;
