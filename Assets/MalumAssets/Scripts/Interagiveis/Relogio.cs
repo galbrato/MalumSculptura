@@ -33,10 +33,7 @@ public class Relogio : interagivel {
 
 	private cryingStatue estatuaChorando;
 	protected override void comeco() {
-        if(EstatuaAtormentada == null) {
-            Debug.LogError("ME DA REFERENCIA PARA ESTATUA ATORMENTADA");
-        }
-
+      
 		if(pontP == null){
 			print(gameObject.name +"não apresenta script ponteiro");
 		}else if(pontG == null)
@@ -108,7 +105,7 @@ public class Relogio : interagivel {
 
 		//termino do jogo
 		if(tempo >= tempoDeJogo && !aconteceuBatidaFinal){
-			audioBatidaHora.Play();
+			//audioBatidaHora.Play();
 			FindObjectOfType<EscurecerTela>().enabled = true;
 			audioWinding.Stop();
 			audioTick.Stop();
