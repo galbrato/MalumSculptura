@@ -137,6 +137,7 @@ public class EnemyBehaviour : MonoBehaviour {
             Stop();
             EndGame = true;
             Lanterna.instance.LightOff();
+            Lanterna.instance.enabled = false;
 
             mAgent.enabled = false;
             StateMachine.enabled = false;

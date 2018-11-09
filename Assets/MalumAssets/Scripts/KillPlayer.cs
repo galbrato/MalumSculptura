@@ -47,6 +47,7 @@ public class KillPlayer : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+        if (morreu) return;
         //calculando posição do player
         Vector3 playerPosition = Camera.main.transform.position;
         playerPosition.y = transform.position.y;
@@ -71,6 +72,7 @@ public class KillPlayer : MonoBehaviour{
             mAgent.speed = 0;
             if(!morreu) Grito.Play();
             morreu = true;
+            Lanterna.instance.enabled = false;
         }
     }
     
