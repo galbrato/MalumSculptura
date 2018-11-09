@@ -26,7 +26,7 @@ public class cryingStatue : interagivel {
 	public bool ativadaUmaVez = false;
 	[HideInInspector]
 	private bool ativadaDuasVezes = false;
-
+	private bool ativadoCorotina = false;
 	private BoxCollider m_colider;
 
 	protected override void comeco(){
@@ -179,8 +179,9 @@ IEnumerator mudarDePosicaoPeriodicamente() {
 
         trans.position = posVoid.position;
 
-        if (ativadaUmaVez && ativadaDuasVezes) {
+        if (ativadaUmaVez && ativadaDuasVezes && (!ativadoCorotina)) {
             StartCoroutine(mudarDePosicaoPeriodicamente());
+			ativadoCorotina = true;
             if (FirstTime) {
                 FirstTime = false;
                 CursedStatue.enabled = true;
