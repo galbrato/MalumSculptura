@@ -16,12 +16,6 @@ public class cryingSpawn : MonoBehaviour {
             return true;
         
 
-        for(int i = 0;i<meshPortas.Length;i++){
-            if(meshPortas[i].isVisible){
-                return true;
-            }
-        }
-        
          for(int i = 0;i<portas.Length;i++){
             if(portas[i].selfRender.isVisible){
                 return true;

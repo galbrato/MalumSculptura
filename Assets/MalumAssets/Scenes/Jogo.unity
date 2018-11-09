@@ -1313,7 +1313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4376946614432584, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.43
+      value: -14.15
       objectReference: {fileID: 0}
     - target: {fileID: 4376946614432584, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1375,6 +1375,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Volume
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108798813895120516, guid: 4397f8af3c4efeb4d9c634fdc8a25b90,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 108798813895120516, guid: 4397f8af3c4efeb4d9c634fdc8a25b90,
+        type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 108798813895120516, guid: 4397f8af3c4efeb4d9c634fdc8a25b90,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315836207589392, guid: 4397f8af3c4efeb4d9c634fdc8a25b90,
+        type: 3}
+      propertyPath: seekMouse
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315836207589392, guid: 4397f8af3c4efeb4d9c634fdc8a25b90,
+        type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315836207589392, guid: 4397f8af3c4efeb4d9c634fdc8a25b90,
+        type: 3}
+      propertyPath: LightDecressPoint
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4397f8af3c4efeb4d9c634fdc8a25b90, type: 3}
@@ -2458,6 +2488,11 @@ PrefabInstance:
     - target: {fileID: 114111351107032374, guid: f0c9b54f9b844e64e862219a5152ad32,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111351107032374, guid: f0c9b54f9b844e64e862219a5152ad32,
+        type: 3}
+      propertyPath: debug
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4733,7 +4768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1182993768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8827,7 +8862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1985576267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8984,7 +9019,7 @@ PrefabInstance:
     - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
         type: 3}
       propertyPath: maxTimer
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2193977529867054286, guid: 816d2991466014c4499af7ad3da5947a,
         type: 3}
@@ -9014,7 +9049,47 @@ PrefabInstance:
     - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
         type: 3}
       propertyPath: tempoEntreTeleportes
-      value: 40
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].time
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.9838562
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.20811462
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -1.1111112
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -1.1111112
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 526718249, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
@@ -9840,7 +9915,12 @@ PrefabInstance:
     - target: {fileID: 1886033305535588680, guid: 4cfb9e8fe64780940b68d8adbd7fa009,
         type: 3}
       propertyPath: tempoDeJogo
-      value: 5
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886033305535588680, guid: 4cfb9e8fe64780940b68d8adbd7fa009,
+        type: 3}
+      propertyPath: tempoAtivoMax
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfb9e8fe64780940b68d8adbd7fa009, type: 3}
