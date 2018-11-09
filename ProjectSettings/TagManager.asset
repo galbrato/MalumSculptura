@@ -8,6 +8,7 @@ TagManager:
   - StatueSpot
   - Porta
   - Atormentada
+  - CryingSpot
   layers:
   - Default
   - TransparentFX
