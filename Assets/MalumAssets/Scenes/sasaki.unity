@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telaPreta: {fileID: 203891146}
+  somRelogio: {fileID: 738360238541122909}
 --- !u!4 &124004408
 Transform:
   m_ObjectHideFlags: 0
@@ -7430,6 +7431,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfb9e8fe64780940b68d8adbd7fa009, type: 3}
+--- !u!1 &738360238541122909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7513581833457502405, guid: 4cfb9e8fe64780940b68d8adbd7fa009,
+    type: 3}
+  m_PrefabInstance: {fileID: 738360238541122908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3987262470157489594
 PrefabInstance:
   m_ObjectHideFlags: 0

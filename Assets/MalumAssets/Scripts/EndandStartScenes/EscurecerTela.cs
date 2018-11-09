@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class EscurecerTela : MonoBehaviour{
     private byte alfaTelaPreta =(byte)0;
     public Image telaPreta;
-
+       public GameObject somRelogio;
     void Start (){
-        StartCoroutine(EsccurecerTela());   
+        StartCoroutine(EsccurecerTela());  
+        DontDestroyOnLoad(somRelogio); 
     }
 
     //escurece imagem até ficar tudo preto

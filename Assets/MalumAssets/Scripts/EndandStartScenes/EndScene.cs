@@ -8,10 +8,13 @@ public class EndScene : MonoBehaviour{
 
     public string texto = "Parabéns, você sobreviveu esta noite.  Convide seus amigos para este desafio.";
     private string newTexto;
+
     void Start (){
         StartCoroutine(EscreverTela());
+
     }
     void Update () {
+
 
         if(Input.GetMouseButton(1)){
             SceneManager.LoadScene("MenuInicial");

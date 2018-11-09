@@ -7,6 +7,7 @@ public class EsbranquecerTela : MonoBehaviour{
         public Image telaPreta;
        private byte alfaTelaPreta =(byte)255;
 
+
     void Start(){
         StartCoroutine(EmbranquecerTela());
     }

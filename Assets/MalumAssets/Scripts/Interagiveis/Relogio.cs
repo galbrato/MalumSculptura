@@ -24,7 +24,8 @@ public class Relogio : interagivel {
 	private AudioSource audioTick;
 	public AudioClip tickClip;
 
-	private AudioSource audioBatidaHora;
+	[HideInInspector]
+	public AudioSource audioBatidaHora;
 	public AudioClip batidaClip;
 	//int horaAtual ;
 	bool aconteceuBatidaFinal = false;
@@ -82,7 +83,7 @@ public class Relogio : interagivel {
 	}
 
 	void Update () {
-		Debug.Log(tempo);
+
 		//caso relogio ativo
 		if(tempoAtivo > 0f){
 			tempoAtivo -= Time.deltaTime; 
