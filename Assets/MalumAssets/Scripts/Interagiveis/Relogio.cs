@@ -24,7 +24,8 @@ public class Relogio : interagivel {
 	private AudioSource audioTick;
 	public AudioClip tickClip;
 
-	private AudioSource audioBatidaHora;
+	[HideInInspector]
+	public AudioSource audioBatidaHora;
 	public AudioClip batidaClip;
 	//int horaAtual ;
 	bool aconteceuBatidaFinal = false;
@@ -95,7 +96,7 @@ public class Relogio : interagivel {
 		//termino do jogo
 		if(tempo >= tempoDeJogo && !aconteceuBatidaFinal){
 			audioBatidaHora.Play();
-			Debug.Log("acaba o jogo");
+			FindObjectOfType<EscurecerTela>().enabled = true;
 			audioWinding.Stop();
 			audioTick.Stop();
 			aconteceuBatidaFinal = true;
