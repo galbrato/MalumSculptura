@@ -17,10 +17,15 @@ public class cryingStatue : interagivel {
 	bool necessitaMudarPos = true;
 	int nivelChoro = 0;//0=sem choro;1=com choro;2=puto
 
-
+    //variaveis para iniciar a estatua amaldiçoada
+    public EnemyBehaviour CursedStatue;
+    private bool FirstTime = true;
 
 
 	protected override void comeco(){
+        if(CursedStatue == null) {
+            Debug.LogError("ME DA REFERENCIA PARA A ESTATUA AMALDIÇOADA");
+        }
 		spawns =  FindObjectsOfType<cryingSpawn>();
 		timer = maxTimer * 0.85f;
 		mudarDePos(posInicial);
@@ -115,14 +120,17 @@ public class cryingStatue : interagivel {
 
 		Debug.Log("q");
 
-		if(teleportes>1)
-			mudarDePos();
-		else if(teleportes==1){
-			mudarDePos(posSegunda);
-		}
-		else if(teleportes==0){
-			mudarDePos(posInicial);
-		}
+        if (teleportes > 1) {
+            mudarDePos();
+            if (FirstTime) {
+                FirstTime = false;
+                CursedStatue.enabled = true;
+            }
+        } else if (teleportes == 1) {
+            mudarDePos(posSegunda);
+        } else if (teleportes == 0) {
+            mudarDePos(posInicial);
+        }
         Invoke("piscaLanterna3", 0.1f);
     }
     private void piscaLanterna3(){

@@ -5,16 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/MalumAssets/Scenes/BackgroundMenu/Scenes/MenuInicial.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/55674104260dff4458d8e2cf158027ff
     guid: 55674104260dff4458d8e2cf158027ff
   - enabled: 1
     path: Assets/MalumAssets/Scenes/CartazHouseTest.unity
     guid: 181f4e1a563bf6d4c877a9e20cf12c43
+  - enabled: 1
+    path: Assets/MalumAssets/Scenes/EndStartScenes/StartScene.unity
+    guid: a5dc19b20c62e454fa8152758762488d
   - enabled: 1
     path: Assets/MalumAssets/Scenes/sasaki.unity
     guid: 30f6f4f79d1eb7d479184470db7287cb
   - enabled: 1
     path: Assets/MalumAssets/Scenes/EndStartScenes/EndScene.unity
     guid: 00b1708bd96b419409c9728f36f84055
+  - enabled: 1
+    path: Assets/MalumAssets/Scenes/cartaz.unity
+    guid: e98221653d32671439f99b70cafc2fd4
+  - enabled: 1
+    path: Assets/MalumAssets/Scenes/MenuInicial.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

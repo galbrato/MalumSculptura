@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class Relogio : interagivel {
+    //variaveis para ligar a estatua que chora
+    public GameObject EstatuaAtormentada;
+    private bool FirtsCorda = true; 
+
 	public float tempoDeJogo = 30f;//tempo da fase
 	[HideInInspector]
 	public float tempo;
@@ -30,6 +34,9 @@ public class Relogio : interagivel {
 	//int horaAtual ;
 	bool aconteceuBatidaFinal = false;
 	protected override void comeco() {
+        if(EstatuaAtormentada == null) {
+            Debug.LogError("ME DA REFERENCIA PARA ESTATUA ATORMENTADA");
+        }
 
 		if(pontP == null){
 			print(gameObject.name +"não apresenta script ponteiro");
@@ -58,6 +65,12 @@ public class Relogio : interagivel {
 	}
 
 	public override void interacao(){
+        if (FirtsCorda) {
+            EstatuaAtormentada.SetActive(true);
+            FirtsCorda = false;
+        }
+
+
 		if(Vector3.Distance(plaTrans.position, trans.position) > distMin)
 			return;
 
