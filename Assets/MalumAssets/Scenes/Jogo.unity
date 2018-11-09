@@ -351,6 +351,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &214327995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214327996}
+  m_Layer: 0
+  m_Name: posVoid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214327996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214327995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.729652, y: 1.1914253, z: 236.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &234938963 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1270001778125527267, guid: 8b2010f4c185f1344ab733d644bb940f,
@@ -469,10 +499,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 515660801}
   - {fileID: 1990708115}
+  meshPortas: []
 --- !u!1 &322035107
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,8 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+  meshPortas: []
 --- !u!65 &322035110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -676,12 +706,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 850367542}
   - {fileID: 234938963}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &350178010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1070,12 +1100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 850367542}
   - {fileID: 515660801}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &421801895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1578,10 +1608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1915827516}
+  meshPortas:
+  - {fileID: 0}
 --- !u!65 &500567027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2580,10 +2610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 1301437435}
   - {fileID: 1874811027}
+  meshPortas: []
 --- !u!23 &708103096
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2717,9 +2747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 1577267010}
+  meshPortas: []
 --- !u!1001 &743506622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2991,10 +3021,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 659790237}
   - {fileID: 262060587}
+  meshPortas: []
 --- !u!1 &901337731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,9 +3186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 1915827516}
+  meshPortas: []
 --- !u!4 &928581989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531277082286024, guid: 8817116546d0e8d4ca521b8aae32cfe0,
@@ -3210,8 +3240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+  meshPortas: []
 --- !u!65 &960833118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3467,12 +3497,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 262060587}
   - {fileID: 659790237}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &972330777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4575,12 +4605,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 659790237}
   - {fileID: 495781314}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &1222162715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5124,8 +5154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+  meshPortas: []
 --- !u!23 &1275905828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5914,8 +5944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+  meshPortas: []
 --- !u!65 &1376011929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6011,10 +6041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 1874811027}
   - {fileID: 1301437435}
+  meshPortas: []
 --- !u!1 &1394694159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6236,12 +6266,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 1301437435}
   - {fileID: 1874811027}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &1426079728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7226,8 +7256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas: []
+  meshPortas: []
 --- !u!65 &1691590337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7433,12 +7463,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 262060587}
   - {fileID: 479928457}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &1732964202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8133,10 +8163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1577267010}
+  meshPortas:
+  - {fileID: 0}
 --- !u!65 &1922572712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8232,12 +8262,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 1990708115}
   - {fileID: 515660801}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &1922942297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8589,6 +8619,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
+        type: 3}
+      propertyPath: posVoid
+      value: 
+      objectReference: {fileID: 214327996}
+    - target: {fileID: 4145008913340143729, guid: 816d2991466014c4499af7ad3da5947a,
+        type: 3}
+      propertyPath: tempoEntreTeleportes
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816d2991466014c4499af7ad3da5947a, type: 3}
 --- !u!43 &2048547071
@@ -8888,10 +8928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 1301437435}
   - {fileID: 1874811027}
+  meshPortas: []
 --- !u!43 &2100351833
 Mesh:
   m_ObjectHideFlags: 0
@@ -9134,10 +9174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas: []
   portas:
   - {fileID: 850367542}
   - {fileID: 234938963}
+  meshPortas: []
 --- !u!1 &2110539393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9220,12 +9260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
-  - {fileID: 0}
   portas:
   - {fileID: 850367542}
   - {fileID: 234938963}
+  meshPortas:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &2110539397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9284,10 +9324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0c387272f6f2347a1c761f1143d195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshPortas:
-  - {fileID: 0}
   portas:
   - {fileID: 1990708115}
+  meshPortas:
+  - {fileID: 0}
 --- !u!65 &2146165481
 BoxCollider:
   m_ObjectHideFlags: 0

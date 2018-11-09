@@ -20,6 +20,7 @@ public class cryingStatue : interagivel {
 
 	private Relogio relogio;
 	public bool ativadaUmaVez = false;
+	[HideInInspector]
 	private bool ativadaDuasVezes = false;
 
 	private BoxCollider m_colider;

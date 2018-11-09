@@ -21,6 +21,7 @@ public class cryingSpawn : MonoBehaviour {
                 return true;
             }
         }
+        
          for(int i = 0;i<portas.Length;i++){
             if(portas[i].selfRender.isVisible){
                 return true;
