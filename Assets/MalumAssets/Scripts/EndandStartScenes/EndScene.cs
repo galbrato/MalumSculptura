@@ -8,7 +8,6 @@ public class EndScene : MonoBehaviour{
 
     public string texto = "Parabéns, você sobreviveu esta noite.  Convide seus amigos para este desafio.";
     private string newTexto;
-
     void Start (){
         StartCoroutine(EscreverTela());
 

@@ -7,22 +7,28 @@ using UnityEngine.SceneManagement;
 public class StartScene : MonoBehaviour{
     public Text textoUi;
     public AudioSource audioIntro;
-    public string texto = "Bem vindo a mansão, ficarei a noite fora, tente sobreviver nela. Ah, além disso, recomendo dar corda no relógio.";
+    public string texto;
     private string newTexto;
-    void Start (){     
 
+    private bool audioIsOver;
+    void Start (){     
         StartCoroutine(EscreverTela());
+        StartCoroutine(waitForAudio());
         audioIntro.Play();
     }
     void Update () {
-        
-        //comecar jogo
-        if(Input.GetMouseButton(1)){
-            SceneManager.LoadScene("cartaz");
+        if(audioIsOver)
+        {
+            Destroy(textoUi);
+            Destroy(this.gameObject);
         }
     }
 
-
+    //waits for audio clip to end and then kill the text object
+    IEnumerator waitForAudio() {
+        yield return new WaitForSeconds(audioIntro.clip.length + 1.0f);
+        audioIsOver = true;
+    }
 
     IEnumerator EscreverTela(){
 
