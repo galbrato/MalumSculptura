@@ -8,11 +8,11 @@ public class cryingSpawn : MonoBehaviour {
     private MeshRenderer selff;
 
     void Start(){
-        selff = GetComponent<MeshRenderer>();
+        // selff = GetComponent<MeshRenderer>();
     }
     public bool obsertado(){
-        if(selff.isVisible)
-            return true;
+        // if(selff.isVisible)
+            // return true;
         
         for(int i = 0;i<meshPortas.Length;i++){
             if(meshPortas[i].isVisible){
