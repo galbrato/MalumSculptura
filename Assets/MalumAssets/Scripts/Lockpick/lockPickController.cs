@@ -112,7 +112,10 @@ public class lockPickController : MonoBehaviour {
 		
 		// Checking if the player wants to leave the minigame
 		if(Input.GetButtonDown("Fire2")){
-			Destroy(gameObject);
+            lanterna.enabled = true;
+            firstPerson.enabled = true;
+
+            Destroy(gameObject);
 		}
 	}
 
