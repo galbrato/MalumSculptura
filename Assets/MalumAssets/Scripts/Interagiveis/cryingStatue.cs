@@ -153,7 +153,8 @@ public class cryingStatue : interagivel {
 			ativadaDuasVezes = true;
 		}else{
 		//caso contrário vá para o void
-
+			Debug.Log("entrarVoid");
+			necessitaMudarPos = false;
 			EntrarVoid();
 		}
         Invoke("piscaLanterna3", 0.1f);
