@@ -30,6 +30,9 @@ public class Lanterna : MonoBehaviour {
     private AudioSource DesligarSound;
 
     private float OriginalRange;
+
+    [SerializeField] private HudFlashLight hudFlashLight;
+    
     private void Awake() {
         if (instance == null)
             instance = this;
@@ -76,10 +79,13 @@ public class Lanterna : MonoBehaviour {
         } else {
             myLight.range = OriginalRange;
         }
-
+        
+        hudFlashLight.UpdateLight(BaterryCounter);
+        
         if (isTurnedOn == false) return;
         Look();
         Detect();
+        
     }
 
     void Look() {
